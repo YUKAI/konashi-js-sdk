@@ -18,7 +18,8 @@ $(function(){
       ;
 
       // hide pio list
-      $(".toggle").removeClass("active");
+      $(".toggle").removeClass("active").attr({"style": ""});
+      $(".toggle-handle").attr({"style": ""});
       $("#pio-setting").hide();
       $("#s1-status").html("OFF");
     }
