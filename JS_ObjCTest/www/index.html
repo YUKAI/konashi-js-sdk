@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charcet=UTF-8" />
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="konashi.js"></script>
+        <script type="text/javascript">
+            var dw=1;
+            var of=0;
+            
+            function reload(){
+                location.href="index.html";
+            }
+            
+            function testLED(){
+                if(of==0){
+                    konashi.pinModeW(1,1);
+                    of=1;
+                }
+                konashi.digitalWriteW(1,dw);
+                dw=1-dw;
+                alert(konashi.digitalReadAllW());
+            }
+            
+            $(document).ready(function(){
+            $('#evalbutton').on("click",function(){
+                                var script=$('#src').val();
+                                $.globalEval(script);
+                                });
+                              $('#box').animate({"width":1000},40000);
+                              });
+        </script>
+	</head>
+	<body>
+		<h1>Alert Test</h1>
+		<form>
+			<input type="button" onclick="konashi.findW();" value="find"></input>
+			<input type="button" onclick="testLED();" value="LED2"></input>
+			<p id="ledstatus"></p>
+			<div id="box" style="width:200px; height:200px; background-color:red;"></div>
+			<textarea id="src" cols="50" rows="20">
+konashi.on("onI2cReady",function(response){
+                konashi.i2cRead({length:1},function(resp){
+        alert(resp);
+        konashi.i2cStopConditionW();
+    });
+});
+konashi.i2cModeW(konashi.I2C_ENABLE_400K);
+konashi.i2cStartConditionW();
+konashi.i2cWriteW(2,[0x6B,0x40],0x68);
+konashi.i2cStartConditionW();
+konashi.i2cStartConditionW();
+konashi.i2cWriteW(1,0x75,0x68);
+konashi.i2cStartConditionW();
+konashi.i2cReadRequest({length:1,address:0x68},function(response){                
+    if(JSON.parse(response).status==konashi.FAILURE){
+        alert("read request failed.");
+    }
+});
+			</textarea>
+			<div></div>
+			<input type="button" id="evalbutton" value="Exec!"></input>
+			<div></div>
+			<input type="button" value="reload" onclick="reload();">
+		</form>
+	</body>
+</html>
