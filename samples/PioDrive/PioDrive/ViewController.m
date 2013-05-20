@@ -37,23 +37,6 @@
         NSDictionary *p = @{@"name": @"takei"};
         callback(p);
     }];*/
-    
-    /*[NSTimer
-        scheduledTimerWithTimeInterval:1.0f
-        target:self
-        selector:@selector(hogeMethod:)
-        userInfo:nil
-        repeats:YES
-    ];*/
-}
-
--(void)hogeMethod:(NSTimer*)timer{
-    NSLog(@"UNKO");
-    
-    NSDictionary *params = @{@"name": @"yuka"};
-    
-    [konashiWebView send:@"testEvent" withParams:params];
-    
 }
 
 - (void)didReceiveMemoryWarning
