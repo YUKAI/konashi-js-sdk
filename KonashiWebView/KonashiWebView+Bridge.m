@@ -3,35 +3,31 @@
 //  PioDrive
 //
 
-#import "KonashiBridge.h"
+#import "KonashiWebView+Bridge.h"
 #import "Konashi.h"
 
-@implementation KonashiBridge
+@implementation KonashiWebView (KonashiWebView_Bridge)
 
-- (id)initWithWebView:(KonashiWebView*)webview
+- (void)deallocBridge
 {
-    konashiWebView = webview;
+    KB_LOG(@"deallocBridge");
+
+    // remove observer
+    [Konashi removeObserver:self];
     
-    return self;
+    // remove js event listener
+    [self off];
 }
 
-- (void)initializeKonashi
-{
-    KB_LOG(@"bridge: initializeKonashi");
-    
-    [self initialize];
-}
+#pragma mark -
+#pragma mark Konashi bridge methods
 
 - (void)disconnectKonashi
 {
     [Konashi disconnect];
 }
 
-
-#pragma mark -
-#pragma mark Konashi bridge methods
-
-- (void)initialize
+- (void)initializeKonashi
 {
     [Konashi initialize];
 
@@ -53,7 +49,7 @@
     /****************************
      * Base
      ****************************/
-    [konashiWebView on:@"find" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"find" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
         KB_LOG(@"bridge: find");
         
         int status = [Konashi find];
@@ -62,7 +58,7 @@
         callback(data);
     }];
     
-    [konashiWebView on:@"findWithName" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"findWithName" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
         KB_LOG(@"bridge: findWithName, %@", params);
         
         NSDictionary *data;
@@ -80,7 +76,7 @@
         callback(data);
     }];
     
-    [konashiWebView on:@"disconnect" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"disconnect" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
         KB_LOG(@"bridge: disconnect");
         
         int status = [Konashi disconnect];
@@ -89,7 +85,7 @@
         callback(data);
     }];
     
-    [konashiWebView on:@"isConnected" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"isConnected" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
         KB_LOG(@"bridge: isConnected");
         
         BOOL isConnected = [Konashi isConnected];
@@ -102,7 +98,7 @@
     /***************************
      * Digital I/O
      ***************************/
-    [konashiWebView on:@"pinMode" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"pinMode" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
         KB_LOG(@"bridge: pinMode, %@", params);
         
         NSDictionary *data;
@@ -124,7 +120,7 @@
         callback(data);
     }];
     
-    [konashiWebView on:@"pinModeAll" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"pinModeAll" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
         KB_LOG(@"bridge: pinModeAll, %@", params);
         
         NSDictionary *data;
@@ -145,7 +141,7 @@
         callback(data);
     }];
     
-    [konashiWebView on:@"pinPullup" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"pinPullup" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
         KB_LOG(@"bridge: pinPullup, %@", params);
         
         NSDictionary *data;
@@ -167,7 +163,7 @@
         callback(data);
     }];
     
-    [konashiWebView on:@"pinPullupAll" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"pinPullupAll" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
         KB_LOG(@"bridge: pinPullupAll, %@", params);
         
         NSDictionary *data;
@@ -188,7 +184,7 @@
         callback(data);
     }];
     
-    [konashiWebView on:@"digitalRead" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"digitalRead" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
         KB_LOG(@"bridge: digitalRead, %@", params);
         
         NSDictionary *data;
@@ -209,7 +205,7 @@
         callback(data);
     }];
     
-    [konashiWebView on:@"digitalReadAll" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"digitalReadAll" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
         KB_LOG(@"bridge: digitalReadAll, %@", params);
         
         NSDictionary *data;
@@ -220,7 +216,7 @@
         callback(data);
     }];
     
-    [konashiWebView on:@"digitalWrite" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"digitalWrite" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
         KB_LOG(@"bridge: digitalWrite, %@", params);
         
         NSDictionary *data;
@@ -242,7 +238,7 @@
         callback(data);
     }];
     
-    [konashiWebView on:@"digitalWriteAll" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"digitalWriteAll" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
         KB_LOG(@"bridge: digitalWriteAll, %@", params);
         
         NSDictionary *data;
@@ -267,7 +263,7 @@
     /***************************
      * Analog I/O
      ***************************/
-    [konashiWebView on:@"analogReference" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"analogReference" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
         KB_LOG(@"bridge: analogReference, %@", params);
         
         NSDictionary *data;
@@ -278,7 +274,7 @@
         callback(data);
     }];
     
-    [konashiWebView on:@"analogReadRequest" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"analogReadRequest" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
         KB_LOG(@"bridge: analogReadRequest, %@", params);
         
         NSDictionary *data;
@@ -299,7 +295,7 @@
         callback(data);
     }];
     
-    [konashiWebView on:@"analogRead" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"analogRead" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
         KB_LOG(@"bridge: analogRead, %@", params);
         
         NSDictionary *data;
@@ -320,7 +316,7 @@
         callback(data);
     }];
     
-    [konashiWebView on:@"analogWrite" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"analogWrite" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
         KB_LOG(@"bridge: analogWrite, %@", params);
         
         NSDictionary *data;
@@ -346,7 +342,7 @@
     /***************************
      * PWM
      ***************************/
-    [konashiWebView on:@"pwmMode" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"pwmMode" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
         KB_LOG(@"bridge: pwmMode, %@", params);
         
         NSDictionary *data;
@@ -368,7 +364,7 @@
         callback(data);
     }];
     
-    [konashiWebView on:@"pwmPeriod" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"pwmPeriod" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
         KB_LOG(@"bridge: pwmPeriod, %@", params);
         
         NSDictionary *data;
@@ -391,7 +387,7 @@
         callback(data);
     }];
     
-    [konashiWebView on:@"pwmDuty" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"pwmDuty" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
         KB_LOG(@"bridge: pwmDuty, %@", params);
         
         NSDictionary *data;
@@ -414,7 +410,7 @@
         callback(data);
     }];
     
-    [konashiWebView on:@"pwmLedDrive" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"pwmLedDrive" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
         KB_LOG(@"bridge: pwmLedDrive, %@", params);
         
         NSDictionary *data;
@@ -440,7 +436,7 @@
     /***************************
      * UART
      ***************************/
-    [konashiWebView on:@"uartMode" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"uartMode" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
         KB_LOG(@"bridge: uartMode, %@", params);
         
         NSDictionary *data;
@@ -461,7 +457,7 @@
         callback(data);
     }];
     
-    [konashiWebView on:@"uartBaudrate" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"uartBaudrate" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
         KB_LOG(@"bridge: uartBaudrate, %@", params);
         
         NSDictionary *data;
@@ -482,7 +478,7 @@
         callback(data);
     }];
     
-    [konashiWebView on:@"uartWrite" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"uartWrite" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
         KB_LOG(@"bridge: uartWrite, %@", params);
         
         NSDictionary *data;
@@ -507,7 +503,7 @@
     /***************************
      * I2C
      ***************************/
-    [konashiWebView on:@"i2cMode" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"i2cMode" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
         KB_LOG(@"bridge: i2cMode, %@", params);
         
         NSDictionary *data;
@@ -528,7 +524,7 @@
         callback(data);
     }];
     
-    [konashiWebView on:@"i2cStartCondition" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"i2cStartCondition" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
         KB_LOG(@"bridge: i2cStartCondition, %@", params);
         
         NSDictionary *data;
@@ -539,7 +535,7 @@
         callback(data);
     }];
     
-    [konashiWebView on:@"i2cRestartCondition" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"i2cRestartCondition" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
         KB_LOG(@"bridge: i2cRestartCondition, %@", params);
         
         NSDictionary *data;
@@ -550,7 +546,7 @@
         callback(data);
     }];
     
-    [konashiWebView on:@"i2cStopCondition" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"i2cStopCondition" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
         KB_LOG(@"bridge: i2cStopCondition, %@", params);
         
         NSDictionary *data;
@@ -561,7 +557,7 @@
         callback(data);
     }];
     
-    [konashiWebView on:@"i2cWrite" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"i2cWrite" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
         KB_LOG(@"bridge: i2cWrite, %@", params);
         
         NSDictionary *d;
@@ -586,7 +582,7 @@
         callback(d);
     }];
     
-    [konashiWebView on:@"i2cReadRequest" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"i2cReadRequest" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
         KB_LOG(@"bridge: i2cReadRequest, %@", params);
         
         NSDictionary *data;
@@ -609,7 +605,7 @@
         callback(data);
     }];
     
-    [konashiWebView on:@"i2cRead" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"i2cRead" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
         KB_LOG(@"bridge: i2cRead, %@", params);
         
         NSDictionary *d;
@@ -641,7 +637,7 @@
     /***************************
      * Hardware control
      ***************************/
-    [konashiWebView on:@"reset" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"reset" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
         KB_LOG(@"bridge: reset, %@", params);
         
         NSDictionary *data;
@@ -652,7 +648,7 @@
         callback(data);
     }];
     
-    [konashiWebView on:@"batteryLevelReadRequest" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"batteryLevelReadRequest" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
         KB_LOG(@"bridge: batteryLevelReadRequest, %@", params);
         
         NSDictionary *data;
@@ -663,7 +659,7 @@
         callback(data);
     }];
     
-    [konashiWebView on:@"batteryLevelRead" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"batteryLevelRead" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
         KB_LOG(@"bridge: batteryLevelRead, %@", params);
         
         NSDictionary *d;
@@ -676,7 +672,7 @@
         callback(d);
     }];
     
-    [konashiWebView on:@"signalStrengthReadRequest" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"signalStrengthReadRequest" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
         KB_LOG(@"bridge: signalStrengthReadRequest, %@", params);
         
         NSDictionary *data;
@@ -687,7 +683,7 @@
         callback(data);
     }];
     
-    [konashiWebView on:@"signalStrengthRead" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"signalStrengthRead" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
         KB_LOG(@"bridge: signalStrengthRead, %@", params);
         
         NSDictionary *d;
@@ -708,13 +704,13 @@
 - (void)jsKonashiConnected
 {
     KB_LOG(@"bridge: jsKonashiConnected");
-    [konashiWebView send:@"connected" withParams:nil];
+    [self send:@"connected" withParams:nil];
 }
 
 - (void)jsKonashiDisconnected
 {
     KB_LOG(@"bridge: jsKonashiDisconnected");
-    [konashiWebView send:@"disconnected" withParams:nil];
+    [self send:@"disconnected" withParams:nil];
 }
 
 - (void)jsKonashiReady
@@ -732,7 +728,7 @@
 
 -(void)konashiReady:(NSTimer*)timer
 {
-    [konashiWebView send:@"ready" withParams:nil];
+    [self send:@"ready" withParams:nil];
 }
 
 - (void)jsKonashiUpdatePioInput
@@ -741,14 +737,14 @@
     
     NSDictionary *data = @{@"value":[NSNumber numberWithInteger:[Konashi digitalReadAll]]};;
 
-    [konashiWebView send:@"updatePioInput" withParams:data];
+    [self send:@"updatePioInput" withParams:data];
 }
 
 - (void)jsKonashiUpdateAnalogValue
 {
     KB_LOG(@"bridge: jsKonashiUpdateAnalogValue");
     
-    [konashiWebView send:@"updateAnalogValue" withParams:nil];
+    [self send:@"updateAnalogValue" withParams:nil];
 }
 
 - (void)jsKonashiUpdateAnalogValueAio0
@@ -757,7 +753,7 @@
     
     NSDictionary *data = @{@"pin": [NSNumber numberWithInt:0], @"value":[NSNumber numberWithInteger:[Konashi analogRead:0]]};;
 
-    [konashiWebView send:@"updateAnalogValueAio0" withParams:data];
+    [self send:@"updateAnalogValueAio0" withParams:data];
 
 }
 
@@ -767,7 +763,7 @@
     
     NSDictionary *data = @{@"pin": [NSNumber numberWithInt:1], @"value":[NSNumber numberWithInteger:[Konashi analogRead:1]]};;
     
-    [konashiWebView send:@"updateAnalogValueAio1" withParams:data];
+    [self send:@"updateAnalogValueAio1" withParams:data];
 
 }
 
@@ -777,14 +773,14 @@
 
     NSDictionary *data = @{@"pin": [NSNumber numberWithInt:2], @"value":[NSNumber numberWithInteger:[Konashi analogRead:2]]};;
 
-    [konashiWebView send:@"updateAnalogValueAio2" withParams:data];
+    [self send:@"updateAnalogValueAio2" withParams:data];
 }
 
 - (void)jsKonashiCompleteReadI2c
 {
     KB_LOG(@"bridge: jsKonashiCompleteReadI2c");
 
-    [konashiWebView send:@"completeReadI2c" withParams:nil];
+    [self send:@"completeReadI2c" withParams:nil];
 }
 
 - (void)jsKonashiCompleteUartRx
@@ -793,7 +789,7 @@
     
     NSDictionary *data = @{@"value":[NSNumber numberWithInteger:[Konashi uartRead]]};;
     
-    [konashiWebView send:@"completeUartRx" withParams:data];
+    [self send:@"completeUartRx" withParams:data];
 
 }
 
@@ -803,7 +799,7 @@
 
     NSDictionary *data = @{@"value":[NSNumber numberWithInteger:[Konashi batteryLevelRead]]};;
     
-    [konashiWebView send:@"updateBatteryLevel" withParams:data];
+    [self send:@"updateBatteryLevel" withParams:data];
 }
 
 - (void)jsKonashiUpdateSignalStrength
@@ -812,7 +808,7 @@
 
     NSDictionary *data = @{@"value":[NSNumber numberWithInteger:[Konashi signalStrengthRead]]};;
     
-    [konashiWebView send:@"updateSignalStrength" withParams:data];
+    [self send:@"updateSignalStrength" withParams:data];
 }
 
 

@@ -1,10 +1,9 @@
 //
 //  KonashiWebView.m
-//  PioDrive
 //
 
 #import "KonashiWebView.h"
-#import "KonashiBridge.h"
+#import "KonashiWebView+Bridge.h"
 
 @implementation KonashiWebView
 
@@ -26,12 +25,18 @@ NSString * const KonashiURLScheme = @"konashijs";
     return self;
 }
 
+- (void)dealloc
+{
+    [self deallocBridge];
+    
+    self.delegate = nil;
+}
+
 - (void)initKonashiWebView
 {
     if(self){
         super.delegate = self;
         handlers = [[NSMutableDictionary alloc] init];
-        bridge = [[KonashiBridge alloc] initWithWebView: self];
     }
 }
 
@@ -43,16 +48,6 @@ NSString * const KonashiURLScheme = @"konashijs";
             ((UIScrollView *)subview).bounces = NO;
         }
     }
-}
-
-- (void)initializeKonashi
-{
-    [bridge initializeKonashi];
-}
-
-- (void)disconnectKonashi
-{
-    [bridge disconnectKonashi];
 }
 
 
@@ -79,6 +74,20 @@ NSString * const KonashiURLScheme = @"konashijs";
     }
     
     [handlerList addObject:handler];
+}
+
+- (void)off:(NSString*)eventName
+{
+    NSMutableArray *handlerList = [handlers objectForKey:eventName];
+
+    [handlerList removeAllObjects];
+}
+
+- (void)off
+{
+    for(id key in [handlers keyEnumerator]){
+        [self off:[handlers objectForKey:key]];
+    }
 }
 
 - (void)send:(NSString*)eventName withParams:(NSDictionary *)params
