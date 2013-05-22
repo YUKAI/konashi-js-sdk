@@ -2,7 +2,8 @@ konashi-js-sdk
 =============
 
 ## Getting Started
-- any taker? 
+
+## 
 
 ### submoudleを初期化する
 konashi-ios-sdk をsubmoduleとして組み込んでいます。

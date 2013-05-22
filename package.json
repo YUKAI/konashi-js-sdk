@@ -1,0 +1,9 @@
+{
+  "name": "konashi",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "~v0.4.1",
+    "grunt-contrib-uglify": "~0.2.1",
+    "grunt-shell": "~0.2.2"
+  }
+}
