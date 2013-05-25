@@ -4,7 +4,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "KonashiWebView.h"
+#import "KonashiWebView+Bridge.h"
 
 @interface ViewController : UIViewController
 

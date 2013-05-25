@@ -27,16 +27,6 @@
     [konashiWebView disableBounce];
     
     [konashiWebView initializeKonashi];
-    
-    /*[konashiWebView on:@"test" handler:^(NSDictionary *params) {
-        NSLog(@"#####test pio: %@", [params objectForKey:@"pio"]);
-    }];
-    [konashiWebView on:@"test2" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
-        NSLog(@"#####test2 pio: %@", [params objectForKey:@"pio"]);
-        
-        NSDictionary *p = @{@"name": @"takei"};
-        callback(p);
-    }];*/
 }
 
 - (void)didReceiveMemoryWarning
