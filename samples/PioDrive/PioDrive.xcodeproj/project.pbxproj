@@ -24,6 +24,17 @@
 		0805540817474A7C00400BFB /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0805540617474A7C00400BFB /* icon.png */; };
 		0805540917474A7C00400BFB /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0805540717474A7C00400BFB /* icon@2x.png */; };
 		0805541B174750D400400BFB /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 0805541A174750D400400BFB /* assets */; };
+		0860CBFB175230620093168E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 080553D017473E2300400BFB /* UIKit.framework */; };
+		0860CBFC175230620093168E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 080553D217473E2300400BFB /* Foundation.framework */; };
+		0860CBFD175230620093168E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 080553D417473E2300400BFB /* CoreGraphics.framework */; };
+		0860CC03175230620093168E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0860CC01175230620093168E /* InfoPlist.strings */; };
+		0860CC05175230620093168E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0860CC04175230620093168E /* main.m */; };
+		0860CC09175230620093168E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0860CC08175230620093168E /* AppDelegate.m */; };
+		0860CC0B175230620093168E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0860CC0A175230620093168E /* Default.png */; };
+		0860CC0D175230620093168E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0860CC0C175230620093168E /* Default@2x.png */; };
+		0860CC0F175230620093168E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0860CC0E175230620093168E /* Default-568h@2x.png */; };
+		0860CC12175230620093168E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0860CC10175230620093168E /* MainStoryboard.storyboard */; };
+		0860CC15175230620093168E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0860CC14175230620093168E /* ViewController.m */; };
 		08931CA217508D1000A0C60B /* KonashiWebView+Bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 08931C9F17508D1000A0C60B /* KonashiWebView+Bridge.m */; };
 		08931CA317508D1000A0C60B /* KonashiWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08931CA117508D1000A0C60B /* KonashiWebView.m */; };
 /* End PBXBuildFile section */
@@ -53,6 +64,19 @@
 		0805540617474A7C00400BFB /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		0805540717474A7C00400BFB /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		0805541A174750D400400BFB /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = ../../assets; sourceTree = "<group>"; };
+		0860CBFA175230620093168E /* KoooTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KoooTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0860CC00175230620093168E /* KoooTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KoooTest-Info.plist"; sourceTree = "<group>"; };
+		0860CC02175230620093168E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0860CC04175230620093168E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0860CC06175230620093168E /* KoooTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KoooTest-Prefix.pch"; sourceTree = "<group>"; };
+		0860CC07175230620093168E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0860CC08175230620093168E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0860CC0A175230620093168E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		0860CC0C175230620093168E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		0860CC0E175230620093168E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		0860CC11175230620093168E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		0860CC13175230620093168E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		0860CC14175230620093168E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		08931C9E17508D1000A0C60B /* KonashiWebView+Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KonashiWebView+Bridge.h"; sourceTree = "<group>"; };
 		08931C9F17508D1000A0C60B /* KonashiWebView+Bridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KonashiWebView+Bridge.m"; sourceTree = "<group>"; };
 		08931CA017508D1000A0C60B /* KonashiWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KonashiWebView.h; sourceTree = "<group>"; };
@@ -71,6 +95,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0860CBF7175230620093168E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0860CBFB175230620093168E /* UIKit.framework in Frameworks */,
+				0860CBFC175230620093168E /* Foundation.framework in Frameworks */,
+				0860CBFD175230620093168E /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -81,6 +115,7 @@
 				08931C9D17508D1000A0C60B /* KonashiWebView */,
 				080553F31747467600400BFB /* Konashi */,
 				080553D617473E2300400BFB /* PioDrive */,
+				0860CBFE175230620093168E /* KoooTest */,
 				080553CF17473E2300400BFB /* Frameworks */,
 				080553CE17473E2300400BFB /* Products */,
 			);
@@ -90,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				080553CD17473E2300400BFB /* PioDrive.app */,
+				0860CBFA175230620093168E /* KoooTest.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,6 +182,33 @@
 			path = "../../libs/konashi-ios-sdk/Konashi";
 			sourceTree = "<group>";
 		};
+		0860CBFE175230620093168E /* KoooTest */ = {
+			isa = PBXGroup;
+			children = (
+				0860CC07175230620093168E /* AppDelegate.h */,
+				0860CC08175230620093168E /* AppDelegate.m */,
+				0860CC10175230620093168E /* MainStoryboard.storyboard */,
+				0860CC13175230620093168E /* ViewController.h */,
+				0860CC14175230620093168E /* ViewController.m */,
+				0860CBFF175230620093168E /* Supporting Files */,
+			);
+			path = KoooTest;
+			sourceTree = "<group>";
+		};
+		0860CBFF175230620093168E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0860CC00175230620093168E /* KoooTest-Info.plist */,
+				0860CC01175230620093168E /* InfoPlist.strings */,
+				0860CC04175230620093168E /* main.m */,
+				0860CC06175230620093168E /* KoooTest-Prefix.pch */,
+				0860CC0A175230620093168E /* Default.png */,
+				0860CC0C175230620093168E /* Default@2x.png */,
+				0860CC0E175230620093168E /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		08931C9D17508D1000A0C60B /* KonashiWebView */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +241,23 @@
 			productReference = 080553CD17473E2300400BFB /* PioDrive.app */;
 			productType = "com.apple.product-type.application";
 		};
+		0860CBF9175230620093168E /* KoooTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0860CC18175230620093168E /* Build configuration list for PBXNativeTarget "KoooTest" */;
+			buildPhases = (
+				0860CBF6175230620093168E /* Sources */,
+				0860CBF7175230620093168E /* Frameworks */,
+				0860CBF8175230620093168E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KoooTest;
+			productName = KoooTest;
+			productReference = 0860CBFA175230620093168E /* KoooTest.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -200,6 +280,7 @@
 			projectRoot = "";
 			targets = (
 				080553CC17473E2300400BFB /* PioDrive */,
+				0860CBF9175230620093168E /* KoooTest */,
 			);
 		};
 /* End PBXProject section */
@@ -221,6 +302,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0860CBF8175230620093168E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0860CC03175230620093168E /* InfoPlist.strings in Resources */,
+				0860CC0B175230620093168E /* Default.png in Resources */,
+				0860CC0D175230620093168E /* Default@2x.png in Resources */,
+				0860CC0F175230620093168E /* Default-568h@2x.png in Resources */,
+				0860CC12175230620093168E /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -234,6 +327,16 @@
 				080553F71747467600400BFB /* Konashi.m in Sources */,
 				08931CA217508D1000A0C60B /* KonashiWebView+Bridge.m in Sources */,
 				08931CA317508D1000A0C60B /* KonashiWebView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0860CBF6175230620093168E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0860CC05175230620093168E /* main.m in Sources */,
+				0860CC09175230620093168E /* AppDelegate.m in Sources */,
+				0860CC15175230620093168E /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +355,22 @@
 			isa = PBXVariantGroup;
 			children = (
 				080553E917473E2300400BFB /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		0860CC01175230620093168E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0860CC02175230620093168E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0860CC10175230620093168E /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0860CC11175230620093168E /* en */,
 			);
 			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
@@ -337,6 +456,30 @@
 			};
 			name = Release;
 		};
+		0860CC16175230620093168E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KoooTest/KoooTest-Prefix.pch";
+				INFOPLIST_FILE = "KoooTest/KoooTest-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0860CC17175230620093168E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KoooTest/KoooTest-Prefix.pch";
+				INFOPLIST_FILE = "KoooTest/KoooTest-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -357,6 +500,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		0860CC18175230620093168E /* Build configuration list for PBXNativeTarget "KoooTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0860CC16175230620093168E /* Debug */,
+				0860CC17175230620093168E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
