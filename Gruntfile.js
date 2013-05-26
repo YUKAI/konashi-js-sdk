@@ -8,7 +8,7 @@ module.exports = function(grunt) {
         uglify: {
             konashijs: {
                 options: {
-                     banner: '/*! <%= package.name %>.js <%= grunt.template.today("yyyy-mm-dd") %> http://konashi.ux-xu.com */\n'
+                     banner: '/*! <%= package.name %>.js <%= grunt.template.today("yyyy-mm-dd") %> http://konashi.ux-xu.com/kjs */\n'
                 },
                 files: {
                     "build/<%= package.name %>-<%= package.version %>.min.js": ["assets/<%= package.name %>.js"],
