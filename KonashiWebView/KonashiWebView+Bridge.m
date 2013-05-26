@@ -48,6 +48,8 @@
     [Konashi initialize];
 
     // konashi event handler
+    [Konashi addObserver:self selector:@selector(jsKonashiCentralManagerPoweredOn) name:KONASHI_EVENT_CENTRAL_MANAGER_POWERED_ON];
+    [Konashi addObserver:self selector:@selector(jsKonashiPeripheralNotFound) name:KONASHI_EVENT_PERIPHERAL_NOT_FOUND];
     [Konashi addObserver:self selector:@selector(jsKonashiConnected) name:KONASHI_EVENT_CONNECTED];
     [Konashi addObserver:self selector:@selector(jsKonashiDisconnected) name:KONASHI_EVENT_DISCONNECTED];
     [Konashi addObserver:self selector:@selector(jsKonashiReady) name:KONASHI_EVENT_READY];
@@ -106,6 +108,15 @@
         
         BOOL isConnected = [Konashi isConnected];
         NSDictionary *data = @{@"isConnected":[NSNumber numberWithBool:isConnected]};
+        
+        callback(data);
+    }];
+    
+    [self on:@"peripheralName" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+        KB_LOG(@"bridge: peripheralName");
+        
+        NSString *name = [Konashi peripheralName];
+        NSDictionary *data = @{@"peripheralName":name};
         
         callback(data);
     }];
@@ -716,6 +727,19 @@
 
 #pragma mark -
 #pragma mark Konashi event handler methods
+
+- (void)jsKonashiCentralManagerPoweredOn
+{
+    KB_LOG(@"bridge: jsKonashiCentralManagerPoweredOn");
+    [self send:@"centralManagerPoweredOn" withParams:nil];
+}
+
+- (void)jsKonashiPeripheralNotFound
+{
+    KB_LOG(@"bridge: jsKonashiPeripheralNotFound");
+    [self send:@"peripheralNotFound" withParams:nil];
+}
+
 
 - (void)jsKonashiConnected
 {
