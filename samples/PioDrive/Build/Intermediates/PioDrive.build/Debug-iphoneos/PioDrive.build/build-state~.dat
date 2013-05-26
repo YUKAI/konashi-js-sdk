@@ -2,25 +2,25 @@ TPioDrive
 v5
 r1
 cCheck dependencies
-cProcessInfoPlistFile /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/Info.plist PioDrive/PioDrive-Info.plist
 cCpResource /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/ResourceRules.plist Build/Products/Debug-iphoneos/PioDrive.app/ResourceRules.plist
+cProcessInfoPlistFile /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/Info.plist PioDrive/PioDrive-Info.plist
 cProcessPCH /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PrecompiledHeaders/PioDrive-Prefix-gttcfxhpaqacvtevwwirrbklunxi/PioDrive-Prefix.pch.pth PioDrive/PioDrive-Prefix.pch normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/Objects-normal/armv7s/AppDelegate.o /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/PioDrive/AppDelegate.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/Objects-normal/armv7s/ViewController.o /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/PioDrive/ViewController.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/Objects-normal/armv7s/main.o /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/PioDrive/main.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/Objects-normal/armv7s/ViewController.o /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/PioDrive/ViewController.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/Objects-normal/armv7s/AppDelegate.o /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/PioDrive/AppDelegate.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/Objects-normal/armv7s/Konashi.o /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/../../libs/konashi-ios-sdk/Konashi/Konashi.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/Objects-normal/armv7s/KonashiWebView+Bridge.o /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/../../KonashiWebView/KonashiWebView+Bridge.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/Objects-normal/armv7s/KonashiWebView.o /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/../../KonashiWebView/KonashiWebView.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cLd /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/PioDrive normal armv7s
 cGenerateDSYMFile /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app.dSYM /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/PioDrive
-cCopyPNGFile /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/Default@2x.png PioDrive/Default@2x.png
-cCopyPNGFile /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/Default-568h@2x.png PioDrive/Default-568h@2x.png
 cCopyPNGFile /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/Default.png PioDrive/Default.png
 cCopyStringsFile /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/en.lproj/InfoPlist.strings PioDrive/en.lproj/InfoPlist.strings
+cCopyPNGFile /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/Default@2x.png PioDrive/Default@2x.png
+cCopyPNGFile /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/Default-568h@2x.png PioDrive/Default-568h@2x.png
 cCompileStoryboard /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/PioDrive/en.lproj/MainStoryboard.storyboard
 cCopyPNGFile /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/icon-72.png PioDrive/icon-72.png
-cCopyPNGFile /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/icon.png PioDrive/icon.png
 cCopyPNGFile /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/icon@2x.png PioDrive/icon@2x.png
+cCopyPNGFile /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/icon.png PioDrive/icon.png
 cCpResource assets Build/Products/Debug-iphoneos/PioDrive.app/assets
 cProcessProductPackaging "/Users/hide/Library/MobileDevice/Provisioning Profiles/4D37A004-1944-4116-AFE2-0F2B1458694C.mobileprovision" /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/embedded.mobileprovision
 cProcessProductPackaging "/Users/hide/Library/MobileDevice/Provisioning Profiles/4D37A004-1944-4116-AFE2-0F2B1458694C.mobileprovision" /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/embedded.mobileprovision
@@ -83,20 +83,10 @@ c000000005189E5C00000000000002132
 t1367991744
 s8498
 
-N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/../../KonashiWebView/KonashiWebView+Bridge.h
-c0000000051A05650000000000000043A
-t1369462352
-s1082
-
 N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/../../KonashiWebView/KonashiWebView+Bridge.m
-c0000000051A25CB00000000000006E61
-t1369595056
-s28257
-
-N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/../../KonashiWebView/KonashiWebView.h
-c0000000051A05674000000000000076E
-t1369462388
-s1902
+c0000000051A056650000000000006AF5
+t1369462373
+s27381
 
 N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/../../KonashiWebView/KonashiWebView.m
 c0000000051A056B1000000000000157F
@@ -108,36 +98,26 @@ c00000000000000000000000000000000
 t2
 s0
 
-N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/../../libs/konashi-ios-sdk/Konashi/Konashi.h
-c0000000051A248F4000000000000194B
-t1369590004
-s6475
-
 N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/../../libs/konashi-ios-sdk/Konashi/Konashi.m
 c0000000051A248F4000000000000B822
 t1369590004
 s47138
 
-N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/../../libs/konashi-ios-sdk/Konashi/KonashiDb.h
-c0000000051A248F40000000000000CB1
-t1369590004
-s3249
-
 N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/Objects-normal/armv7s/AppDelegate.o
-t1369591243
-s85872
+t2
+s0
 
 N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/Objects-normal/armv7s/Konashi.o
-t1369591243
-s228444
+t2
+s0
 
 N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/Objects-normal/armv7s/KonashiWebView+Bridge.o
-t1369596293
-s183416
+t2
+s0
 
 N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/Objects-normal/armv7s/KonashiWebView.o
-t1369591243
-s95192
+t2
+s0
 
 N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/Objects-normal/armv7s/PioDrive.LinkFileList
 c0000000051A24DC900000000000003E9
@@ -145,56 +125,56 @@ t1369591241
 s1001
 
 N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/Objects-normal/armv7s/ViewController.o
-t1369591243
-s73512
+t2
+s0
 
 N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/Objects-normal/armv7s/main.o
-t1369591243
-s3464
+t2
+s0
 
 N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/PioDrive.xcent
-t1369591249
-s430
+t2
+s0
 
 N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PrecompiledHeaders/PioDrive-Prefix-gttcfxhpaqacvtevwwirrbklunxi/PioDrive-Prefix.pch.pth
-t1369591242
-s4607092
+t2
+s0
 
 N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app
-t1369596554
-s544
+t2
+s0
 
 N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app.dSYM
-t1369596630
-s102
+t2
+s0
 
 N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/Default-568h@2x.png
-t1369591245
-s15651
+t2
+s0
 
 N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/Default.png
-t1369591245
-s11291
+t2
+s0
 
 N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/Default@2x.png
-t1369591245
-s14883
+t2
+s0
 
 N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/Info.plist
-t1369591241
-s1145
+t2
+s0
 
 N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/PioDrive
-t1369596554
-s164816
+t2
+s0
 
 N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/PkgInfo
-t1369591241
-s8
+t2
+s0
 
 N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/ResourceRules.plist
-t1369591241
-s485
+t2
+s0
 
 N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/apple-touch-icon-114x114.png
 t2
@@ -209,32 +189,32 @@ t2
 s0
 
 N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/assets
-t1369596553
-s170
+t2
+s0
 
 N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/embedded.mobileprovision
-t1369591249
-s8498
+t2
+s0
 
 N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/en.lproj/InfoPlist.strings
-t1369591244
-s42
+t2
+s0
 
 N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/en.lproj/MainStoryboard.storyboardc
-t1369591248
-s170
+t2
+s0
 
 N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/icon-72.png
-t1369591245
-s3558
+t2
+s0
 
 N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/icon.png
-t1369591245
-s3807
+t2
+s0
 
 N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/icon@2x.png
-t1369591245
-s5937
+t2
+s0
 
 N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/index.html
 t2
@@ -247,11 +227,6 @@ s0
 N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/template.html
 t2
 s0
-
-N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/PioDrive/AppDelegate.h
-c000000005199D06900000000000000B3
-t1369034857
-s179
 
 N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/PioDrive/AppDelegate.m
 c000000005199D06D0000000000000775
@@ -280,11 +255,6 @@ s319
 i<Availability.h>
 i<UIKit/UIKit.h>
 i<Foundation/Foundation.h>
-
-N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/PioDrive/ViewController.h
-c0000000051A056D800000000000000DD
-t1369462488
-s221
 
 N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/PioDrive/ViewController.m
 c0000000051A055D20000000000000327
@@ -322,8 +292,8 @@ t1369034881
 s238
 
 N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/assets
-c0000000051A2628500000000000000CC
-t1369596549
+c0000000051A24D7500000000000000CC
+t1369591157
 s204
 
 N/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/assets/index.html
@@ -381,16 +351,15 @@ r0
 
 CCheck dependencies
 r0
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies7d3f0d739a52b741^ef720d739a52b741^---0#1#0#--18"Check dependencies36"8E8F80AC-025F-4185-AF94-7712BB0A9C70-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependenciesbc9189498552b741^5933a2498552b741^---0#1#0#--18"Check dependencies36"A3955164-BE6D-4A40-A7B0-FD6554BDA539-
 
 CCodeSign /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app
-s391289459.167268
-e391289459.366252
+s391284049.187661
+e391284051.402245
 r1
 xCodeSign
 x/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app
-o/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app: replacing existing signature
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection51"CodeSign Build/Products/Debug-iphoneos/PioDrive.app9ce12a739a52b741^8fc25d739a52b741^-137"/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app: replacing existing signature-0#0#0#-19%DVTDocumentLocation2@124"file://localhost/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/0000000000000000^939"CodeSign Build/Products/Debug-iphoneos/PioDrive.app    cd /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive    setenv CODESIGN_ALLOCATE /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/codesign --force --sign c785bf03c4749dbe47672269b334713baaf5df35 --resource-rules=/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/ResourceRules.plist --entitlements /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/PioDrive.xcent /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app36"3FE861D0-2CE1-487B-A48C-DD91AD166CD4-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection51"CodeSign Build/Products/Debug-iphoneos/PioDrive.appca1b30518552b741^baf966538552b741^---0#0#0#-19%DVTDocumentLocation2@124"file://localhost/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/0000000000000000^939"CodeSign Build/Products/Debug-iphoneos/PioDrive.app    cd /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive    setenv CODESIGN_ALLOCATE /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/codesign --force --sign c785bf03c4749dbe47672269b334713baaf5df35 --resource-rules=/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/ResourceRules.plist --entitlements /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/PioDrive.xcent /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app36"13DA0D79-3608-466C-B28C-BE43FCBECC44-
 
 CCompileC Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/Objects-normal/armv7s/AppDelegate.o /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/PioDrive/AppDelegate.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s391284042.417922
@@ -419,8 +388,8 @@ xcom.apple.compilers.llvm.clang.1_0.compiler
 lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection117"Compile /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/../../libs/konashi-ios-sdk/Konashi/Konashi.mcb146b4a8552b741^b1a3854b8552b741^---0#0#0#-19%DVTDocumentLocation2@125"file://localhost/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/../../libs/konashi-ios-sdk/Konashi/Konashi.m0000000000000000^3829"CompileC Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/Objects-normal/armv7s/Konashi.o ../../libs/konashi-ios-sdk/Konashi/Konashi.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7s -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=6.1 -iquote /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/PioDrive-generated-files.hmap -I/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/PioDrive-own-target-headers.hmap -I/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/PioDrive-all-target-headers.hmap -iquote /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/PioDrive-project-headers.hmap -I/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/DerivedSources/armv7s -I/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/DerivedSources -F/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos -include /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PrecompiledHeaders/PioDrive-Prefix-gttcfxhpaqacvtevwwirrbklunxi/PioDrive-Prefix.pch -MMD -MT dependencies -MF /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/Objects-normal/armv7s/Konashi.d --serialize-diagnostics /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/Objects-normal/armv7s/Konashi.dia -c /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/../../libs/konashi-ios-sdk/Konashi/Konashi.m -o /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/Objects-normal/armv7s/Konashi.o36"A390DFE4-3637-4C29-B1E5-02AF3C69E016-
 
 CCompileC Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/Objects-normal/armv7s/KonashiWebView+Bridge.o /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/../../KonashiWebView/KonashiWebView+Bridge.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s391289091.628388
-e391289093.183268
+s391284043.515764
+e391284043.735392
 r1
 xCompileC
 xBuild/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/Objects-normal/armv7s/KonashiWebView+Bridge.o
@@ -429,7 +398,7 @@ xnormal
 xarmv7s
 xobjective-c
 xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection117"Compile /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/../../KonashiWebView/KonashiWebView+Bridge.m5df9a0039952b741^31ea2e059952b741^---0#0#0#-19%DVTDocumentLocation2@125"file://localhost/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/../../KonashiWebView/KonashiWebView+Bridge.m0000000000000000^3885"CompileC Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/Objects-normal/armv7s/KonashiWebView+Bridge.o ../../KonashiWebView/KonashiWebView+Bridge.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7s -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=6.1 -iquote /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/PioDrive-generated-files.hmap -I/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/PioDrive-own-target-headers.hmap -I/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/PioDrive-all-target-headers.hmap -iquote /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/PioDrive-project-headers.hmap -I/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/DerivedSources/armv7s -I/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/DerivedSources -F/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos -include /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PrecompiledHeaders/PioDrive-Prefix-gttcfxhpaqacvtevwwirrbklunxi/PioDrive-Prefix.pch -MMD -MT dependencies -MF /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/Objects-normal/armv7s/KonashiWebView+Bridge.d --serialize-diagnostics /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/Objects-normal/armv7s/KonashiWebView+Bridge.dia -c /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/../../KonashiWebView/KonashiWebView+Bridge.m -o /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/Objects-normal/armv7s/KonashiWebView+Bridge.o36"4B2A789F-45CA-4546-B424-33D617EB9FCC-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection117"Compile /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/../../KonashiWebView/KonashiWebView+Bridge.mdeac854b8552b741^ee41bc4b8552b741^---0#0#0#-19%DVTDocumentLocation2@125"file://localhost/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/../../KonashiWebView/KonashiWebView+Bridge.m0000000000000000^3885"CompileC Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/Objects-normal/armv7s/KonashiWebView+Bridge.o ../../KonashiWebView/KonashiWebView+Bridge.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7s -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=6.1 -iquote /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/PioDrive-generated-files.hmap -I/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/PioDrive-own-target-headers.hmap -I/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/PioDrive-all-target-headers.hmap -iquote /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/PioDrive-project-headers.hmap -I/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/DerivedSources/armv7s -I/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/DerivedSources -F/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos -include /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PrecompiledHeaders/PioDrive-Prefix-gttcfxhpaqacvtevwwirrbklunxi/PioDrive-Prefix.pch -MMD -MT dependencies -MF /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/Objects-normal/armv7s/KonashiWebView+Bridge.d --serialize-diagnostics /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/Objects-normal/armv7s/KonashiWebView+Bridge.dia -c /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/../../KonashiWebView/KonashiWebView+Bridge.m -o /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/Objects-normal/armv7s/KonashiWebView+Bridge.o36"0995BF50-4DA7-4F7C-B69E-09F346123827-
 
 CCompileC Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/Objects-normal/armv7s/KonashiWebView.o /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/../../KonashiWebView/KonashiWebView.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s391284043.525937
@@ -563,13 +532,13 @@ xBuild/Products/Debug-iphoneos/PioDrive.app/ResourceRules.plist
 lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection67"Copy Build/Products/Debug-iphoneos/PioDrive.app/ResourceRules.plist8ae4a3498552b741^9bfea4498552b741^---0#0#0#-19%DVTDocumentLocation2@143"file://localhost/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/ResourceRules.plist000000000080d041^798"CpResource /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/ResourceRules.plist Build/Products/Debug-iphoneos/PioDrive.app/ResourceRules.plist    cd /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/ResourceRules.plist /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app36"038755C4-08D0-4D57-BA92-4C7E5B832C86-
 
 CCpResource assets Build/Products/Debug-iphoneos/PioDrive.app/assets
-s391289459.115419
-e391289459.120908
+s391284045.434050
+e391284045.778917
 r1
 xCpResource
 xassets
 xBuild/Products/Debug-iphoneos/PioDrive.app/assets
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection54"Copy Build/Products/Debug-iphoneos/PioDrive.app/assets349d1d739a52b741^9cc11f739a52b741^---0#0#0#-19%DVTDocumentLocation2@131"file://localhost/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/assets/0000000000000000^620"CpResource assets Build/Products/Debug-iphoneos/PioDrive.app/assets    cd /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/assets /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app36"DFD6B5E2-1A27-4A1C-91FC-36E2283B6A28-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection54"Copy Build/Products/Debug-iphoneos/PioDrive.app/assets062e6f4d8552b741^f966c74d8552b741^---0#0#0#-19%DVTDocumentLocation2@130"file://localhost/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/assets000000000080d041^620"CpResource assets Build/Products/Debug-iphoneos/PioDrive.app/assets    cd /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/assets /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app36"C6142427-3FA1-47FE-A6FF-B6090D80E168-
 
 CCpResource assets/index.html Build/Products/Debug-iphoneos/PioDrive.app/index.html
 r0
@@ -581,23 +550,23 @@ CCpResource assets/sample/ratchet/template.html Build/Products/Debug-iphoneos/Pi
 r0
 
 CGenerateDSYMFile /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app.dSYM /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/PioDrive
-s391289430.387887
-e391289430.416005
+s391284044.645532
+e391284044.758774
 r1
 xGenerateDSYMFile
 x/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app.dSYM
 x/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/PioDrive
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection121"Generate /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app.dSYM7c6063569a52b741^c87e6a569a52b741^---0#0#0#-19%DVTDocumentLocation2@129"file://localhost/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app.dSYM/0000000000000000^710"GenerateDSYMFile Build/Products/Debug-iphoneos/PioDrive.app.dSYM Build/Products/Debug-iphoneos/PioDrive.app/PioDrive    cd /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/PioDrive -o /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app.dSYM36"87115F32-044F-4F98-9297-779C073250AC-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection121"Generate /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app.dSYM0553a54c8552b741^143fc24c8552b741^---0#0#0#-19%DVTDocumentLocation2@128"file://localhost/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app.dSYM000000000080d041^710"GenerateDSYMFile Build/Products/Debug-iphoneos/PioDrive.app.dSYM Build/Products/Debug-iphoneos/PioDrive.app/PioDrive    cd /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/PioDrive -o /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app.dSYM36"7350AA27-C38A-42FB-9551-8D6237C1820E-
 
 CLd /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/PioDrive normal armv7s
-s391289093.190076
-e391289093.797535
+s391284043.743166
+e391284044.638727
 r1
 xLd
 x/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/PioDrive
 xnormal
 xarmv7s
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection121"Link /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/PioDrive12c130059952b741^ae2dcc059952b741^---0#0#0#--1249"Ld Build/Products/Debug-iphoneos/PioDrive.app/PioDrive normal armv7s    cd /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive    setenv IPHONEOS_DEPLOYMENT_TARGET 6.1    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch armv7s -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -L/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos -F/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos -filelist /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/Objects-normal/armv7s/PioDrive.LinkFileList -dead_strip -fobjc-arc -fobjc-link-runtime -miphoneos-version-min=6.1 -framework CoreBluetooth -framework UIKit -framework Foundation -framework CoreGraphics -o /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/PioDrive36"9C9982D1-DB31-4A65-95B4-6D0BA77F2294-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection121"Link /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/PioDrivea358be4b8552b741^cf83a34c8552b741^---0#0#0#--1249"Ld Build/Products/Debug-iphoneos/PioDrive.app/PioDrive normal armv7s    cd /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive    setenv IPHONEOS_DEPLOYMENT_TARGET 6.1    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch armv7s -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -L/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos -F/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos -filelist /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/Objects-normal/armv7s/PioDrive.LinkFileList -dead_strip -fobjc-arc -fobjc-link-runtime -miphoneos-version-min=6.1 -framework CoreBluetooth -framework UIKit -framework Foundation -framework CoreGraphics -o /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/PioDrive36"B3F8BAEF-D3FD-4E34-8AC6-1BCDF6CB5BFA-
 
 CProcessInfoPlistFile /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app/Info.plist PioDrive/PioDrive-Info.plist
 s391284041.639874
@@ -643,10 +612,10 @@ x/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermed
 lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection224"ProcessProductPackaging /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/Entitlements.plist Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/PioDrive.xcent39d225518552b741^30b92d518552b741^---0#0#0#-19%DVTDocumentLocation2@160"file://localhost/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/PioDrive.xcent000000000080d041^816"ProcessProductPackaging /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/Entitlements.plist Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/PioDrive.xcent    cd /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-productPackagingUtility /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/Entitlements.plist -entitlements -format xml -o /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Intermediates/PioDrive.build/Debug-iphoneos/PioDrive.build/PioDrive.xcent36"4EBBD159-C3A6-4B87-9EE8-AB8915F391AF-
 
 CTouch /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app
-s391289459.146395
-e391289459.150688
+s391284049.040128
+e391284049.138330
 r1
 xTouch
 x/Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection113"Touch /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.appb58725739a52b741^6c9326739a52b741^---0#0#0#--439"Touch Build/Products/Debug-iphoneos/PioDrive.app    cd /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app36"664B6012-7230-4E47-9540-7D8DF39917E6-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection113"Touch /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app08550a518552b741^ba6923518552b741^---0#0#0#--439"Touch Build/Products/Debug-iphoneos/PioDrive.app    cd /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/hide/yukai/project/monaka/konashi-js-sdk/samples/PioDrive/Build/Products/Debug-iphoneos/PioDrive.app36"B9EF8F0C-02D5-4519-89D1-2EB24A2517F9-
 

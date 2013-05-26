@@ -141,6 +141,205 @@
       this.messages.shift();
     },
 
+
+    /***************************************************
+     * Public wrap functions (Event handler)
+     ***************************************************/
+    centralManagerPoweredOn: function(callback){
+      if(callback && typeof callback == "function"){
+        this.on( "centralManagerPoweredOn", function(){
+          callback();
+        });
+      }
+    },
+
+    peripheralNotFound: function(callback){
+      if(callback && typeof callback == "function"){
+        this.on( "peripheralNotFound", function(){
+          callback();
+        });
+      }
+    },
+
+    connected: function(callback){
+      if(callback && typeof callback == "function"){
+        this.on( "connected", function(){
+          callback();
+        });
+      }
+    },
+
+    disconnected: function(callback){
+      if(callback && typeof callback == "function"){
+        this.on( "disconnected", function(){
+          callback();
+        });
+      }
+    },
+
+    ready: function(callback){
+      if(callback && typeof callback == "function"){
+        this.on( "ready", function(){
+          callback();
+        });
+      }
+    },
+
+    updatePioInput: function(callback){
+      if(callback && typeof callback == "function"){
+        this.on( "updatePioInput", function(data){
+          callback(data);
+        });
+      }
+    },
+
+    updateAnalogValue: function(callback){
+      if(callback && typeof callback == "function"){
+        this.on( "updateAnalogValue", function(){
+          callback();
+        });
+      }
+    },
+
+    updateAnalogValueAio0: function(callback){
+      if(callback && typeof callback == "function"){
+        this.on( "updateAnalogValueAio0", function(data){
+          callback(data);
+        });
+      }
+    },
+
+    updateAnalogValueAio1: function(callback){
+      if(callback && typeof callback == "function"){
+        this.on( "updateAnalogValueAio1", function(data){
+          callback(data);
+        });
+      }
+    },
+
+    updateAnalogValueAio2: function(callback){
+      if(callback && typeof callback == "function"){
+        this.on( "updateAnalogValueAio2", function(data){
+          callback(data);
+        });
+      }
+    },
+
+    completeReadI2c: function(callback){
+      if(callback && typeof callback == "function"){
+        this.on( "completeReadI2c", function(){
+          callback();
+        });
+      }
+    },
+
+    completeUartRx: function(callback){
+      if(callback && typeof callback == "function"){
+        this.on( "completeUartRx", function(data){
+          callback(data);
+        });
+      }
+    },
+
+    updateBatteryLevel: function(callback){
+      if(callback && typeof callback == "function"){
+        this.on( "updateBatteryLevel", function(data){
+          callback(data);
+        });
+      }
+    },
+
+    updateSignalStrength: function(callback){
+      if(callback && typeof callback == "function"){
+        this.on( "updateSignalStrength", function(data){
+          callback(data);
+        });
+      }
+    },
+
+    /***************************************************
+     * Public wrap functions (Control functinos)
+     ***************************************************/
+    // Base
+    find: function(){
+      k.trigger("find");
+    },
+
+    findWithName: function(name){
+      k.trigger("findWithName", {name: name});
+    },
+
+    disconnect: function(){
+      k.trigger("disconnect");
+    },
+
+    isConnected: function(callback){
+      if(callback && typeof callback == "function"){
+        k.trigger("isConnected", {}, function(isConnected){
+          callback(isConnected);
+        });
+      }
+    },
+
+    peripheralName: function(callback){
+      if(callback && typeof callback == "function"){
+        k.trigger("peripheralName", {}, function(name){
+          callback(name);
+        });
+      }
+    },
+
+    // Digital I/O
+    pinMode: function(pin, mode){
+      k.trigger("pinMode", {pin: pin, mode:mode});
+    },
+
+    pinModeAll: function(mode){
+      k.trigger("pinModeAll", {mode:mode});
+    },
+
+    pinPullup: function(pin, mode){
+      k.trigger("pinPullup", {pin: pin, mode:mode});
+    },
+
+    pinPullupAll: function(mode){
+      k.trigger("pinPullupAll", {mode:mode});
+    },
+
+    digitalRead: function(pin, callback){
+      if(callback && typeof callback == "function"){
+        k.trigger("digitalRead", {pin: pin}, function(value){
+          callback(value.input);
+        });
+      }
+    },
+
+    digitalReadAll: function(callback){
+      if(callback && typeof callback == "function"){
+        k.trigger("digitalReadAll", {}, function(value){
+          callback(value.input);
+        });
+      }
+    },
+
+    digitalWrite: function(pin, value){
+      k.trigger("digitalWrite", {pin: pin, value: value});
+    },
+
+    digitalWriteAll: function(value){
+      k.trigger("digitalWriteAll", {value: value});
+    },
+
+
+    /***************************************************
+     * Public util functions
+     ***************************************************/
+    noConflict: function(){
+      window.k = kBefore;
+      return this;
+    },
+
+
     /***************************************************
      * log functions
      ***************************************************/
@@ -177,7 +376,7 @@
      * call from native functions
      ***************************************************/
     triggerFromNative: function(eventName, data){
-      k.log("triggerFromNative eventname: " + eventName + ", data: " + JSON.stringify(data));
+      this.log("triggerFromNative eventname: " + eventName + ", data: " + JSON.stringify(data));
 
       var handlerList = this.handlers[eventName] || [];
 
@@ -194,7 +393,7 @@
     triggerCallback: function(id, data) {
       var that = this;
 
-      k.log("triggerCallback id: " + id + ", data: " + JSON.stringify(data));
+      this.log("triggerCallback id: " + id + ", data: " + JSON.stringify(data));
 
       setTimeout(function() {
         try{
@@ -208,6 +407,7 @@
     }
   };
 
+  var kBefore = window.k;
   window.k = konashi;
 })();
 

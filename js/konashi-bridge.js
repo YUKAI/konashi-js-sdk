@@ -323,11 +323,11 @@
     },
 
     digitalWrite: function(pin, value){
-      k.trigger("digitalRead", {pin: pin, value: value});
+      k.trigger("digitalWrite", {pin: pin, value: value});
     },
 
-    digitalWriteAll: function(){
-      k.trigger("digitalReadAll", {value: value});
+    digitalWriteAll: function(value){
+      k.trigger("digitalWriteAll", {value: value});
     },
 
 
