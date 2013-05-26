@@ -11,16 +11,17 @@ module.exports = function(grunt) {
                      banner: '/*! <%= package.name %>.js <%= grunt.template.today("yyyy-mm-dd") %> http://konashi.ux-xu.com/kjs */\n'
                 },
                 files: {
-                    "build/<%= package.name %>-<%= package.version %>.min.js": ["assets/<%= package.name %>.js"],
+                    "build/<%= package.name %>-<%= package.version %>.min.js": ["js/<%= package.name %>.js"],
                 }
             }
         },
 
         shell: {
             copyjs: {
-                command: 'cp assets/<%= package.name %>.js build/<%= package.name %>-<%= package.version %>.js;' +
-                         'cp assets/<%= package.name %>.js build/<%= package.name %>.js;' +
-                         'cp build/<%= package.name %>-<%= package.version %>.min.js build/<%= package.name %>.min.js;'
+                command: 'cp js/<%= package.name %>.js build/<%= package.name %>-<%= package.version %>.js;' +
+                         'cp js/<%= package.name %>.js build/<%= package.name %>.js;' +
+                         'cp build/<%= package.name %>-<%= package.version %>.min.js build/<%= package.name %>.min.js;' +
+                         'for d in "./samples/*"; do cp js/<%= package.name %>.js ${d}/assets/; done;'
             }
         }
     });
