@@ -23,6 +23,11 @@ konashi-js-sdk により、HTML+JavaScript から konashi をコントロール�
 ## Getting Started
 - サンプル参照
 
+### konashi-bridge.js だけほしいひと
+```
+$ bower install konashi-bridge.js
+```
+
 
 ## ディレクトリ構成
 - KonashiWebView: konashi-ios-sdk + UIWebViewでブラウザからkonashi-ios-sdk経由でkonashiにアクセスできりるようにするUIWebViewのカスタムクラス。
