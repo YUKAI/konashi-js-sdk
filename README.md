@@ -1,11 +1,45 @@
 konashi-js-sdk
 =============
 
-## Getting Started
+<a href="http://konashi.ux-xu.com"><img src="http://konashi.ux-xu.com/img/header_logo.png" width="200" /></a><br/>
+Physical computing toolkit for smartphones and tablets
 
-## Build js
+[http://konashi.ux-xu.com](http://konashi.ux-xu.com)<br/>
+[Github: konashi-ios-sdk](https://github.com/YUKAI/konashi-ios-sdk)
+
+
+## konashi-js-sdkについて
+konashi-js-sdk には、
+
+- koanshi-ios-sdk で定義されている関数の実行や、イベントのハンドラ登録をJavaScriptからできるようにしたUIWebView (KonashiWebView) 
+- ブラウザから KonashiWebView へアクセスするための手続きをラップした konashi-bridge.js
+が含まれています。
+
+konashi-js-sdk により、HTML+JavaScript から konashi をコントロールすることができます。
+
+## Getting Started
+- サンプル参照
+
+
+## ディレクトリ構成
+- KonashiWebView: konashi-ios-sdk + UIWebViewでブラウザからkonashi-ios-sdk経由でkonashiにアクセスできりるようにするUIWebViewのカスタムクラス。
+- js: JSとnative(konashi-ios-sdk)をブリッジするkonashi-bridge.jsがある。
+- build: konashi-bridge.jsの圧縮版。
+- libs: submoduleが格納される。
+- samples: まだ少ないですが、サンプルもあります。
+
+## 開発情報
+
+### JSをビルドする
+最初に
+
 ```
 $ npm install
+```
+
+以降は
+
+```
 $ grunt
 ```
 
