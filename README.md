@@ -17,6 +17,9 @@ konashi-js-sdk には、
 
 konashi-js-sdk により、HTML+JavaScript から konashi をコントロールすることができます。
 
+## ただいまBeta中!!
+現在beta開発中です。まだ足りないJSの関数があったり、デバッグができていないところがあります。よかったらPullRequestやIssueで開発に参加してね！大歓迎！
+
 ## Getting Started
 - サンプル参照
 
