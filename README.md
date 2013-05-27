@@ -3,7 +3,11 @@ konashi-js-sdk
 
 ## Getting Started
 
-## 
+## Build js
+```
+$ npm install
+$ grunt
+```
 
 ### submoudleを初期化する
 konashi-ios-sdk をsubmoduleとして組み込んでいます。
