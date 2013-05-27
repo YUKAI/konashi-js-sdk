@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=2, minimum-scale=1, maximum-scale=1, user-scalable=no">
+
+        <link rel="stylesheet" href="sample/ratchet/ratchet.css">
+
+        <style type="text/css">
+            .hello {
+                margin: 10px;
+            }
+
+            .find {
+                margin: 10px;
+            }
+
+            #pio-setting {
+                display: none;
+            }
+        </style>
+
+    </head>
+    <body>
+        <header class="bar-title">
+            <h1 class="title">konashi-js-sdk: Read AIO</h1>
+        </header>
+
+        <div class="content">
+
+            <div class="hello">
+                <p>Hello konashi.js!</p>
+                <p>First make sure you tap the following button to find konashi.
+            </div>
+
+            <div class="find">
+                <a id="btn-find" class="button-main button-block find">Find konashi</a>
+            </div>
+
+            <ul id="aio-setting" class="list inset">
+                <li class="list-divider">AIO: Input</li>
+		<li>AIO1: <span id="aio1-value">0</span><a id="btn-aio1" class="button-block">Read</a></li>
+                <li>AIO2: <span id="aio2-value">0</span><a id="btn-aio2" class="button-block">Read</a></li>
+                <li>AIO3: <span id="aio3-value">0</span><a id="btn-aio3" class="button-block">Read</a></li>
+            </ul>
+
+        </div>
+
+        <!-- for konashijs -->
+        <script src="konashi-bridge.js"></script>
+
+        <!-- for this sample -->
+        <script src="sample/zepto/zepto.min.js"></script>
+        <script src="sample/zepto/touch.js"></script>
+        <script src="sample/ratchet/ratchet.js"></script>
+        <script src="sample/sample-aio.js"></script>
+    </body>
+</html>
