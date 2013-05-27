@@ -23,7 +23,7 @@ konashi-js-sdk により、HTML+JavaScript から konashi をコントロール�
 ## Getting Started
 - サンプル参照
 
-### konashi-bridge.js だけほしいひと
+### konashi-bridge.js をbowerでゲット
 ```
 $ bower install konashi-bridge.js
 ```
