@@ -1,0 +1,14 @@
+{
+  "name": "konashi-bridge.js",
+  "version": "0.1.0",
+  "main": "js/konashi-bridge.js",
+  "ignore": [
+    "KonashiWebView",
+    "libs",
+    "samples"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/YUKAI/konashi-js-sdk/"
+  }
+}
