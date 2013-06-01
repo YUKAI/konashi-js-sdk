@@ -1,21 +1,90 @@
 konashi-js-sdk
 =============
 
+BLE konashi + js = konashi-js-sdk!!
+
+
+## konashiってなぁに？
+iPhoneやiPadで使えるワイヤレスなフィジカル・コンピューティング・ツールキット
+
 <a href="http://konashi.ux-xu.com"><img src="http://konashi.ux-xu.com/img/header_logo.png" width="200" /></a><br/>
 Physical computing toolkit for smartphones and tablets
 
 [http://konashi.ux-xu.com](http://konashi.ux-xu.com)<br/>
 [Github: konashi-ios-sdk](https://github.com/YUKAI/konashi-ios-sdk)
 
+## konashi-js-sdk の魅力的なコードたち
+JSだけでkonashiをコントロールできる、とはどういうことだろう。コードを見れば一目瞭然！
 
-## konashi-js-sdkについて
-konashi-js-sdk には、
+たとえば、konashiのボートにあるLEDを光らせるには
 
-- koanshi-ios-sdk で定義されている関数の実行や、イベントのハンドラ登録をJavaScriptからできるようにしたUIWebView (KonashiWebView) 
-- ブラウザから KonashiWebView へアクセスするための手続きをラップした konashi-bridge.js
-が含まれています。
+```js
+// konashiと接続できたら実行される
+k.ready(function(){
+    // I/Oの設定
+    k.pinMode(k.LED2, k.OUTPUT);
+    
+    // LED2をON
+    k.digitalWrite(k.LED2, k.HIGH);
+});
 
-konashi-js-sdk により、HTML+JavaScript から konashi をコントロールすることができます。
+// まわりにあるkonashiを探す
+k.find();
+```
+
+これだけでOK!
+
+さらに発展させて、LEDをチカチカさせるには
+
+```js
+// LEDチカチカ開始
+function startBlinkLed(){
+    var toggle = false;
+    
+    setInterval(function(){
+        if(toggle){
+            // LEDをON
+            k.digitalWrite(k.LED2, k.HIGH);
+        } else {
+            // LEDをOFF
+            k.digitalWrite(k.LED2, k.LOW);
+        }
+        
+        // 次の状態をセット
+        toggle = !toggle;
+    }, 500);
+    
+    $("#goran").html("konashiのLED2をみてごらん！<br/>たぶんチカチカしていると思うよ！");
+}
+
+// konashiと接続できたんだね
+k.ready(function(){
+    // まずはI/Oの設定から
+    k.pinMode(k.LED2, k.OUTPUT);
+    
+    // Lチカスタートさせるよ
+    startBlinkLed();
+});
+
+// konashiを探すボタンを押すとkonashiを探せ命令を送る！
+$(function(){
+    $("#find").on("tap", function(){
+        k.find();
+    });
+});
+```
+
+これだけでオッケー！！
+
+BLEの通信内容やCoreBluetoothAPIなどのネイティブの実装を意識することなく、ただJSを書くだけでハードウェアをコントロールできちゃうんです。
+
+## konashi-js-sdk について
+konashi-js-sdk には、iOSのライブラリと、jsのライブラリが含まれています。
+
+- koanshi-ios-sdk で定義されている関数の実行や、イベントのハンドラ登録をJavaScriptからできるようにしたUIWebView **「KonashiWebView」**
+- ブラウザから KonashiWebView へアクセスするための手続きをラップした **「konashi-bridge.js」**
+
+これらを使用することにより、HTML+JavaScript から konashi をコントロールすることができます。
 
 ## ただいまBeta中!!
 現在beta開発中です。まだ足りないJSの関数があったり、デバッグができていないところがあります。よかったらPullRequestやIssueで開発に参加してね！大歓迎！
