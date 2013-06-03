@@ -5,3 +5,5 @@ samples/*/*.xcodeproj/*
 .DS_Store
 .idea
 node_modules
+*.pbxproj
+*.swp

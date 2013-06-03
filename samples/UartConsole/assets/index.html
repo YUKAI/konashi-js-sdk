@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=2, minimum-scale=1, maximum-scale=1, user-scalable=no">
+
+        <link rel="stylesheet" href="sample/ratchet/ratchet.css">
+
+        <style type="text/css">
+            .hello {
+                margin: 10px;
+            }
+
+            .find {
+                margin: 10px;
+            }
+
+            #pio-setting {
+                display: none;
+            }
+        </style>
+
+    </head>
+    <body>
+        <header class="bar-title">
+            <h1 class="title">konashi-js-sdk: UART Console</h1>
+        </header>
+
+        <div class="content">
+
+            <div class="hello">
+                <p>Hello konashi.js!</p>
+                <p>First make sure you tap the following button to find konashi.
+            </div>
+
+            <div class="find">
+                <a id="btn-find" class="button-main button-block find">Find konashi</a>
+            </div>
+
+            <ul id="uart-panel" class="list inset">
+                <li class="list-divider">UART: Baudrate</li>
+		<li><input id="uart-baud-2k4" name="uart-baud" type="radio"/>2400bps <input id="uart-baud-9k6" name="uart-baud" type="radio" checked="checked"/>9600bps </li>
+                <li class="list-divider">UART: Tx</li>
+		<li>Char: <input id="uart-tx-char" type="text" maxlength="1" style="width:50px;"/><a id="btn-tx-char" class="button">Submit</a></li>
+		<li>String: <input id="uart-tx-str" type="text" maxlength="20" style="width:200px;"/><a id="btn-tx-str" class="button">Submit</a></li>
+		<li>Hex: 0x<input id="uart-tx-hex" type="text" maxlength="2" style="width:50px;"/><a id="btn-tx-hex" class="button">Submit</a></li>
+                <li class="list-divider">UART: Rx</li>
+		<li>Char: <textarea id="uart-rx-text" rows="5" readonly></textarea></li>
+		<li>Hex: <textarea id="uart-rx-hex" rows="5" readonly></textarea></li>
+		<li><a id="btn-clear-rx" class="button">Clear Console</a></li>
+            </ul>
+
+        </div>
+
+        <!-- for konashijs -->
+        <script src="konashi-bridge.js"></script>
+
+        <!-- for this sample -->
+        <script src="sample/zepto/zepto.min.js"></script>
+        <script src="sample/zepto/touch.js"></script>
+        <script src="sample/ratchet/ratchet.js"></script>
+        <script src="sample/sample-uart.js"></script>
+    </body>
+</html>
