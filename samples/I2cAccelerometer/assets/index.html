@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=2, minimum-scale=1, maximum-scale=1, user-scalable=no">
+
+        <link rel="stylesheet" href="sample/ratchet/ratchet.css">
+
+        <style type="text/css">
+            .hello {
+                margin: 10px;
+            }
+
+            .find {
+                margin: 10px;
+            }
+
+            #pio-setting {
+                display: none;
+            }
+        </style>
+
+    </head>
+    <body>
+        <header class="bar-title">
+            <h1 class="title">konashi-js-sdk: Testing ADXL345</h1>
+        </header>
+
+        <div class="content">
+
+            <div class="hello">
+                <p>Hello konashi.js!</p>
+                <p>First make sure you tap the following button to find konashi.
+            </div>
+
+            <div class="find">
+                <a id="btn-find" class="button-main button-block find">Find konashi</a>
+            </div>
+
+            <ul id="i2c-setting" class="list inset">
+                <li class="list-divider">I2C: Bitrate</li>
+		<li><input id="i2c-rate-100k" name="i2c-rate" type="radio"/>100kbps <input id="i2c-rate-400k" name="i2c-rate" type="radio" checked="checked"/>400kbps </li>
+                <li class="list-divider">I2C: Sanity Check</li>
+		<li><a id="btn-chk" class="button">Check</a><span id="i2c-chk-status">Not Connected</span></li>
+                <li class="list-divider">I2C: Read Value</li>
+		<li>AxisX: <span id="i2c-val-ax"></span><a id="btn-val-ax" class="button">Read</a></li>
+		<li>AxisY: <span id="i2c-val-ay"></span><a id="btn-val-ay" class="button">Read</a></li>
+		<li>AxisZ: <span id="i2c-val-az"></span><a id="btn-val-az" class="button">Read</a></li>
+            </ul>
+
+        </div>
+
+        <!-- for konashijs -->
+        <script src="konashi-bridge.js"></script>
+
+        <!-- for this sample -->
+        <script src="sample/zepto/zepto.min.js"></script>
+        <script src="sample/zepto/touch.js"></script>
+        <script src="sample/ratchet/ratchet.js"></script>
+        <script src="sample/sample-i2c.js"></script>
+    </body>
+</html>
