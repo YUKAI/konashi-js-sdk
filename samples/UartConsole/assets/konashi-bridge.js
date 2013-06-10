@@ -394,8 +394,8 @@
       k.trigger("i2cStartCondition", {});
     },
 
-    i2cReStartCondition: function(){
-      k.trigger("i2cReStartCondition", {});
+    i2cRestartCondition: function(){
+      k.trigger("i2cRestartCondition", {});
     },
 
     i2cStopCondition: function(){
