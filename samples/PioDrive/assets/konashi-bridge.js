@@ -291,19 +291,19 @@
 
     // Digital I/O
     pinMode: function(pin, mode){
-      k.trigger("pinMode", {pin: pin, mode:mode});
+      k.trigger("pinMode", {pin: pin, mode: mode});
     },
 
     pinModeAll: function(mode){
-      k.trigger("pinModeAll", {mode:mode});
+      k.trigger("pinModeAll", {mode: mode});
     },
 
     pinPullup: function(pin, mode){
-      k.trigger("pinPullup", {pin: pin, mode:mode});
+      k.trigger("pinPullup", {pin: pin, mode: mode});
     },
 
     pinPullupAll: function(mode){
-      k.trigger("pinPullupAll", {mode:mode});
+      k.trigger("pinPullupAll", {mode: mode});
     },
 
     digitalRead: function(pin, callback){
@@ -330,6 +330,122 @@
       k.trigger("digitalWriteAll", {value: value});
     },
 
+    // Analog I/O
+    analogReference: function(callback){
+      if(callback && typeof callback == "function"){
+        k.trigger("analogReference", {}, function(value){
+          callback(value.value);
+        });
+      }
+    },
+
+    analogReadRequest: function(pin){
+      k.trigger("analogReadRequest", {pin: pin});
+    },
+
+    analogRead: function(pin, callback){
+      if(callback && typeof callback == "function"){
+        k.trigger("analogRead", {pin: pin}, function(value){
+          callback(value.value);
+        });
+      }
+    },
+
+    analogWrite: function(pin){
+      k.trigger("analogWrite", {pin: pin, millivolt: millivolt});
+    },
+
+    // PWM
+    pwmMode: function(pin, mode){
+      k.trigger("pwmMode", {pin: pin, mode: mode});
+    },
+
+    pwmPeriod: function(pin, period){
+      k.trigger("pwmPeriod", {pin: pin, period: period});
+    },
+
+    pwmDuty: function(pin, duty){
+      k.trigger("pwmDuty", {pin: pin, duty: duty});
+    },
+
+    pwmLedDrive: function(pin, dutyRatio){
+      k.trigger("pwmLedDrive", {pin: pin, dutyRatio: dutyRatio});
+    },
+
+    // UART
+    uartMode: function(mode){
+      k.trigger("uartMode", {mode: mode});
+    },
+
+    uartBaudrate: function(baudrate){
+      k.trigger("uartBaudrate", {baudrate: baudrate});
+    },
+
+    uartWrite: function(data){
+      k.trigger("uartWrite", {data: data});
+    },
+
+    // I2C
+    i2cMode: function(mode){
+      k.trigger("i2cMode", {mode: mode});
+    },
+
+    i2cStartCondition: function(){
+      k.trigger("i2cStartCondition", {});
+    },
+
+    i2cRestartCondition: function(){
+      k.trigger("i2cRestartCondition", {});
+    },
+
+    i2cStopCondition: function(){
+      k.trigger("i2cStopCondition", {});
+    },
+
+    i2cWrite: function(length, data, address){
+      k.trigger("i2cWrite", {length: length, data: data, address: address});
+    },
+
+    i2cReadRequest: function(length, address){
+      k.trigger("i2cReadRequest", {length: length, address: address});
+    },
+
+    i2cRead: function(length, callback){
+      if(callback && typeof callback == "function"){
+        k.trigger("i2cRead", {length: length}, function(data){
+          callback(data.value);
+        });
+      }
+    },
+
+    // Hardware Control
+    reset: function(){
+      k.trigger("reset", {});
+    },
+
+    batteryLevelReadRequest: function(){
+      k.trigger("batteryLevelReadRequest", {});
+    },
+
+    batteryLevelRead: function(callback){
+      if(callback && typeof callback == "function"){
+        k.trigger("batteryLevelRead", {}, function(data){
+          callback(data.value);
+        });
+      }
+    },
+
+    signalStrengthReadRequest: function(){
+      k.trigger("signalStrengthReadRequest", {});
+    },
+
+    signalStrengthRead: function(callback){
+      if(callback && typeof callback == "function"){
+        k.trigger("signalStrengthRead", {}, function(data){
+          callback(data.value);
+        });
+      }
+    },
 
     /***************************************************
      * Public util functions

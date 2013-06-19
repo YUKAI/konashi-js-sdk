@@ -589,7 +589,7 @@
         
         NSDictionary *d;
         int length;
-        unsigned char data;
+        int status = KONASHI_FAILURE;
         unsigned char address;
         
         // validation
@@ -599,11 +599,22 @@
             return;
         }
         
-        length = [[params objectForKey:@"length"] intValue];
-        data = [[params objectForKey:@"data"] unsignedCharValue];
         address = [[params objectForKey:@"address"] unsignedCharValue];
+        length = [[params objectForKey:@"length"] intValue];
+        if([[params objectForKey:@"data"] isKindOfClass:[NSValue class]]){
+            unsigned char data = [[params objectForKey:@"data"] unsignedCharValue];
+            KB_LOG(@"i2cWrite: data:%d",data);
+            status = [Konashi i2cWrite:length data:&data address:address];
+        } else if([[params objectForKey:@"data"] isKindOfClass:[NSArray class]]) {
+            NSArray *array=[params objectForKey:@"data"];
+            unsigned char data[array.count];
+            for (int i=0; i<array.count; i++) {
+                data[i]=[[array objectAtIndex:i] unsignedCharValue];
+                KB_LOG(@"i2cWrite: data[%d]:%d",i,data[i]);
+            }
+            status = [Konashi i2cWrite:length data:data address:address];
+        }
         
-        int status = [Konashi i2cWrite:length data:&data address:address];
         d = @{@"status":[NSNumber numberWithInteger:status]};
         
         callback(d);
@@ -636,7 +647,7 @@
         KB_LOG(@"bridge: i2cRead, %@", params);
         
         NSDictionary *d;
-        NSMutableArray *jsonData;
+        NSMutableArray *jsonData=[[NSMutableArray alloc] init];
         int length;
         unsigned char data[20];
         int status;
