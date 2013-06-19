@@ -109,7 +109,11 @@ $ bower install konashi-bridge.js
 - js: JSとnative(konashi-ios-sdk)をブリッジするkonashi-bridge.jsがある。
 - build: konashi-bridge.jsの圧縮版。
 - libs: submoduleが格納される。
-- samples: まだ少ないですが、サンプルもあります。
+- samples:
+  - AioTest: Analog I/O を使ったサンプル
+  - I2cAccelerometer: I2C 接続の加速度センサのサンプル
+  - PioDrive: Digital I/0 を使ったサンプル
+  - UartConsole: UART を使ったサンプル
 
 
 ---------
