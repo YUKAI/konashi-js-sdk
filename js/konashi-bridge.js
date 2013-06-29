@@ -101,6 +101,14 @@
       }
     },
 
+    addObserver: function(eventName, handler){
+      this.on(eventName, handler);
+    },
+
+    removeObserver: function(eventName, handler){
+      this.off(eventName, handler);
+    },
+
     trigger: function(eventName, dataOpt, callbackOpt){
       var messageId = this.messageCount++;
       var data = dataOpt || {};
