@@ -41,8 +41,8 @@ $(function(){
     k.pinModeAll(254);
   });
 
-  k.updatePioInput(function(data){
-    if(data.value % 2){
+  k.updatePioInput(function(value){
+    if(value % 2){
       $("#s1-status").html("ON");
     } else {
       $("#s1-status").html("OFF");

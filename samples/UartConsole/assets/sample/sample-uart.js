@@ -71,9 +71,9 @@ $(function(){
     k.uartMode(k.KONASHI_UART_ENABLE);
   });
 
-  k.completeUartRx(function(data){
-    $("#uart-rx-text").html($("#uart-rx-text").html()+String.fromCharCode(data.value));
-    $("#uart-rx-hex").html($("#uart-rx-hex").html()+parseInt(data.value).toString(16)+" ");
+  k.completeUartRx(function(value){
+    $("#uart-rx-text").html($("#uart-rx-text").html()+String.fromCharCode(value));
+    $("#uart-rx-hex").html($("#uart-rx-hex").html()+parseInt(value).toString(16)+" ");
   });
 
   //k.showDebugLog();

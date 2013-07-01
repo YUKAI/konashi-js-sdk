@@ -53,16 +53,16 @@ $(function(){
     $("#aio-setting").show();
   });
 
-  k.updateAnalogValueAio0(function(data){
-    $("#aio0-read-value").html(data.value);
+  k.updateAnalogValueAio0(function(value){
+    $("#aio0-read-value").html(value);
   });
 
-  k.updateAnalogValueAio1(function(data){
-    $("#aio1-read-value").html(data.value);
+  k.updateAnalogValueAio1(function(value){
+    $("#aio1-read-value").html(value);
   });
 
-  k.updateAnalogValueAio2(function(data){
-    $("#aio2-read-value").html(data.value);
+  k.updateAnalogValueAio2(function(value){
+    $("#aio2-read-value").html(value);
   });
 
   //k.showDebugLog();
