@@ -414,6 +414,12 @@
       k.trigger("uartWrite", {data: data});
     },
 
+    uartWriteString: function(str){
+      for(var i=0;i<str.length;i++){
+        k.trigger("uartWrite", {data: str.charCodeAt(i)});
+      }
+    },
+
     // I2C
     i2cMode: function(mode){
       k.trigger("i2cMode", {mode: mode});

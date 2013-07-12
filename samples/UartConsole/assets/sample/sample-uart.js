@@ -32,16 +32,14 @@ $(function(){
 
   $("#btn-tx-char").on("tap", function(){
     if($("#uart-tx-char").val()!=""){
-      k.uartWrite($("#uart-tx-char").val().charCodeAt(0));
+      k.uartPutChar($("#uart-tx-char").val());
     }
   });
 
   $("#btn-tx-str").on("tap", function(){
     if($("#uart-tx-str").val()!=""){
       var str=$("#uart-tx-str").val();
-      for(i=0;i<str.length;i++){
-        k.uartWrite(str.charCodeAt(i));
-      }
+      k.uartWriteString(str);
     }
   });
 
