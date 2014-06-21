@@ -21,7 +21,7 @@ module.exports = function(grunt) {
                 command: 'cp js/<%= package.name %>.js build/<%= package.name %>-<%= package.version %>.js;' +
                          'cp js/<%= package.name %>.js build/<%= package.name %>.js;' +
                          'cp build/<%= package.name %>-<%= package.version %>.min.js build/<%= package.name %>.min.js;' +
-                         'for d in "./samples/*"; do cp js/<%= package.name %>.js ${d}/assets/; done;'
+                         'for d in `find ./samples/ -mindepth 1 -maxdepth 1 -type d`; do cp js/<%= package.name %>.js ${d}/assets/; done;'
             }
         }
     });
