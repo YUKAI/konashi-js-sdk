@@ -1,6 +1,6 @@
 {
   "name": "konashi-bridge",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "devDependencies": {
     "grunt": "~v0.4.1",
     "grunt-contrib-uglify": "~0.2.1",
