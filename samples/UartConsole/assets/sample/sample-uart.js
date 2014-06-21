@@ -32,7 +32,7 @@ $(function(){
 
   $("#btn-tx-char").on("tap", function(){
     if($("#uart-tx-char").val()!=""){
-      k.uartPutChar($("#uart-tx-char").val());
+      k.uartWriteString($("#uart-tx-char").val());
     }
   });
 
