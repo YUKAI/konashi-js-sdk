@@ -12,6 +12,9 @@ module.exports = function(grunt) {
                 },
                 files: {
                     "build/<%= package.name %>-<%= package.version %>.min.js": ["js/<%= package.name %>.js"],
+                    "build/konashi-ext-acdrive.min.js": ["js/konashi-ext-acdrive.js"],
+                    "build/konashi-ext-adc.min.js": ["js/konashi-ext-adc.js"],
+                    "build/konashi-ext-grove.min.js": ["js/konashi-ext-grove.js"],
                 }
             }
         },
@@ -21,7 +24,12 @@ module.exports = function(grunt) {
                 command: 'cp js/<%= package.name %>.js build/<%= package.name %>-<%= package.version %>.js;' +
                          'cp js/<%= package.name %>.js build/<%= package.name %>.js;' +
                          'cp build/<%= package.name %>-<%= package.version %>.min.js build/<%= package.name %>.min.js;' +
-                         'for d in "./samples/*"; do cp js/<%= package.name %>.js ${d}/assets/; done;'
+                         'for d in `find ./samples/ -mindepth 1 -maxdepth 1 -type d`; do cp js/<%= package.name %>.js ${d}/assets/; done;'
+            },
+            copyextjs: {
+                command: 'cp js/konashi-ext-acdrive.js build/;' +
+                         'cp js/konashi-ext-adc.js build/;' +
+                         'cp js/konashi-ext-grove.js build/;'
             }
         }
     });
@@ -29,5 +37,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks("grunt-shell");
 
-    grunt.registerTask("default", [ "uglify", "shell:copyjs" ]);
+    grunt.registerTask("default", [ "uglify", "shell:copyjs", "shell:copyextjs" ]);
 };

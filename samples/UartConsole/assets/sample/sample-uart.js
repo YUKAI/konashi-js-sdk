@@ -32,16 +32,14 @@ $(function(){
 
   $("#btn-tx-char").on("tap", function(){
     if($("#uart-tx-char").val()!=""){
-      k.uartWrite($("#uart-tx-char").val().charCodeAt(0));
+      k.uartWriteString($("#uart-tx-char").val());
     }
   });
 
   $("#btn-tx-str").on("tap", function(){
     if($("#uart-tx-str").val()!=""){
       var str=$("#uart-tx-str").val();
-      for(i=0;i<str.length;i++){
-        k.uartWrite(str.charCodeAt(i));
-      }
+      k.uartWriteString(str);
     }
   });
 
@@ -71,9 +69,9 @@ $(function(){
     k.uartMode(k.KONASHI_UART_ENABLE);
   });
 
-  k.completeUartRx(function(data){
-    $("#uart-rx-text").html($("#uart-rx-text").html()+String.fromCharCode(data.value));
-    $("#uart-rx-hex").html($("#uart-rx-hex").html()+parseInt(data.value).toString(16)+" ");
+  k.completeUartRx(function(value){
+    $("#uart-rx-text").html($("#uart-rx-text").html()+String.fromCharCode(value));
+    $("#uart-rx-hex").html($("#uart-rx-hex").html()+parseInt(value).toString(16)+" ");
   });
 
   //k.showDebugLog();

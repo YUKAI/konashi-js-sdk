@@ -68,6 +68,22 @@
     KONASHI_UART_DISABLE: 0,
     KONASHI_UART_ENABLE: 1,
 
+    // Events
+    KONASHI_EVENT_CENTRAL_MANAGER_POWERED_ON: "centralManagerPoweredOn",
+    KONASHI_EVENT_PERIPHERAL_NOT_FOUND: "peripheralNotFound",
+    KONASHI_EVENT_CONNECTED: "connected",
+    KONASHI_EVENT_DISCONNECTED: "disconnected",
+    KONASHI_EVENT_READY: "ready",
+    KONASHI_EVENT_UPDATE_PIO_INPUT: "updatePioInput",
+    KONASHI_EVENT_UPDATE_ANALOG_VALUE: "updateAnalogValue",
+    KONASHI_EVENT_UPDATE_ANALOG_VALUE_AIO0: "updateAnalogValueAio0",
+    KONASHI_EVENT_UPDATE_ANALOG_VALUE_AIO1: "updateAnalogValueAio1",
+    KONASHI_EVENT_UPDATE_ANALOG_VALUE_AIO2: "updateAnalogValueAio2",
+    KONASHI_EVENT_I2C_READ_COMPLETE: "completeReadI2c",
+    KONASHI_EVENT_UART_RX_COMPLETE: "completeUartRx",
+    KONASHI_EVENT_UPDATE_BATTERY_LEVEL: "updateBatteryLevel",
+    KONASHI_EVENT_UPDATE_SIGNAL_STRENGTH: "updateSignalStrength",
+
 
     /***************************************************
      * properties
@@ -101,6 +117,14 @@
       }
     },
 
+    addObserver: function(eventName, handler){
+      this.on(eventName, handler);
+    },
+
+    removeObserver: function(eventName, handler){
+      this.off(eventName, handler);
+    },
+
     trigger: function(eventName, dataOpt, callbackOpt){
       var messageId = this.messageCount++;
       var data = dataOpt || {};
@@ -109,7 +133,6 @@
       // set callback
       this.callbacks[messageId] = function(data){
         callback(data);
-        delete this.callbacks[messageId];
       };
 
       this.messages.push({
@@ -135,8 +158,13 @@
       bridge.setAttribute("height", "0px");
       bridge.setAttribute("width", "0px");
       bridge.setAttribute("frameborder", "0");
+      bridge.setAttribute("src", this.KONASHI_URL_SCHEME + "://" + eventName + "/" + messageId + "?" + encodeURIComponent(JSON.stringify(data)));
       document.documentElement.appendChild(bridge);
-      bridge.src = this.KONASHI_URL_SCHEME + "://" + eventName + "/" + messageId + "?" + encodeURIComponent(JSON.stringify(data));
+
+      setTimeout(function(){
+        bridge.parentNode.removeChild(bridge);
+        bridge = void 0;
+      }, 10);
 
       this.messages.shift();
     },
@@ -147,7 +175,7 @@
      ***************************************************/
     centralManagerPoweredOn: function(callback){
       if(callback && typeof callback == "function"){
-        this.on( "centralManagerPoweredOn", function(){
+        this.on( k.KONASHI_EVENT_CENTRAL_MANAGER_POWERED_ON, function(){
           callback();
         });
       }
@@ -155,7 +183,7 @@
 
     peripheralNotFound: function(callback){
       if(callback && typeof callback == "function"){
-        this.on( "peripheralNotFound", function(){
+        this.on( k.KONASHI_EVENT_PERIPHERAL_NOT_FOUND, function(){
           callback();
         });
       }
@@ -163,7 +191,7 @@
 
     connected: function(callback){
       if(callback && typeof callback == "function"){
-        this.on( "connected", function(){
+        this.on( k.KONASHI_EVENT_CONNECTED, function(){
           callback();
         });
       }
@@ -171,7 +199,7 @@
 
     disconnected: function(callback){
       if(callback && typeof callback == "function"){
-        this.on( "disconnected", function(){
+        this.on( k.KONASHI_EVENT_DISCONNECTED, function(){
           callback();
         });
       }
@@ -179,7 +207,7 @@
 
     ready: function(callback){
       if(callback && typeof callback == "function"){
-        this.on( "ready", function(){
+        this.on( k.KONASHI_EVENT_READY, function(){
           callback();
         });
       }
@@ -187,15 +215,15 @@
 
     updatePioInput: function(callback){
       if(callback && typeof callback == "function"){
-        this.on( "updatePioInput", function(data){
-          callback(data);
+        this.on( k.KONASHI_EVENT_UPDATE_PIO_INPUT, function(data){
+          callback(data.value);
         });
       }
     },
 
     updateAnalogValue: function(callback){
       if(callback && typeof callback == "function"){
-        this.on( "updateAnalogValue", function(){
+        this.on( k.KONASHI_EVENT_UPDATE_ANALOG_VALUE, function(){
           callback();
         });
       }
@@ -203,31 +231,31 @@
 
     updateAnalogValueAio0: function(callback){
       if(callback && typeof callback == "function"){
-        this.on( "updateAnalogValueAio0", function(data){
-          callback(data);
+        this.on( k.KONASHI_EVENT_UPDATE_ANALOG_VALUE_AIO0, function(data){
+          callback(data.value);
         });
       }
     },
 
     updateAnalogValueAio1: function(callback){
       if(callback && typeof callback == "function"){
-        this.on( "updateAnalogValueAio1", function(data){
-          callback(data);
+        this.on( k.KONASHI_EVENT_UPDATE_ANALOG_VALUE_AIO1, function(data){
+          callback(data.value);
         });
       }
     },
 
     updateAnalogValueAio2: function(callback){
       if(callback && typeof callback == "function"){
-        this.on( "updateAnalogValueAio2", function(data){
-          callback(data);
+        this.on( k.KONASHI_EVENT_UPDATE_ANALOG_VALUE_AIO2, function(data){
+          callback(data.value);
         });
       }
     },
 
     completeReadI2c: function(callback){
       if(callback && typeof callback == "function"){
-        this.on( "completeReadI2c", function(){
+        this.on( k.KONASHI_EVENT_I2C_READ_COMPLETE, function(){
           callback();
         });
       }
@@ -235,27 +263,28 @@
 
     completeUartRx: function(callback){
       if(callback && typeof callback == "function"){
-        this.on( "completeUartRx", function(data){
-          callback(data);
+        this.on( k.KONASHI_EVENT_UART_RX_COMPLETE, function(data){
+          callback(data.value);
         });
       }
     },
 
     updateBatteryLevel: function(callback){
       if(callback && typeof callback == "function"){
-        this.on( "updateBatteryLevel", function(data){
-          callback(data);
+        this.on( k.KONASHI_EVENT_UPDATE_BATTERY_LEVEL, function(data){
+          callback(data.value);
         });
       }
     },
 
     updateSignalStrength: function(callback){
       if(callback && typeof callback == "function"){
-        this.on( "updateSignalStrength", function(data){
-          callback(data);
+        this.on( k.KONASHI_EVENT_UPDATE_SIGNAL_STRENGTH, function(data){
+          callback(data.value);
         });
       }
     },
+
 
     /***************************************************
      * Public wrap functions (Control functinos)
@@ -275,16 +304,16 @@
 
     isConnected: function(callback){
       if(callback && typeof callback == "function"){
-        k.trigger("isConnected", {}, function(isConnected){
-          callback(isConnected);
+        k.trigger("isConnected", {}, function(data){
+          callback(data.isConnected);
         });
       }
     },
 
     peripheralName: function(callback){
       if(callback && typeof callback == "function"){
-        k.trigger("peripheralName", {}, function(name){
-          callback(name);
+        k.trigger("peripheralName", {}, function(data){
+          callback(data.peripheralName);
         });
       }
     },
@@ -351,7 +380,7 @@
       }
     },
 
-    analogWrite: function(pin){
+    analogWrite: function(pin, millivolt){
       k.trigger("analogWrite", {pin: pin, millivolt: millivolt});
     },
 
@@ -383,6 +412,12 @@
 
     uartWrite: function(data){
       k.trigger("uartWrite", {data: data});
+    },
+
+    uartWriteString: function(str){
+      for(var i=0;i<str.length;i++){
+        k.trigger("uartWrite", {data: str.charCodeAt(i)});
+      }
     },
 
     // I2C
@@ -514,10 +549,12 @@
       setTimeout(function() {
         try{
           that.callbacks[Number(id)](data);
+          that.callbacks[Number(id)] = void 0;
+          delete that.callbacks[Number(id)];
         } catch(e){}
 
-        if(this.messages.length>0){
-          this.triggerToNative();
+        if(that.messages.length>0){
+          that.triggerToNative();
         }
       }, 0);
     }
