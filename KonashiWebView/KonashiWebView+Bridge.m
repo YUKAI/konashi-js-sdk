@@ -133,7 +133,7 @@
         
         // validation
         if(![params.allKeys containsObject:@"pin"] || ![params.allKeys containsObject:@"mode"]){
-            data = @{@"status":[NSNumber numberWithInteger:KonashiResultSuccess]};
+            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
             callback(data);
             return;
         }
