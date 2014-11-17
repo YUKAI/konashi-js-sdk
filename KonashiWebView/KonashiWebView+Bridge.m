@@ -48,20 +48,20 @@
     [Konashi initialize];
 
     // konashi event handler
-    [Konashi addObserver:self selector:@selector(jsKonashiCentralManagerPoweredOn) name:KONASHI_EVENT_CENTRAL_MANAGER_POWERED_ON];
-    [Konashi addObserver:self selector:@selector(jsKonashiPeripheralNotFound) name:KONASHI_EVENT_PERIPHERAL_NOT_FOUND];
-    [Konashi addObserver:self selector:@selector(jsKonashiConnected) name:KONASHI_EVENT_CONNECTED];
-    [Konashi addObserver:self selector:@selector(jsKonashiDisconnected) name:KONASHI_EVENT_DISCONNECTED];
-    [Konashi addObserver:self selector:@selector(jsKonashiReady) name:KONASHI_EVENT_READY];
-    [Konashi addObserver:self selector:@selector(jsKonashiUpdatePioInput) name:KONASHI_EVENT_UPDATE_PIO_INPUT];
-    [Konashi addObserver:self selector:@selector(jsKonashiUpdateAnalogValue) name:KONASHI_EVENT_UPDATE_ANALOG_VALUE];
-    [Konashi addObserver:self selector:@selector(jsKonashiUpdateAnalogValueAio0) name:KONASHI_EVENT_UPDATE_ANALOG_VALUE_AIO0];
-    [Konashi addObserver:self selector:@selector(jsKonashiUpdateAnalogValueAio1) name:KONASHI_EVENT_UPDATE_ANALOG_VALUE_AIO1];
-    [Konashi addObserver:self selector:@selector(jsKonashiUpdateAnalogValueAio2) name:KONASHI_EVENT_UPDATE_ANALOG_VALUE_AIO2];
-    [Konashi addObserver:self selector:@selector(jsKonashiCompleteReadI2c) name:KONASHI_EVENT_I2C_READ_COMPLETE];
-    [Konashi addObserver:self selector:@selector(jsKonashiCompleteUartRx) name:KONASHI_EVENT_UART_RX_COMPLETE];
-    [Konashi addObserver:self selector:@selector(jsKonashiUpdateBatteryLevel) name:KONASHI_EVENT_UPDATE_BATTERY_LEVEL];
-    [Konashi addObserver:self selector:@selector(jsKonashiUpdateSignalStrength) name:KONASHI_EVENT_UPDATE_SIGNAL_STRENGTH];
+    [Konashi addObserver:self selector:@selector(jsKonashiCentralManagerPoweredOn) name:KonashiEventCentralManagerPowerOnNotification];
+    [Konashi addObserver:self selector:@selector(jsKonashiPeripheralNotFound) name:KonashiEventPeripheralNotFoundNotification];
+    [Konashi addObserver:self selector:@selector(jsKonashiConnected) name:KonashiEventConnectedNotification];
+    [Konashi addObserver:self selector:@selector(jsKonashiDisconnected) name:KonashiEventDisconnectedNotification];
+    [Konashi addObserver:self selector:@selector(jsKonashiReady) name:KonashiEventReadyToUseNotification];
+    [Konashi addObserver:self selector:@selector(jsKonashiUpdatePioInput) name:KonashiEventDigitalIODidUpdateNotification];
+    [Konashi addObserver:self selector:@selector(jsKonashiUpdateAnalogValue) name:KonashiEventAnalogIODidUpdateNotification];
+    [Konashi addObserver:self selector:@selector(jsKonashiUpdateAnalogValueAio0) name:KonashiEventAnalogIO0DidUpdateNotification];
+    [Konashi addObserver:self selector:@selector(jsKonashiUpdateAnalogValueAio1) name:KonashiEventAnalogIO1DidUpdateNotification];
+    [Konashi addObserver:self selector:@selector(jsKonashiUpdateAnalogValueAio2) name:KonashiEventAnalogIO2DidUpdateNotification];
+    [Konashi addObserver:self selector:@selector(jsKonashiCompleteReadI2c) name:KonashiEventI2CReadCompleteNotification];
+    [Konashi addObserver:self selector:@selector(jsKonashiCompleteUartRx) name:KonashiEventUartRxCompleteNotification];
+    [Konashi addObserver:self selector:@selector(jsKonashiUpdateBatteryLevel) name:KonashiEventBatteryLevelDidUpdateNotification];
+    [Konashi addObserver:self selector:@selector(jsKonashiUpdateSignalStrength) name:KonashiEventSignalStrengthDidUpdateNotification];
     
     
     /****************************
@@ -83,7 +83,7 @@
         
         // validation
         if(![params.allKeys containsObject:@"name"]){
-            data = @{@"status":[NSNumber numberWithInteger:KONASHI_FAILURE]};
+            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
             callback(data);
             return;
         }
@@ -133,7 +133,7 @@
         
         // validation
         if(![params.allKeys containsObject:@"pin"] || ![params.allKeys containsObject:@"mode"]){
-            data = @{@"status":[NSNumber numberWithInteger:KONASHI_FAILURE]};
+            data = @{@"status":[NSNumber numberWithInteger:KonashiResultSuccess]};
             callback(data);
             return;
         }
@@ -155,7 +155,7 @@
         
         // validation
         if(![params.allKeys containsObject:@"mode"]){
-            data = @{@"status":[NSNumber numberWithInteger:KONASHI_FAILURE]};
+            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
             callback(data);
             return;
         }
@@ -176,7 +176,7 @@
         
         // validation
         if(![params.allKeys containsObject:@"pin"] || ![params.allKeys containsObject:@"mode"]){
-            data = @{@"status":[NSNumber numberWithInteger:KONASHI_FAILURE]};
+            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
             callback(data);
             return;
         }
@@ -198,7 +198,7 @@
         
         // validation
         if(![params.allKeys containsObject:@"mode"]){
-            data = @{@"status":[NSNumber numberWithInteger:KONASHI_FAILURE]};
+            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
             callback(data);
             return;
         }
@@ -219,7 +219,7 @@
         
         // validation
         if(![params.allKeys containsObject:@"pin"]){
-            data = @{@"status":[NSNumber numberWithInteger:KONASHI_FAILURE]};
+            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
             callback(data);
             return;
         }
@@ -251,7 +251,7 @@
         
         // validation
         if(![params.allKeys containsObject:@"pin"] || ![params.allKeys containsObject:@"value"]){
-            data = @{@"status":[NSNumber numberWithInteger:KONASHI_FAILURE]};
+            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
             callback(data);
             return;
         }
@@ -273,7 +273,7 @@
         
         // validation
         if(![params.allKeys containsObject:@"value"]){
-            data = @{@"status":[NSNumber numberWithInteger:KONASHI_FAILURE]};
+            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
             callback(data);
             return;
         }
@@ -309,7 +309,7 @@
         
         // validation
         if(![params.allKeys containsObject:@"pin"]){
-            data = @{@"status":[NSNumber numberWithInteger:KONASHI_FAILURE]};
+            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
             callback(data);
             return;
         }
@@ -330,7 +330,7 @@
         
         // validation
         if(![params.allKeys containsObject:@"pin"]){
-            data = @{@"status":[NSNumber numberWithInteger:KONASHI_FAILURE]};
+            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
             callback(data);
             return;
         }
@@ -351,7 +351,7 @@
         
         // validation
         if(![params.allKeys containsObject:@"pin"] || ![params.allKeys containsObject:@"millivolt"]){
-            data = @{@"status":[NSNumber numberWithInteger:KONASHI_FAILURE]};
+            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
             callback(data);
             return;
         }
@@ -377,7 +377,7 @@
         
         // validation
         if(![params.allKeys containsObject:@"pin"] || ![params.allKeys containsObject:@"mode"]){
-            data = @{@"status":[NSNumber numberWithInteger:KONASHI_FAILURE]};
+            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
             callback(data);
             return;
         }
@@ -400,7 +400,7 @@
         
         // validation
         if(![params.allKeys containsObject:@"pin"] || ![params.allKeys containsObject:@"period"]){
-            data = @{@"status":[NSNumber numberWithInteger:KONASHI_FAILURE]};
+            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
             callback(data);
             return;
         }
@@ -423,7 +423,7 @@
         
         // validation
         if(![params.allKeys containsObject:@"pin"] || ![params.allKeys containsObject:@"duty"]){
-            data = @{@"status":[NSNumber numberWithInteger:KONASHI_FAILURE]};
+            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
             callback(data);
             return;
         }
@@ -445,7 +445,7 @@
         
         // validation
         if(![params.allKeys containsObject:@"pin"] || ![params.allKeys containsObject:@"dutyRatio"]){
-            data = @{@"status":[NSNumber numberWithInteger:KONASHI_FAILURE]};
+            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
             callback(data);
             return;
         }
@@ -471,7 +471,7 @@
         
         // validation
         if(![params.allKeys containsObject:@"mode"]){
-            data = @{@"status":[NSNumber numberWithInteger:KONASHI_FAILURE]};
+            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
             callback(data);
             return;
         }
@@ -492,7 +492,7 @@
         
         // validation
         if(![params.allKeys containsObject:@"baudrate"]){
-            data = @{@"status":[NSNumber numberWithInteger:KONASHI_FAILURE]};
+            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
             callback(data);
             return;
         }
@@ -513,7 +513,7 @@
         
         // validation
         if(![params.allKeys containsObject:@"data"]){
-            data = @{@"status":[NSNumber numberWithInteger:KONASHI_FAILURE]};
+            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
             callback(data);
             return;
         }
@@ -538,7 +538,7 @@
         
         // validation
         if(![params.allKeys containsObject:@"mode"]){
-            data = @{@"status":[NSNumber numberWithInteger:KONASHI_FAILURE]};
+            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
             callback(data);
             return;
         }
@@ -589,12 +589,12 @@
         
         NSDictionary *d;
         int length;
-        int status = KONASHI_FAILURE;
+        int status = KonashiResultFailure;
         unsigned char address;
         
         // validation
         if(![params.allKeys containsObject:@"length"] || ![params.allKeys containsObject:@"data"] || ![params.allKeys containsObject:@"address"]){
-            d = @{@"status":[NSNumber numberWithInteger:KONASHI_FAILURE]};
+            d = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
             callback(d);
             return;
         }
@@ -629,7 +629,7 @@
         
         // validation
         if(![params.allKeys containsObject:@"length"] || ![params.allKeys containsObject:@"address"]){
-            data = @{@"status":[NSNumber numberWithInteger:KONASHI_FAILURE]};
+            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
             callback(data);
             return;
         }
@@ -654,7 +654,7 @@
         
         // validation
         if(![params.allKeys containsObject:@"length"]){
-            d = @{@"status":[NSNumber numberWithInteger:KONASHI_FAILURE]};
+            d = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
             callback(d);
             return;
         }
