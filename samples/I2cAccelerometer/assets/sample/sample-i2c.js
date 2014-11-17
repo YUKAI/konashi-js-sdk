@@ -1,5 +1,5 @@
 $(function(){
-  var ADXL345_ADDR=0x53;
+  var ADXL345_ADDR=0x1D;
   $("#i2c-setting").hide();
   // Find button
   $("#btn-find").on("tap", function(){
