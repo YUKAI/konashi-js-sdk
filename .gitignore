@@ -7,3 +7,4 @@ samples/*/*.xcodeproj/*
 node_modules
 *.swp
 *.swo
+bower_components
