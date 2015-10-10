@@ -18,7 +18,6 @@
  * limitations under the License.
  * ======================================================================== */
 
-
 #import <UIKit/UIKit.h>
 
 // Debug
@@ -35,20 +34,20 @@
 typedef void (^KonashiHandler)(NSDictionary *params);
 typedef void (^KonashiHandlerWithCallback)(NSDictionary *params, void (^callback)(NSDictionary *));
 
-@interface KonashiWebView : UIWebView<UIWebViewDelegate> {
-    NSMutableDictionary *handlers;
+@interface KonashiWebView : UIWebView <UIWebViewDelegate> {
+	NSMutableDictionary *handlers;
 }
 
 - (void)disableBounce;
 
-- (void)on:(NSString*)envetName handler:(KonashiHandler)handler;
-- (void)on:(NSString*)eventName handlerWithCallback:(KonashiHandlerWithCallback)handler;
-- (void)off:(NSString*)eventName;
+- (void)on:(NSString *)envetName handler:(KonashiHandler)handler;
+- (void)on:(NSString *)eventName handlerWithCallback:(KonashiHandlerWithCallback)handler;
+- (void)off:(NSString *)eventName;
 - (void)off;
 
-- (void)send:(NSString*)eventName withParams:(id)params;
+- (void)send:(NSString *)eventName withParams:(id)params;
 
-// 
+//
 //- (void)triggerEvent:(NSString*)eventName messageId:(NSString*)messageId withParams:(NSDictionary*)params;
 //- (void)triggerCallback:(NSString*)messageId withParams:(NSDictionary*)params;
 

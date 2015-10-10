@@ -18,7 +18,6 @@
  * limitations under the License.
  * ======================================================================== */
 
-
 #import "KonashiWebView+Bridge.h"
 #import "Konashi.h"
 
@@ -28,9 +27,6 @@
 {
     KB_LOG(@"deallocBridge");
 
-    // remove observer
-    [Konashi removeObserver:self];
-    
     // remove js event listener
     [self off];
 }
@@ -48,114 +44,112 @@
     [Konashi initialize];
 
     // konashi event handler
-    [Konashi addObserver:self selector:@selector(jsKonashiCentralManagerPoweredOn) name:KonashiEventCentralManagerPowerOnNotification];
-    [Konashi addObserver:self selector:@selector(jsKonashiPeripheralNotFound) name:KonashiEventPeripheralNotFoundNotification];
-    [Konashi addObserver:self selector:@selector(jsKonashiConnected) name:KonashiEventConnectedNotification];
-    [Konashi addObserver:self selector:@selector(jsKonashiDisconnected) name:KonashiEventDisconnectedNotification];
-    [Konashi addObserver:self selector:@selector(jsKonashiReady) name:KonashiEventReadyToUseNotification];
-    [Konashi addObserver:self selector:@selector(jsKonashiUpdatePioInput) name:KonashiEventDigitalIODidUpdateNotification];
-    [Konashi addObserver:self selector:@selector(jsKonashiUpdateAnalogValue) name:KonashiEventAnalogIODidUpdateNotification];
-    [Konashi addObserver:self selector:@selector(jsKonashiUpdateAnalogValueAio0) name:KonashiEventAnalogIO0DidUpdateNotification];
-    [Konashi addObserver:self selector:@selector(jsKonashiUpdateAnalogValueAio1) name:KonashiEventAnalogIO1DidUpdateNotification];
-    [Konashi addObserver:self selector:@selector(jsKonashiUpdateAnalogValueAio2) name:KonashiEventAnalogIO2DidUpdateNotification];
-    [Konashi addObserver:self selector:@selector(jsKonashiCompleteReadI2c) name:KonashiEventI2CReadCompleteNotification];
-    [Konashi addObserver:self selector:@selector(jsKonashiCompleteUartRx) name:KonashiEventUartRxCompleteNotification];
-    [Konashi addObserver:self selector:@selector(jsKonashiUpdateBatteryLevel) name:KonashiEventBatteryLevelDidUpdateNotification];
-    [Konashi addObserver:self selector:@selector(jsKonashiUpdateSignalStrength) name:KonashiEventSignalStrengthDidUpdateNotification];
-    
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(jsKonashiCentralManagerPoweredOn) name:KonashiEventCentralManagerPowerOnNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(jsKonashiPeripheralNotFound) name:KonashiEventPeripheralNotFoundNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(jsKonashiConnected) name:KonashiEventConnectedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(jsKonashiDisconnected) name:KonashiEventDisconnectedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(jsKonashiReady) name:KonashiEventReadyToUseNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(jsKonashiUpdatePioInput) name:KonashiEventDigitalIODidUpdateNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(jsKonashiUpdateAnalogValue) name:KonashiEventAnalogIODidUpdateNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(jsKonashiUpdateAnalogValueAio0) name:KonashiEventAnalogIO0DidUpdateNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(jsKonashiUpdateAnalogValueAio1) name:KonashiEventAnalogIO1DidUpdateNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(jsKonashiUpdateAnalogValueAio2) name:KonashiEventAnalogIO2DidUpdateNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(jsKonashiCompleteReadI2c) name:KonashiEventI2CReadCompleteNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(jsKonashiCompleteUartRx) name:KonashiEventUartRxCompleteNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(jsKonashiUpdateBatteryLevel) name:KonashiEventBatteryLevelDidUpdateNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(jsKonashiUpdateSignalStrength) name:KonashiEventSignalStrengthDidUpdateNotification object:nil];
+
     /****************************
      * Base
      ****************************/
-    [self on:@"find" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"find" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
         KB_LOG(@"bridge: find");
         
         int status = [Konashi find];
-        NSDictionary *data = @{@"status":[NSNumber numberWithInteger:status]};
+        NSDictionary *data = @{ @"status" : [NSNumber numberWithInteger:status] };
         
         callback(data);
     }];
     
-    [self on:@"findWithName" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"findWithName" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
         KB_LOG(@"bridge: findWithName, %@", params);
         
         NSDictionary *data;
         
         // validation
-        if(![params.allKeys containsObject:@"name"]){
-            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
+        if (![params.allKeys containsObject:@"name"]) {
+            data = @{ @"status" : [NSNumber numberWithInteger:KonashiResultFailure] };
             callback(data);
             return;
         }
         
         int status = [Konashi findWithName:[params objectForKey:@"name"]];
-        data = @{@"status":[NSNumber numberWithInteger:status]};
+        data = @{ @"status" : [NSNumber numberWithInteger:status] };
         
         callback(data);
     }];
     
-    [self on:@"disconnect" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"disconnect" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
         KB_LOG(@"bridge: disconnect");
         
         int status = [Konashi disconnect];
-        NSDictionary *data = @{@"status":[NSNumber numberWithInteger:status]};
-        
+        NSDictionary *data = @{ @"status" : [NSNumber numberWithInteger:status] };
+
         callback(data);
     }];
     
-    [self on:@"isConnected" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"isConnected" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
         KB_LOG(@"bridge: isConnected");
         
         BOOL isConnected = [Konashi isConnected];
-        NSDictionary *data = @{@"isConnected":[NSNumber numberWithBool:isConnected]};
+        NSDictionary *data = @{ @"isConnected" : [NSNumber numberWithBool:isConnected] };
         
         callback(data);
     }];
-    
-    [self on:@"peripheralName" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+
+    [self on:@"peripheralName" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
         KB_LOG(@"bridge: peripheralName");
         
         NSString *name = [Konashi peripheralName];
-        NSDictionary *data = @{@"peripheralName":name};
+        NSDictionary *data = @{ @"peripheralName" : name };
         
         callback(data);
     }];
-    
     
     /***************************
      * Digital I/O
      ***************************/
-    [self on:@"pinMode" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"pinMode" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
         KB_LOG(@"bridge: pinMode, %@", params);
         
         NSDictionary *data;
         int pin, mode;
         
         // validation
-        if(![params.allKeys containsObject:@"pin"] || ![params.allKeys containsObject:@"mode"]){
-            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
+        if (![params.allKeys containsObject:@"pin"] || ![params.allKeys containsObject:@"mode"]) {
+            data = @{ @"status" : [NSNumber numberWithInteger:KonashiResultFailure] };
             callback(data);
             return;
         }
         
         pin = [[params objectForKey:@"pin"] intValue];
         mode = [[params objectForKey:@"mode"] intValue];
-                
+        
         int status = [Konashi pinMode:pin mode:mode];
-        data = @{@"status":[NSNumber numberWithInteger:status]};
+        data = @{ @"status" : [NSNumber numberWithInteger:status] };
         
         callback(data);
     }];
     
-    [self on:@"pinModeAll" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"pinModeAll" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
         KB_LOG(@"bridge: pinModeAll, %@", params);
         
         NSDictionary *data;
         int mode;
         
         // validation
-        if(![params.allKeys containsObject:@"mode"]){
-            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
+        if (![params.allKeys containsObject:@"mode"]) {
+            data = @{ @"status" : [NSNumber numberWithInteger:KonashiResultFailure] };
             callback(data);
             return;
         }
@@ -163,20 +157,20 @@
         mode = [[params objectForKey:@"mode"] intValue];
         
         int status = [Konashi pinModeAll:mode];
-        data = @{@"status":[NSNumber numberWithInteger:status]};
+        data = @{ @"status" : [NSNumber numberWithInteger:status] };
         
         callback(data);
     }];
-    
-    [self on:@"pinPullup" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+
+    [self on:@"pinPullup" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
         KB_LOG(@"bridge: pinPullup, %@", params);
         
         NSDictionary *data;
         int pin, mode;
         
         // validation
-        if(![params.allKeys containsObject:@"pin"] || ![params.allKeys containsObject:@"mode"]){
-            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
+        if (![params.allKeys containsObject:@"pin"] || ![params.allKeys containsObject:@"mode"]) {
+            data = @{ @"status" : [NSNumber numberWithInteger:KonashiResultFailure] };
             callback(data);
             return;
         }
@@ -185,20 +179,20 @@
         mode = [[params objectForKey:@"mode"] intValue];
         
         int status = [Konashi pinPullup:pin mode:mode];
-        data = @{@"status":[NSNumber numberWithInteger:status]};
+        data = @{ @"status" : [NSNumber numberWithInteger:status] };
         
         callback(data);
     }];
-    
-    [self on:@"pinPullupAll" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+
+    [self on:@"pinPullupAll" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
         KB_LOG(@"bridge: pinPullupAll, %@", params);
         
         NSDictionary *data;
         int mode;
         
         // validation
-        if(![params.allKeys containsObject:@"mode"]){
-            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
+        if (![params.allKeys containsObject:@"mode"]) {
+            data = @{ @"status" : [NSNumber numberWithInteger:KonashiResultFailure] };
             callback(data);
             return;
         }
@@ -206,20 +200,20 @@
         mode = [[params objectForKey:@"mode"] intValue];
         
         int status = [Konashi pinPullupAll:mode];
-        data = @{@"status":[NSNumber numberWithInteger:status]};
+        data = @{ @"status" : [NSNumber numberWithInteger:status] };
         
         callback(data);
     }];
-    
-    [self on:@"digitalRead" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+
+    [self on:@"digitalRead" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
         KB_LOG(@"bridge: digitalRead, %@", params);
         
         NSDictionary *data;
         int pin;
         
         // validation
-        if(![params.allKeys containsObject:@"pin"]){
-            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
+        if (![params.allKeys containsObject:@"pin"]) {
+            data = @{ @"status" : [NSNumber numberWithInteger:KonashiResultFailure] };
             callback(data);
             return;
         }
@@ -227,31 +221,32 @@
         pin = [[params objectForKey:@"pin"] intValue];
         
         int input = [Konashi digitalRead:pin];
-        data = @{@"pin":[NSNumber numberWithInteger:pin], @"input":[NSNumber numberWithInteger:input]};
+        data = @{ @"pin" : [NSNumber numberWithInteger:pin],
+                @"input" : [NSNumber numberWithInteger:input] };
         
         callback(data);
     }];
-    
-    [self on:@"digitalReadAll" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+
+    [self on:@"digitalReadAll" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
         KB_LOG(@"bridge: digitalReadAll, %@", params);
         
         NSDictionary *data;
-                
+        
         int input = [Konashi digitalReadAll];
-        data = @{@"input":[NSNumber numberWithInteger:input]};
+        data = @{ @"input" : [NSNumber numberWithInteger:input] };
         
         callback(data);
     }];
     
-    [self on:@"digitalWrite" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"digitalWrite" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
         KB_LOG(@"bridge: digitalWrite, %@", params);
         
         NSDictionary *data;
         int pin, value;
         
         // validation
-        if(![params.allKeys containsObject:@"pin"] || ![params.allKeys containsObject:@"value"]){
-            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
+        if (![params.allKeys containsObject:@"pin"] || ![params.allKeys containsObject:@"value"]) {
+            data = @{ @"status" : [NSNumber numberWithInteger:KonashiResultFailure] };
             callback(data);
             return;
         }
@@ -260,20 +255,20 @@
         value = [[params objectForKey:@"value"] intValue];
         
         int status = [Konashi digitalWrite:pin value:value];
-        data = @{@"status":[NSNumber numberWithInteger:status]};
+        data = @{ @"status" : [NSNumber numberWithInteger:status] };
         
         callback(data);
     }];
-    
-    [self on:@"digitalWriteAll" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+
+    [self on:@"digitalWriteAll" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
         KB_LOG(@"bridge: digitalWriteAll, %@", params);
         
         NSDictionary *data;
         int value;
         
         // validation
-        if(![params.allKeys containsObject:@"value"]){
-            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
+        if (![params.allKeys containsObject:@"value"]) {
+            data = @{ @"status" : [NSNumber numberWithInteger:KonashiResultFailure] };
             callback(data);
             return;
         }
@@ -281,35 +276,34 @@
         value = [[params objectForKey:@"value"] intValue];
         
         int status = [Konashi digitalWriteAll:value];
-        data = @{@"status":[NSNumber numberWithInteger:status]};
+        data = @{ @"status" : [NSNumber numberWithInteger:status] };
         
         callback(data);
     }];
-    
-    
+
     /***************************
      * Analog I/O
      ***************************/
-    [self on:@"analogReference" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"analogReference" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
         KB_LOG(@"bridge: analogReference, %@", params);
         
         NSDictionary *data;
-                
+        
         int millivolt = [Konashi analogReference];
-        data = @{@"value":[NSNumber numberWithInteger:millivolt]};
+        data = @{ @"value" : [NSNumber numberWithInteger:millivolt] };
         
         callback(data);
     }];
     
-    [self on:@"analogReadRequest" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"analogReadRequest" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
         KB_LOG(@"bridge: analogReadRequest, %@", params);
         
         NSDictionary *data;
         int pin;
         
         // validation
-        if(![params.allKeys containsObject:@"pin"]){
-            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
+        if (![params.allKeys containsObject:@"pin"]) {
+            data = @{ @"status" : [NSNumber numberWithInteger:KonashiResultFailure] };
             callback(data);
             return;
         }
@@ -317,20 +311,20 @@
         pin = [[params objectForKey:@"pin"] intValue];
         
         int status = [Konashi analogReadRequest:pin];
-        data = @{@"status":[NSNumber numberWithInteger:status]};
+        data = @{ @"status" : [NSNumber numberWithInteger:status] };
         
         callback(data);
     }];
-    
-    [self on:@"analogRead" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+
+    [self on:@"analogRead" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
         KB_LOG(@"bridge: analogRead, %@", params);
         
         NSDictionary *data;
         int pin;
         
         // validation
-        if(![params.allKeys containsObject:@"pin"]){
-            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
+        if (![params.allKeys containsObject:@"pin"]) {
+            data = @{ @"status" : [NSNumber numberWithInteger:KonashiResultFailure] };
             callback(data);
             return;
         }
@@ -338,20 +332,20 @@
         pin = [[params objectForKey:@"pin"] intValue];
         
         int millivolt = [Konashi analogRead:pin];
-        data = @{@"value":[NSNumber numberWithInteger:millivolt]};
+        data = @{ @"value" : [NSNumber numberWithInteger:millivolt] };
         
         callback(data);
     }];
-    
-    [self on:@"analogWrite" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+
+    [self on:@"analogWrite" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
         KB_LOG(@"bridge: analogWrite, %@", params);
-        
+
         NSDictionary *data;
         int pin, millivolt;
         
         // validation
-        if(![params.allKeys containsObject:@"pin"] || ![params.allKeys containsObject:@"millivolt"]){
-            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
+        if (![params.allKeys containsObject:@"pin"] || ![params.allKeys containsObject:@"millivolt"]) {
+            data = @{ @"status" : [NSNumber numberWithInteger:KonashiResultFailure] };
             callback(data);
             return;
         }
@@ -360,24 +354,23 @@
         millivolt = [[params objectForKey:@"millivolt"] intValue];
         
         int status = [Konashi analogWrite:pin milliVolt:millivolt];
-        data = @{@"status":[NSNumber numberWithInteger:status]};
+        data = @{ @"status" : [NSNumber numberWithInteger:status] };
         
         callback(data);
     }];
     
-    
     /***************************
      * PWM
      ***************************/
-    [self on:@"pwmMode" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"pwmMode" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
         KB_LOG(@"bridge: pwmMode, %@", params);
         
         NSDictionary *data;
         int pin, mode;
         
         // validation
-        if(![params.allKeys containsObject:@"pin"] || ![params.allKeys containsObject:@"mode"]){
-            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
+        if (![params.allKeys containsObject:@"pin"] || ![params.allKeys containsObject:@"mode"]) {
+            data = @{ @"status" : [NSNumber numberWithInteger:KonashiResultFailure] };
             callback(data);
             return;
         }
@@ -386,12 +379,12 @@
         mode = [[params objectForKey:@"mode"] intValue];
         
         int status = [Konashi pwmMode:pin mode:mode];
-        data = @{@"status":[NSNumber numberWithInteger:status]};
+        data = @{ @"status" : [NSNumber numberWithInteger:status] };
         
         callback(data);
     }];
     
-    [self on:@"pwmPeriod" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"pwmPeriod" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
         KB_LOG(@"bridge: pwmPeriod, %@", params);
         
         NSDictionary *data;
@@ -399,8 +392,8 @@
         unsigned int period;
         
         // validation
-        if(![params.allKeys containsObject:@"pin"] || ![params.allKeys containsObject:@"period"]){
-            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
+        if (![params.allKeys containsObject:@"pin"] || ![params.allKeys containsObject:@"period"]) {
+            data = @{ @"status" : [NSNumber numberWithInteger:KonashiResultFailure] };
             callback(data);
             return;
         }
@@ -409,21 +402,21 @@
         period = [[params objectForKey:@"period"] unsignedIntValue];
         
         int status = [Konashi pwmPeriod:pin period:period];
-        data = @{@"status":[NSNumber numberWithInteger:status]};
+        data = @{ @"status" : [NSNumber numberWithInteger:status] };
         
         callback(data);
     }];
     
-    [self on:@"pwmDuty" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"pwmDuty" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
         KB_LOG(@"bridge: pwmDuty, %@", params);
-        
+
         NSDictionary *data;
         int pin;
         unsigned int duty;
         
         // validation
-        if(![params.allKeys containsObject:@"pin"] || ![params.allKeys containsObject:@"duty"]){
-            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
+        if (![params.allKeys containsObject:@"pin"] || ![params.allKeys containsObject:@"duty"]) {
+            data = @{ @"status" : [NSNumber numberWithInteger:KonashiResultFailure] };
             callback(data);
             return;
         }
@@ -432,46 +425,45 @@
         duty = [[params objectForKey:@"duty"] unsignedIntValue];
         
         int status = [Konashi pwmDuty:pin duty:duty];
-        data = @{@"status":[NSNumber numberWithInteger:status]};
+        data = @{ @"status" : [NSNumber numberWithInteger:status] };
         
         callback(data);
     }];
-    
-    [self on:@"pwmLedDrive" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+
+    [self on:@"pwmLedDrive" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
         KB_LOG(@"bridge: pwmLedDrive, %@", params);
         
         NSDictionary *data;
         int pin, dutyRatio;
         
         // validation
-        if(![params.allKeys containsObject:@"pin"] || ![params.allKeys containsObject:@"dutyRatio"]){
-            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
+        if (![params.allKeys containsObject:@"pin"] || ![params.allKeys containsObject:@"dutyRatio"]) {
+            data = @{ @"status" : [NSNumber numberWithInteger:KonashiResultFailure] };
             callback(data);
             return;
         }
-                
+        
         pin = [[params objectForKey:@"pin"] intValue];
         dutyRatio = [[params objectForKey:@"dutyRatio"] intValue];
         
         int status = [Konashi pwmLedDrive:pin dutyRatio:dutyRatio];
-        data = @{@"status":[NSNumber numberWithInteger:status]};
+        data = @{ @"status" : [NSNumber numberWithInteger:status] };
         
         callback(data);
     }];
     
-    
     /***************************
      * UART
      ***************************/
-    [self on:@"uartMode" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"uartMode" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
         KB_LOG(@"bridge: uartMode, %@", params);
         
         NSDictionary *data;
         int mode;
         
         // validation
-        if(![params.allKeys containsObject:@"mode"]){
-            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
+        if (![params.allKeys containsObject:@"mode"]) {
+            data = @{ @"status" : [NSNumber numberWithInteger:KonashiResultFailure] };
             callback(data);
             return;
         }
@@ -479,20 +471,20 @@
         mode = [[params objectForKey:@"mode"] intValue];
         
         int status = [Konashi uartMode:mode];
-        data = @{@"status":[NSNumber numberWithInteger:status]};
+        data = @{ @"status" : [NSNumber numberWithInteger:status] };
         
         callback(data);
     }];
     
-    [self on:@"uartBaudrate" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"uartBaudrate" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
         KB_LOG(@"bridge: uartBaudrate, %@", params);
         
         NSDictionary *data;
         int baudrate;
         
         // validation
-        if(![params.allKeys containsObject:@"baudrate"]){
-            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
+        if (![params.allKeys containsObject:@"baudrate"]) {
+            data = @{ @"status" : [NSNumber numberWithInteger:KonashiResultFailure] };
             callback(data);
             return;
         }
@@ -500,20 +492,20 @@
         baudrate = [[params objectForKey:@"baudrate"] intValue];
         
         int status = [Konashi uartBaudrate:baudrate];
-        data = @{@"status":[NSNumber numberWithInteger:status]};
+        data = @{ @"status" : [NSNumber numberWithInteger:status] };
         
         callback(data);
     }];
     
-    [self on:@"uartWrite" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"uartWrite" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
         KB_LOG(@"bridge: uartWrite, %@", params);
         
         NSDictionary *data;
         unsigned char value;
         
         // validation
-        if(![params.allKeys containsObject:@"data"]){
-            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
+        if (![params.allKeys containsObject:@"data"]) {
+            data = @{ @"status" : [NSNumber numberWithInteger:KonashiResultFailure] };
             callback(data);
             return;
         }
@@ -521,24 +513,23 @@
         value = [[params objectForKey:@"data"] unsignedCharValue];
         
         int status = [Konashi uartWrite:value];
-        data = @{@"status":[NSNumber numberWithInteger:status]};
+        data = @{ @"status" : [NSNumber numberWithInteger:status] };
         
         callback(data);
     }];
     
-    
     /***************************
      * I2C
      ***************************/
-    [self on:@"i2cMode" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"i2cMode" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
         KB_LOG(@"bridge: i2cMode, %@", params);
         
         NSDictionary *data;
         int mode;
         
         // validation
-        if(![params.allKeys containsObject:@"mode"]){
-            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
+        if (![params.allKeys containsObject:@"mode"]) {
+            data = @{ @"status" : [NSNumber numberWithInteger:KonashiResultFailure] };
             callback(data);
             return;
         }
@@ -546,45 +537,45 @@
         mode = [[params objectForKey:@"mode"] intValue];
         
         int status = [Konashi i2cMode:mode];
-        data = @{@"status":[NSNumber numberWithInteger:status]};
+        data = @{ @"status" : [NSNumber numberWithInteger:status] };
         
         callback(data);
     }];
     
-    [self on:@"i2cStartCondition" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"i2cStartCondition" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
         KB_LOG(@"bridge: i2cStartCondition, %@", params);
         
         NSDictionary *data;
         
         int status = [Konashi i2cStartCondition];
-        data = @{@"status":[NSNumber numberWithInteger:status]};
+        data = @{ @"status" : [NSNumber numberWithInteger:status] };
         
         callback(data);
     }];
     
-    [self on:@"i2cRestartCondition" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"i2cRestartCondition" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
         KB_LOG(@"bridge: i2cRestartCondition, %@", params);
         
         NSDictionary *data;
         
         int status = [Konashi i2cRestartCondition];
-        data = @{@"status":[NSNumber numberWithInteger:status]};
+        data = @{ @"status" : [NSNumber numberWithInteger:status] };
         
         callback(data);
     }];
-    
-    [self on:@"i2cStopCondition" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+
+    [self on:@"i2cStopCondition" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
         KB_LOG(@"bridge: i2cStopCondition, %@", params);
         
         NSDictionary *data;
         
         int status = [Konashi i2cStopCondition];
-        data = @{@"status":[NSNumber numberWithInteger:status]};
+        data = @{ @"status" : [NSNumber numberWithInteger:status] };
         
         callback(data);
     }];
     
-    [self on:@"i2cWrite" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"i2cWrite" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
         KB_LOG(@"bridge: i2cWrite, %@", params);
         
         NSDictionary *d;
@@ -593,34 +584,35 @@
         unsigned char address;
         
         // validation
-        if(![params.allKeys containsObject:@"length"] || ![params.allKeys containsObject:@"data"] || ![params.allKeys containsObject:@"address"]){
-            d = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
+        if (![params.allKeys containsObject:@"length"] || ![params.allKeys containsObject:@"data"] || ![params.allKeys containsObject:@"address"]) {
+            d = @{ @"status" : [NSNumber numberWithInteger:KonashiResultFailure] };
             callback(d);
             return;
         }
-        
+
         address = [[params objectForKey:@"address"] unsignedCharValue];
         length = [[params objectForKey:@"length"] intValue];
-        if([[params objectForKey:@"data"] isKindOfClass:[NSValue class]]){
+        if ([[params objectForKey:@"data"] isKindOfClass:[NSValue class]]) {
             unsigned char data = [[params objectForKey:@"data"] unsignedCharValue];
-            KB_LOG(@"i2cWrite: data:%d",data);
+            KB_LOG(@"i2cWrite: data:%d", data);
             status = [Konashi i2cWrite:length data:&data address:address];
-        } else if([[params objectForKey:@"data"] isKindOfClass:[NSArray class]]) {
-            NSArray *array=[params objectForKey:@"data"];
+        }
+        else if ([[params objectForKey:@"data"] isKindOfClass:[NSArray class]]) {
+            NSArray *array = [params objectForKey:@"data"];
             unsigned char data[array.count];
-            for (int i=0; i<array.count; i++) {
-                data[i]=[[array objectAtIndex:i] unsignedCharValue];
-                KB_LOG(@"i2cWrite: data[%d]:%d",i,data[i]);
+            for (int i = 0; i < array.count; i++) {
+                data[i] = [[array objectAtIndex:i] unsignedCharValue];
+                KB_LOG(@"i2cWrite: data[%d]:%d", i, data[i]);
             }
             status = [Konashi i2cWrite:length data:data address:address];
         }
-        
-        d = @{@"status":[NSNumber numberWithInteger:status]};
-        
+
+        d = @{ @"status" : [NSNumber numberWithInteger:status] };
+
         callback(d);
     }];
-    
-    [self on:@"i2cReadRequest" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+
+    [self on:@"i2cReadRequest" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
         KB_LOG(@"bridge: i2cReadRequest, %@", params);
         
         NSDictionary *data;
@@ -628,113 +620,112 @@
         unsigned char address;
         
         // validation
-        if(![params.allKeys containsObject:@"length"] || ![params.allKeys containsObject:@"address"]){
-            data = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
+        if (![params.allKeys containsObject:@"length"] || ![params.allKeys containsObject:@"address"]) {
+            data = @{ @"status" : [NSNumber numberWithInteger:KonashiResultFailure] };
             callback(data);
             return;
         }
-        
+
         length = [[params objectForKey:@"length"] intValue];
         address = [[params objectForKey:@"address"] unsignedCharValue];
-        
+
         int status = [Konashi i2cReadRequest:length address:address];
-        data = @{@"status":[NSNumber numberWithInteger:status]};
-        
+        data = @{ @"status" : [NSNumber numberWithInteger:status] };
+
         callback(data);
     }];
-    
-    [self on:@"i2cRead" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+
+    [self on:@"i2cRead" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
         KB_LOG(@"bridge: i2cRead, %@", params);
-        
+
         NSDictionary *d;
-        NSMutableArray *jsonData=[[NSMutableArray alloc] init];
+        NSMutableArray *jsonData = [[NSMutableArray alloc] init];
         int length;
         unsigned char data[20];
         int status;
-        
+
         // validation
-        if(![params.allKeys containsObject:@"length"]){
-            d = @{@"status":[NSNumber numberWithInteger:KonashiResultFailure]};
+        if (![params.allKeys containsObject:@"length"]) {
+            d = @{ @"status" : [NSNumber numberWithInteger:KonashiResultFailure] };
             callback(d);
             return;
         }
-        
+
         length = [[params objectForKey:@"length"] intValue];
-        
+
         status = [Konashi i2cRead:length data:data];
-        
-        for(int i=0; i<length;i++){
+
+        for (int i = 0; i < length; i++) {
             [jsonData addObject:[NSNumber numberWithInt:data[i]]];
         }
-        d = @{@"status": [NSNumber numberWithInt:status], @"value":jsonData};
-        
+        d = @{ @"status" : [NSNumber numberWithInt:status],
+            @"value" : jsonData };
+
         callback(d);
     }];
-    
-    
+
     /***************************
      * Hardware control
      ***************************/
-    [self on:@"reset" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+    [self on:@"reset" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
         KB_LOG(@"bridge: reset, %@", params);
-        
+
         NSDictionary *data;
-        
+
         int status = [Konashi reset];
-        data = @{@"status":[NSNumber numberWithInteger:status]};
-        
+        data = @{ @"status" : [NSNumber numberWithInteger:status] };
+
         callback(data);
     }];
-    
-    [self on:@"batteryLevelReadRequest" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+
+    [self on:@"batteryLevelReadRequest" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
         KB_LOG(@"bridge: batteryLevelReadRequest, %@", params);
-        
+
         NSDictionary *data;
-        
+
         int status = [Konashi batteryLevelReadRequest];
-        data = @{@"status":[NSNumber numberWithInteger:status]};
-        
+        data = @{ @"status" : [NSNumber numberWithInteger:status] };
+
         callback(data);
     }];
-    
-    [self on:@"batteryLevelRead" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+
+    [self on:@"batteryLevelRead" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
         KB_LOG(@"bridge: batteryLevelRead, %@", params);
-        
+
         NSDictionary *d;
         int batteryLevel;
-                
+
         batteryLevel = [Konashi batteryLevelRead];
 
-        d = @{@"value":[NSNumber numberWithInteger:batteryLevel]};
-        
+        d = @{ @"value" : [NSNumber numberWithInteger:batteryLevel] };
+
         callback(d);
     }];
-    
-    [self on:@"signalStrengthReadRequest" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+
+    [self on:@"signalStrengthReadRequest" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
         KB_LOG(@"bridge: signalStrengthReadRequest, %@", params);
-        
+
         NSDictionary *data;
-        
+
         int status = [Konashi signalStrengthReadRequest];
-        data = @{@"status":[NSNumber numberWithInteger:status]};
-        
+        data = @{ @"status" : [NSNumber numberWithInteger:status] };
+
         callback(data);
     }];
-    
-    [self on:@"signalStrengthRead" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary*)) {
+
+    [self on:@"signalStrengthRead" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
         KB_LOG(@"bridge: signalStrengthRead, %@", params);
-        
+
         NSDictionary *d;
         int value;
-        
+
         value = [Konashi signalStrengthRead];
-        
-        d = @{@"value":[NSNumber numberWithInteger:value]};
-        
+
+        d = @{ @"value" : [NSNumber numberWithInteger:value] };
+
         callback(d);
     }];
 }
-
 
 #pragma mark -
 #pragma mark Konashi event handler methods
@@ -751,7 +742,6 @@
     [self send:@"peripheralNotFound" withParams:nil];
 }
 
-
 - (void)jsKonashiConnected
 {
     KB_LOG(@"bridge: jsKonashiConnected");
@@ -767,17 +757,11 @@
 - (void)jsKonashiReady
 {
     KB_LOG(@"bridge: jsKonashiReady");
-    
-    [NSTimer
-        scheduledTimerWithTimeInterval:0.3f
-        target:self
-        selector:@selector(konashiReady:)
-        userInfo:nil
-        repeats:NO
-    ];
+
+    [NSTimer scheduledTimerWithTimeInterval:0.3f target:self selector:@selector(konashiReady:) userInfo:nil repeats:NO];
 }
 
--(void)konashiReady:(NSTimer*)timer
+- (void)konashiReady:(NSTimer *)timer
 {
     [self send:@"ready" withParams:nil];
 }
@@ -785,8 +769,8 @@
 - (void)jsKonashiUpdatePioInput
 {
     KB_LOG(@"bridge: jsKonashiUpdatePioInput");
-    
-    NSDictionary *data = @{@"value":[NSNumber numberWithInteger:[Konashi digitalReadAll]]};;
+
+    NSDictionary *data = @{ @"value" : [NSNumber numberWithInteger:[Konashi digitalReadAll]] };
 
     [self send:@"updatePioInput" withParams:data];
 }
@@ -794,35 +778,36 @@
 - (void)jsKonashiUpdateAnalogValue
 {
     KB_LOG(@"bridge: jsKonashiUpdateAnalogValue");
-    
+
     [self send:@"updateAnalogValue" withParams:nil];
 }
 
 - (void)jsKonashiUpdateAnalogValueAio0
 {
     KB_LOG(@"bridge: jsKonashiUpdateAnalogValueAio0");
-    
-    NSDictionary *data = @{@"pin": [NSNumber numberWithInt:0], @"value":[NSNumber numberWithInteger:[Konashi analogRead:0]]};;
+
+    NSDictionary *data = @{ @"pin" : [NSNumber numberWithInt:0],
+        @"value" : [NSNumber numberWithInteger:[Konashi analogRead:0]] };
 
     [self send:@"updateAnalogValueAio0" withParams:data];
-
 }
 
 - (void)jsKonashiUpdateAnalogValueAio1
 {
     KB_LOG(@"bridge: jsKonashiUpdateAnalogValueAio1");
-    
-    NSDictionary *data = @{@"pin": [NSNumber numberWithInt:1], @"value":[NSNumber numberWithInteger:[Konashi analogRead:1]]};;
-    
-    [self send:@"updateAnalogValueAio1" withParams:data];
 
+    NSDictionary *data = @{ @"pin" : [NSNumber numberWithInt:1],
+        @"value" : [NSNumber numberWithInteger:[Konashi analogRead:1]] };
+
+    [self send:@"updateAnalogValueAio1" withParams:data];
 }
 
 - (void)jsKonashiUpdateAnalogValueAio2
 {
     KB_LOG(@"bridge: jsKonashiUpdateAnalogValueAio2");
 
-    NSDictionary *data = @{@"pin": [NSNumber numberWithInt:2], @"value":[NSNumber numberWithInteger:[Konashi analogRead:2]]};;
+    NSDictionary *data = @{ @"pin" : [NSNumber numberWithInt:2],
+        @"value" : [NSNumber numberWithInteger:[Konashi analogRead:2]] };
 
     [self send:@"updateAnalogValueAio2" withParams:data];
 }
@@ -837,19 +822,18 @@
 - (void)jsKonashiCompleteUartRx
 {
     KB_LOG(@"bridge: jsKonashiCompleteUartRx");
-    
-    NSDictionary *data = @{@"value":[NSNumber numberWithInteger:[Konashi uartRead]]};;
-    
-    [self send:@"completeUartRx" withParams:data];
 
+    NSDictionary *data = @{ @"value" : [NSNumber numberWithInteger:[Konashi uartRead]] };
+
+    [self send:@"completeUartRx" withParams:data];
 }
 
 - (void)jsKonashiUpdateBatteryLevel
 {
     KB_LOG(@"bridge: jsKonashiUpdateBatteryLevel");
 
-    NSDictionary *data = @{@"value":[NSNumber numberWithInteger:[Konashi batteryLevelRead]]};;
-    
+    NSDictionary *data = @{ @"value" : [NSNumber numberWithInteger:[Konashi batteryLevelRead]] };
+
     [self send:@"updateBatteryLevel" withParams:data];
 }
 
@@ -857,10 +841,9 @@
 {
     KB_LOG(@"bridge: jsKonashiUpdateSignalStrength");
 
-    NSDictionary *data = @{@"value":[NSNumber numberWithInteger:[Konashi signalStrengthRead]]};;
-    
+    NSDictionary *data = @{ @"value" : [NSNumber numberWithInteger:[Konashi signalStrengthRead]] };
+
     [self send:@"updateSignalStrength" withParams:data];
 }
-
 
 @end
