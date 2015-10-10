@@ -20,16 +20,17 @@ $(function(){
     }
   });
   $("#btn-send11").on("tap", function() {
-		k.spiWrite(parseInt("ABCDEFGHIJ".val(),16));
+    k.digitalWrite(2, LOW);
+    k.spiWrite(parseInt("ABCDEFGHIJ".val(),16));
+    k.digitalWrite(2, HIGH);
   });
   $("#btn-send25").on("tap", function() {
+    k.digitalWrite(2, LOW);
     k.spiWrite(parseInt("ABCDEFGHIJABCDEFGHIJABCDE".val(),16));
-  });
-  $("#btn-read").on("tap", function() {
-    k.spiReadRequest();
+    k.digitalWrite(2, HIGH);
   });
   k.completeWriteSPI(function() {
-
+    k.spiReadRequest();
   });
   k.completeReadSPI(function() {
     k.spiReadData(function(data) {
