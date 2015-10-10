@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02EB151A619CA295B2CB0C2E108181F8 /* CBPeripheral+Konashi.h in Headers */ = {isa = PBXBuildFile; fileRef = E2B99FF2FFBCA9B546258223AB910F68 /* CBPeripheral+Konashi.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0E40000204CD27B724326C573C0DC7AA /* konashi-ios-sdk-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D81498EEEF5076FC6297BE0A6DD4B75F /* konashi-ios-sdk-dummy.m */; };
+		149990BE6403629343DA5BF7BB744EF6 /* Konashi+ADC.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DE9DE135E257A112ADB41C32CAE7983 /* Konashi+ADC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		14C78FCD4DA363A08231F3A9A3FD5C41 /* KNSPeripheralImpls.h in Headers */ = {isa = PBXBuildFile; fileRef = FA643035F7F4A4C941AE08E9F8C224E8 /* KNSPeripheralImpls.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1CB00D64156979AB66F5F1B1710D763C /* CBService+Konashi.m in Sources */ = {isa = PBXBuildFile; fileRef = 80AE5D6F0E1412046C837FA88A01CB1F /* CBService+Konashi.m */; };
+		1E06874A3D057A64E4726549E7BE3E70 /* KonashiJavaScriptBindingsProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 52251DEBDA3289A602ACCACCC87491F1 /* KonashiJavaScriptBindingsProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1590D75F94FD124DFD3884822FEB23 /* Konashi+ADC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD57E9645F581D2BC5B33A9EDFA030A /* Konashi+ADC.m */; };
+		3EA8D54F129BDA1ECE0D9DCD7632B55E /* CBService+Konashi.h in Headers */ = {isa = PBXBuildFile; fileRef = EA593CFB2952409FC3044F3F3624750F /* CBService+Konashi.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3F9A51882FCC1347F159973970390436 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E93ED28D4BFCA54D1D0B3004F64FF0 /* Foundation.framework */; };
+		49CE7D314D2FC4902888B6C54C897148 /* Konashi.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DB2B8F07960D1CE1E4C11C6C8A83E3 /* Konashi.m */; };
+		49DB563D52FC3536B178BEAC8C5CA76D /* KNSHandlerManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AB535E4706179EDCB6BDF2C42FD93D9 /* KNSHandlerManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E1DE010FE99B34D78E0A1D266D11F90 /* KNSKoshianPeripheralImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 746E5A4FE0F53531697D5F80D7693237 /* KNSKoshianPeripheralImpl.m */; };
+		57A2DA199D9658CB927E9DE020459B32 /* CBUUID+Konashi.m in Sources */ = {isa = PBXBuildFile; fileRef = 52CCC9B3BE2029C5FF59197CF58FA8F4 /* CBUUID+Konashi.m */; };
+		57C8B45467C7C218E73E27EA960EC35D /* KonashiConstant.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F161D8A18BB2F270E9475C0827E72FA /* KonashiConstant.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5AE072F2C681FA84825278AFC8D84DA4 /* Konashi+JavaScriptBindings.m in Sources */ = {isa = PBXBuildFile; fileRef = 12012B299198E88E5783CD264AB128AD /* Konashi+JavaScriptBindings.m */; };
+		65242D4EAC695FA8B62601D9A799E517 /* Konashi+Grove.m in Sources */ = {isa = PBXBuildFile; fileRef = CA73137B4CEC5EAE7C5B4A270E11774C /* Konashi+Grove.m */; };
+		7536DE2FD677ED97EC83F183FF503826 /* KNSKoshianPeripheralImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 813EF899273199A64C1E6A2685D6E262 /* KNSKoshianPeripheralImpl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75FC966701A1F70ADF471EF6B9D9588D /* Pods-PioDrive-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5701BA3EB2BC3FE9F758877FF1C57084 /* Pods-PioDrive-dummy.m */; };
+		76FD290365CA99E78F7E9388921EFB09 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFCF001EB660FB059265DC21BC49803F /* CoreBluetooth.framework */; };
+		782B8070C9BA0510D06275E647A07A01 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FF297D3CF584F1E9527A2373A14C1FB /* JavaScriptCore.framework */; };
+		7928B1B9D5CB94A2EF7EBEE9A0B45866 /* KNSPeripheral.h in Headers */ = {isa = PBXBuildFile; fileRef = 623E78331078E8C13242B8AA7A4C9593 /* KNSPeripheral.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7E915D7ECD7D753EFE0770D91E00DF51 /* Konashi+ACDrive.h in Headers */ = {isa = PBXBuildFile; fileRef = B02E3F4DD99073FE64E2823DAA7B207D /* Konashi+ACDrive.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8997AA517D998EAE0D243F8C3F791850 /* Konashi+Grove.h in Headers */ = {isa = PBXBuildFile; fileRef = 90B59E65949333CC76A19B66D9E564B0 /* Konashi+Grove.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9BEC2E7D520398C05BA1D7DC9F3035DD /* KNSPeripheralBaseImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD965D7F55600AE601BE42F26003E94 /* KNSPeripheralBaseImpl.m */; };
+		A8A44ED2986BB942E9A59698546C8EC8 /* KNSPeripheralImplProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 68FA529C2CE2C0FE12591BAAEF71ABFD /* KNSPeripheralImplProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AEBD720A1A0309645BE19090E565C69B /* KNSCentralManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 742301C1BA2C63C245C097FEBADEFE56 /* KNSCentralManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5238D3EC13327E9DE26D78ED3D81F82 /* KNSKonashiPeripheralImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF10222943814984545F76A7ED98E82 /* KNSKonashiPeripheralImpl.m */; };
+		B54C0DD543F76B21AA00414CF661DACC /* KonashiUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1604D8FBA5F94DFBE2FA20DB54442AE1 /* KonashiUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5B4D4BA97D510630C1ED9E303FCC2CA /* KNSKonashiPeripheralImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = CB96A4DFE4D1CA333239AAE9489901F1 /* KNSKonashiPeripheralImpl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BE7130D8FD0EB939645C878B41B5B097 /* Konashi+ACDrive.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AB1F8B769473B4D3B2D0DB5234E663 /* Konashi+ACDrive.m */; };
+		C833621867A7310207E7984045FB907C /* KNSHandlerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEF2ED2188A73DCCA75ECE9FB1BFDA8 /* KNSHandlerManager.m */; };
+		CDF5926C584586000AFB8DBB2C10D531 /* KNSCentralManager+UI.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D1A0B7E8F8AFACED5C309409B733A0 /* KNSCentralManager+UI.m */; };
+		CE300D07AC8D7099FDBD9FC389877F48 /* KNSCentralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BDCF250BC38ABFA7FDA6BC6F9323B3B0 /* KNSCentralManager.m */; };
+		D2215FC19313820B68E353EF0EEF59AD /* CBUUID+Konashi.h in Headers */ = {isa = PBXBuildFile; fileRef = 890E9063235F65B919F972985126A4D5 /* CBUUID+Konashi.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D7390C0191BA392A61715913C6B3AEDD /* KNSPeripheralBaseImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F4932D76558C603B1D1532C47197B00 /* KNSPeripheralBaseImpl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC34CF8D738A94267137666BB187D10E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E93ED28D4BFCA54D1D0B3004F64FF0 /* Foundation.framework */; };
+		DD06D9704BE9CD4B6250E1E599DD81BE /* KNSCentralManager+UI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DB8F72E06FBFCFC68D30AF3C1DD6075 /* KNSCentralManager+UI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E04BFD7AD8027BCC3B8D030AFBE8DA8E /* Konashi.h in Headers */ = {isa = PBXBuildFile; fileRef = E017B39D7E5D789857798A1B02057477 /* Konashi.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E0ECBF04500922E27B4088D73C972979 /* KNSPeripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A573FFA9FCAAAA021FC6C6240197B2E /* KNSPeripheral.m */; };
+		E822F1FCC14F80B9DF7E8A87BAAAB8C5 /* KonashiUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 540EEC09D7EBF442C65930E7393A855A /* KonashiUtils.m */; };
+		F4BFD7B535692DDF63649BD29FAC9D5E /* Konashi+JavaScriptBindings.h in Headers */ = {isa = PBXBuildFile; fileRef = FF96E61A28D4F309E344B3ADF7E31C92 /* Konashi+JavaScriptBindings.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F6400467481E4FC5022B938DEE53DED7 /* CBPeripheral+Konashi.m in Sources */ = {isa = PBXBuildFile; fileRef = A87BB3BB791571C8413432FC6A5BB80C /* CBPeripheral+Konashi.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		80C5F2A886CA686A3F9E3D4C2973BB69 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDCEC26E7C1C01111754F3897BAA1558;
+			remoteInfo = "konashi-ios-sdk";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01DB2B8F07960D1CE1E4C11C6C8A83E3 /* Konashi.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Konashi.m; path = Konashi/Konashi/Konashi.m; sourceTree = "<group>"; };
+		05E93ED28D4BFCA54D1D0B3004F64FF0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		06C2737B8C7169840BADC33F3922796D /* konashi-ios-sdk.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "konashi-ios-sdk.xcconfig"; sourceTree = "<group>"; };
+		12012B299198E88E5783CD264AB128AD /* Konashi+JavaScriptBindings.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Konashi+JavaScriptBindings.m"; path = "Konashi/Konashi/Category/Konashi/Konashi+JavaScriptBindings.m"; sourceTree = "<group>"; };
+		1604D8FBA5F94DFBE2FA20DB54442AE1 /* KonashiUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KonashiUtils.h; path = Konashi/Konashi/KonashiUtils.h; sourceTree = "<group>"; };
+		17BE9975EF832215D929F65F2AF7C867 /* libkonashi-ios-sdk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libkonashi-ios-sdk.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AB535E4706179EDCB6BDF2C42FD93D9 /* KNSHandlerManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KNSHandlerManager.h; path = Konashi/Konashi/KNSHandlerManager.h; sourceTree = "<group>"; };
+		1DB8F72E06FBFCFC68D30AF3C1DD6075 /* KNSCentralManager+UI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "KNSCentralManager+UI.h"; path = "Konashi/Konashi/Category/Konashi/KNSCentralManager+UI.h"; sourceTree = "<group>"; };
+		1DE9DE135E257A112ADB41C32CAE7983 /* Konashi+ADC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Konashi+ADC.h"; path = "Konashi/Konashi/Category/Konashi/Konashi+ADC.h"; sourceTree = "<group>"; };
+		2FD57E9645F581D2BC5B33A9EDFA030A /* Konashi+ADC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Konashi+ADC.m"; path = "Konashi/Konashi/Category/Konashi/Konashi+ADC.m"; sourceTree = "<group>"; };
+		2FF297D3CF584F1E9527A2373A14C1FB /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		44C1720F7F3C1DED976DBF09326930C6 /* Pods-PioDrive-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PioDrive-frameworks.sh"; sourceTree = "<group>"; };
+		4F161D8A18BB2F270E9475C0827E72FA /* KonashiConstant.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KonashiConstant.h; path = Konashi/Konashi/Constant/KonashiConstant.h; sourceTree = "<group>"; };
+		4F4932D76558C603B1D1532C47197B00 /* KNSPeripheralBaseImpl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KNSPeripheralBaseImpl.h; path = Konashi/Konashi/Impl/KNSPeripheralBaseImpl.h; sourceTree = "<group>"; };
+		52251DEBDA3289A602ACCACCC87491F1 /* KonashiJavaScriptBindingsProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KonashiJavaScriptBindingsProtocol.h; path = Konashi/Konashi/Category/Konashi/KonashiJavaScriptBindingsProtocol.h; sourceTree = "<group>"; };
+		52CCC9B3BE2029C5FF59197CF58FA8F4 /* CBUUID+Konashi.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CBUUID+Konashi.m"; path = "Konashi/Konashi/Category/CoreBluetooth/CBUUID+Konashi.m"; sourceTree = "<group>"; };
+		540EEC09D7EBF442C65930E7393A855A /* KonashiUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KonashiUtils.m; path = Konashi/Konashi/KonashiUtils.m; sourceTree = "<group>"; };
+		54AB1F8B769473B4D3B2D0DB5234E663 /* Konashi+ACDrive.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Konashi+ACDrive.m"; path = "Konashi/Konashi/Category/Konashi/Konashi+ACDrive.m"; sourceTree = "<group>"; };
+		5701BA3EB2BC3FE9F758877FF1C57084 /* Pods-PioDrive-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PioDrive-dummy.m"; sourceTree = "<group>"; };
+		5EF10222943814984545F76A7ED98E82 /* KNSKonashiPeripheralImpl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KNSKonashiPeripheralImpl.m; path = Konashi/Konashi/Impl/KNSKonashiPeripheralImpl.m; sourceTree = "<group>"; };
+		61230389104BAF6A1719DF38D097079E /* konashi-ios-sdk-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "konashi-ios-sdk-prefix.pch"; sourceTree = "<group>"; };
+		623E78331078E8C13242B8AA7A4C9593 /* KNSPeripheral.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KNSPeripheral.h; path = Konashi/Konashi/KNSPeripheral.h; sourceTree = "<group>"; };
+		68FA529C2CE2C0FE12591BAAEF71ABFD /* KNSPeripheralImplProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KNSPeripheralImplProtocol.h; path = Konashi/Konashi/Impl/KNSPeripheralImplProtocol.h; sourceTree = "<group>"; };
+		6A573FFA9FCAAAA021FC6C6240197B2E /* KNSPeripheral.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KNSPeripheral.m; path = Konashi/Konashi/KNSPeripheral.m; sourceTree = "<group>"; };
+		6CA55E273866A89CE08585BD1BD3CB22 /* libPods-PioDrive.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PioDrive.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		742301C1BA2C63C245C097FEBADEFE56 /* KNSCentralManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KNSCentralManager.h; path = Konashi/Konashi/KNSCentralManager.h; sourceTree = "<group>"; };
+		746E5A4FE0F53531697D5F80D7693237 /* KNSKoshianPeripheralImpl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KNSKoshianPeripheralImpl.m; path = Konashi/Konashi/Impl/KNSKoshianPeripheralImpl.m; sourceTree = "<group>"; };
+		80AE5D6F0E1412046C837FA88A01CB1F /* CBService+Konashi.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CBService+Konashi.m"; path = "Konashi/Konashi/Category/CoreBluetooth/CBService+Konashi.m"; sourceTree = "<group>"; };
+		813EF899273199A64C1E6A2685D6E262 /* KNSKoshianPeripheralImpl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KNSKoshianPeripheralImpl.h; path = Konashi/Konashi/Impl/KNSKoshianPeripheralImpl.h; sourceTree = "<group>"; };
+		890E9063235F65B919F972985126A4D5 /* CBUUID+Konashi.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CBUUID+Konashi.h"; path = "Konashi/Konashi/Category/CoreBluetooth/CBUUID+Konashi.h"; sourceTree = "<group>"; };
+		8AEF2ED2188A73DCCA75ECE9FB1BFDA8 /* KNSHandlerManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KNSHandlerManager.m; path = Konashi/Konashi/KNSHandlerManager.m; sourceTree = "<group>"; };
+		90B59E65949333CC76A19B66D9E564B0 /* Konashi+Grove.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Konashi+Grove.h"; path = "Konashi/Konashi/Category/Konashi/Konashi+Grove.h"; sourceTree = "<group>"; };
+		927085E939E05030419E76CE007EF26C /* Pods-PioDrive-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PioDrive-resources.sh"; sourceTree = "<group>"; };
+		969586D28526CB2DF5A45E58EAA3FBA5 /* Pods-PioDrive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PioDrive.debug.xcconfig"; sourceTree = "<group>"; };
+		A87BB3BB791571C8413432FC6A5BB80C /* CBPeripheral+Konashi.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CBPeripheral+Konashi.m"; path = "Konashi/Konashi/Category/CoreBluetooth/CBPeripheral+Konashi.m"; sourceTree = "<group>"; };
+		ADB778DCB63EB1C6DFFDED4084C80524 /* Pods-PioDrive-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PioDrive-acknowledgements.plist"; sourceTree = "<group>"; };
+		B02E3F4DD99073FE64E2823DAA7B207D /* Konashi+ACDrive.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Konashi+ACDrive.h"; path = "Konashi/Konashi/Category/Konashi/Konashi+ACDrive.h"; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BDCF250BC38ABFA7FDA6BC6F9323B3B0 /* KNSCentralManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KNSCentralManager.m; path = Konashi/Konashi/KNSCentralManager.m; sourceTree = "<group>"; };
+		CA484107531D996CD5BBC34F280838A9 /* Pods-PioDrive-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PioDrive-acknowledgements.markdown"; sourceTree = "<group>"; };
+		CA73137B4CEC5EAE7C5B4A270E11774C /* Konashi+Grove.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Konashi+Grove.m"; path = "Konashi/Konashi/Category/Konashi/Konashi+Grove.m"; sourceTree = "<group>"; };
+		CB96A4DFE4D1CA333239AAE9489901F1 /* KNSKonashiPeripheralImpl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KNSKonashiPeripheralImpl.h; path = Konashi/Konashi/Impl/KNSKonashiPeripheralImpl.h; sourceTree = "<group>"; };
+		D81498EEEF5076FC6297BE0A6DD4B75F /* konashi-ios-sdk-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "konashi-ios-sdk-dummy.m"; sourceTree = "<group>"; };
+		DDD965D7F55600AE601BE42F26003E94 /* KNSPeripheralBaseImpl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KNSPeripheralBaseImpl.m; path = Konashi/Konashi/Impl/KNSPeripheralBaseImpl.m; sourceTree = "<group>"; };
+		E017B39D7E5D789857798A1B02057477 /* Konashi.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Konashi.h; path = Konashi/Konashi/Konashi.h; sourceTree = "<group>"; };
+		E2B99FF2FFBCA9B546258223AB910F68 /* CBPeripheral+Konashi.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CBPeripheral+Konashi.h"; path = "Konashi/Konashi/Category/CoreBluetooth/CBPeripheral+Konashi.h"; sourceTree = "<group>"; };
+		E6D1A0B7E8F8AFACED5C309409B733A0 /* KNSCentralManager+UI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "KNSCentralManager+UI.m"; path = "Konashi/Konashi/Category/Konashi/KNSCentralManager+UI.m"; sourceTree = "<group>"; };
+		EA593CFB2952409FC3044F3F3624750F /* CBService+Konashi.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CBService+Konashi.h"; path = "Konashi/Konashi/Category/CoreBluetooth/CBService+Konashi.h"; sourceTree = "<group>"; };
+		FA643035F7F4A4C941AE08E9F8C224E8 /* KNSPeripheralImpls.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KNSPeripheralImpls.h; path = Konashi/Konashi/Impl/KNSPeripheralImpls.h; sourceTree = "<group>"; };
+		FA73BFE061F143937CADD127187E3004 /* Pods-PioDrive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PioDrive.release.xcconfig"; sourceTree = "<group>"; };
+		FF96E61A28D4F309E344B3ADF7E31C92 /* Konashi+JavaScriptBindings.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Konashi+JavaScriptBindings.h"; path = "Konashi/Konashi/Category/Konashi/Konashi+JavaScriptBindings.h"; sourceTree = "<group>"; };
+		FFCF001EB660FB059265DC21BC49803F /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/CoreBluetooth.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0E7DD233E5057C03E7615C01EC343847 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC34CF8D738A94267137666BB187D10E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2B3DAB934A464162F2269CA4005BC5F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76FD290365CA99E78F7E9388921EFB09 /* CoreBluetooth.framework in Frameworks */,
+				3F9A51882FCC1347F159973970390436 /* Foundation.framework in Frameworks */,
+				782B8070C9BA0510D06275E647A07A01 /* JavaScriptCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				418428D738670C59AAAEC273231FD898 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		132A7F9D5F6945E4C68F46CFD7BE220F /* Pods-PioDrive */ = {
+			isa = PBXGroup;
+			children = (
+				CA484107531D996CD5BBC34F280838A9 /* Pods-PioDrive-acknowledgements.markdown */,
+				ADB778DCB63EB1C6DFFDED4084C80524 /* Pods-PioDrive-acknowledgements.plist */,
+				5701BA3EB2BC3FE9F758877FF1C57084 /* Pods-PioDrive-dummy.m */,
+				44C1720F7F3C1DED976DBF09326930C6 /* Pods-PioDrive-frameworks.sh */,
+				927085E939E05030419E76CE007EF26C /* Pods-PioDrive-resources.sh */,
+				969586D28526CB2DF5A45E58EAA3FBA5 /* Pods-PioDrive.debug.xcconfig */,
+				FA73BFE061F143937CADD127187E3004 /* Pods-PioDrive.release.xcconfig */,
+			);
+			name = "Pods-PioDrive";
+			path = "Target Support Files/Pods-PioDrive";
+			sourceTree = "<group>";
+		};
+		418428D738670C59AAAEC273231FD898 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				FFCF001EB660FB059265DC21BC49803F /* CoreBluetooth.framework */,
+				05E93ED28D4BFCA54D1D0B3004F64FF0 /* Foundation.framework */,
+				2FF297D3CF584F1E9527A2373A14C1FB /* JavaScriptCore.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		59450BDF62FB043885A05488DA0677BD /* konashi-ios-sdk */ = {
+			isa = PBXGroup;
+			children = (
+				E2B99FF2FFBCA9B546258223AB910F68 /* CBPeripheral+Konashi.h */,
+				A87BB3BB791571C8413432FC6A5BB80C /* CBPeripheral+Konashi.m */,
+				EA593CFB2952409FC3044F3F3624750F /* CBService+Konashi.h */,
+				80AE5D6F0E1412046C837FA88A01CB1F /* CBService+Konashi.m */,
+				890E9063235F65B919F972985126A4D5 /* CBUUID+Konashi.h */,
+				52CCC9B3BE2029C5FF59197CF58FA8F4 /* CBUUID+Konashi.m */,
+				742301C1BA2C63C245C097FEBADEFE56 /* KNSCentralManager.h */,
+				BDCF250BC38ABFA7FDA6BC6F9323B3B0 /* KNSCentralManager.m */,
+				1DB8F72E06FBFCFC68D30AF3C1DD6075 /* KNSCentralManager+UI.h */,
+				E6D1A0B7E8F8AFACED5C309409B733A0 /* KNSCentralManager+UI.m */,
+				1AB535E4706179EDCB6BDF2C42FD93D9 /* KNSHandlerManager.h */,
+				8AEF2ED2188A73DCCA75ECE9FB1BFDA8 /* KNSHandlerManager.m */,
+				CB96A4DFE4D1CA333239AAE9489901F1 /* KNSKonashiPeripheralImpl.h */,
+				5EF10222943814984545F76A7ED98E82 /* KNSKonashiPeripheralImpl.m */,
+				813EF899273199A64C1E6A2685D6E262 /* KNSKoshianPeripheralImpl.h */,
+				746E5A4FE0F53531697D5F80D7693237 /* KNSKoshianPeripheralImpl.m */,
+				623E78331078E8C13242B8AA7A4C9593 /* KNSPeripheral.h */,
+				6A573FFA9FCAAAA021FC6C6240197B2E /* KNSPeripheral.m */,
+				4F4932D76558C603B1D1532C47197B00 /* KNSPeripheralBaseImpl.h */,
+				DDD965D7F55600AE601BE42F26003E94 /* KNSPeripheralBaseImpl.m */,
+				68FA529C2CE2C0FE12591BAAEF71ABFD /* KNSPeripheralImplProtocol.h */,
+				FA643035F7F4A4C941AE08E9F8C224E8 /* KNSPeripheralImpls.h */,
+				E017B39D7E5D789857798A1B02057477 /* Konashi.h */,
+				01DB2B8F07960D1CE1E4C11C6C8A83E3 /* Konashi.m */,
+				B02E3F4DD99073FE64E2823DAA7B207D /* Konashi+ACDrive.h */,
+				54AB1F8B769473B4D3B2D0DB5234E663 /* Konashi+ACDrive.m */,
+				1DE9DE135E257A112ADB41C32CAE7983 /* Konashi+ADC.h */,
+				2FD57E9645F581D2BC5B33A9EDFA030A /* Konashi+ADC.m */,
+				90B59E65949333CC76A19B66D9E564B0 /* Konashi+Grove.h */,
+				CA73137B4CEC5EAE7C5B4A270E11774C /* Konashi+Grove.m */,
+				FF96E61A28D4F309E344B3ADF7E31C92 /* Konashi+JavaScriptBindings.h */,
+				12012B299198E88E5783CD264AB128AD /* Konashi+JavaScriptBindings.m */,
+				4F161D8A18BB2F270E9475C0827E72FA /* KonashiConstant.h */,
+				52251DEBDA3289A602ACCACCC87491F1 /* KonashiJavaScriptBindingsProtocol.h */,
+				1604D8FBA5F94DFBE2FA20DB54442AE1 /* KonashiUtils.h */,
+				540EEC09D7EBF442C65930E7393A855A /* KonashiUtils.m */,
+				C513573E8942E065B6FFCBF4F79DECEF /* Support Files */,
+			);
+			path = "konashi-ios-sdk";
+			sourceTree = "<group>";
+		};
+		664E51EFBEA44D954943CFEDA58C0B95 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				132A7F9D5F6945E4C68F46CFD7BE220F /* Pods-PioDrive */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
+				EF8C20096F73DA102981B90DD392D50E /* Pods */,
+				ACC08CC9813DFB237CFEEA116371FE19 /* Products */,
+				664E51EFBEA44D954943CFEDA58C0B95 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		ACC08CC9813DFB237CFEEA116371FE19 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				17BE9975EF832215D929F65F2AF7C867 /* libkonashi-ios-sdk.a */,
+				6CA55E273866A89CE08585BD1BD3CB22 /* libPods-PioDrive.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C513573E8942E065B6FFCBF4F79DECEF /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				06C2737B8C7169840BADC33F3922796D /* konashi-ios-sdk.xcconfig */,
+				D81498EEEF5076FC6297BE0A6DD4B75F /* konashi-ios-sdk-dummy.m */,
+				61230389104BAF6A1719DF38D097079E /* konashi-ios-sdk-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/konashi-ios-sdk";
+			sourceTree = "<group>";
+		};
+		EF8C20096F73DA102981B90DD392D50E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				59450BDF62FB043885A05488DA0677BD /* konashi-ios-sdk */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0A6AB07C8D786FC6D519A73DB0E73C52 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02EB151A619CA295B2CB0C2E108181F8 /* CBPeripheral+Konashi.h in Headers */,
+				3EA8D54F129BDA1ECE0D9DCD7632B55E /* CBService+Konashi.h in Headers */,
+				D2215FC19313820B68E353EF0EEF59AD /* CBUUID+Konashi.h in Headers */,
+				DD06D9704BE9CD4B6250E1E599DD81BE /* KNSCentralManager+UI.h in Headers */,
+				AEBD720A1A0309645BE19090E565C69B /* KNSCentralManager.h in Headers */,
+				49DB563D52FC3536B178BEAC8C5CA76D /* KNSHandlerManager.h in Headers */,
+				B5B4D4BA97D510630C1ED9E303FCC2CA /* KNSKonashiPeripheralImpl.h in Headers */,
+				7536DE2FD677ED97EC83F183FF503826 /* KNSKoshianPeripheralImpl.h in Headers */,
+				7928B1B9D5CB94A2EF7EBEE9A0B45866 /* KNSPeripheral.h in Headers */,
+				D7390C0191BA392A61715913C6B3AEDD /* KNSPeripheralBaseImpl.h in Headers */,
+				A8A44ED2986BB942E9A59698546C8EC8 /* KNSPeripheralImplProtocol.h in Headers */,
+				14C78FCD4DA363A08231F3A9A3FD5C41 /* KNSPeripheralImpls.h in Headers */,
+				7E915D7ECD7D753EFE0770D91E00DF51 /* Konashi+ACDrive.h in Headers */,
+				149990BE6403629343DA5BF7BB744EF6 /* Konashi+ADC.h in Headers */,
+				8997AA517D998EAE0D243F8C3F791850 /* Konashi+Grove.h in Headers */,
+				F4BFD7B535692DDF63649BD29FAC9D5E /* Konashi+JavaScriptBindings.h in Headers */,
+				E04BFD7AD8027BCC3B8D030AFBE8DA8E /* Konashi.h in Headers */,
+				57C8B45467C7C218E73E27EA960EC35D /* KonashiConstant.h in Headers */,
+				1E06874A3D057A64E4726549E7BE3E70 /* KonashiJavaScriptBindingsProtocol.h in Headers */,
+				B54C0DD543F76B21AA00414CF661DACC /* KonashiUtils.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		A743B7519D1A8767C2624DEF927D2273 /* Pods-PioDrive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A4BE89ED99C9B0E0D7513294669D513 /* Build configuration list for PBXNativeTarget "Pods-PioDrive" */;
+			buildPhases = (
+				30B28E767FF6065EA934A9B306B1CEB8 /* Sources */,
+				0E7DD233E5057C03E7615C01EC343847 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				60EB0BCE3497EBBF0797B8416DC852B7 /* PBXTargetDependency */,
+			);
+			name = "Pods-PioDrive";
+			productName = "Pods-PioDrive";
+			productReference = 6CA55E273866A89CE08585BD1BD3CB22 /* libPods-PioDrive.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		DDCEC26E7C1C01111754F3897BAA1558 /* konashi-ios-sdk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B8E4261AC03E35E54787415E8DD4DFBC /* Build configuration list for PBXNativeTarget "konashi-ios-sdk" */;
+			buildPhases = (
+				1B76A9EA26465B3E22E327808FD1CFE9 /* Sources */,
+				A2B3DAB934A464162F2269CA4005BC5F /* Frameworks */,
+				0A6AB07C8D786FC6D519A73DB0E73C52 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "konashi-ios-sdk";
+			productName = "konashi-ios-sdk";
+			productReference = 17BE9975EF832215D929F65F2AF7C867 /* libkonashi-ios-sdk.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = ACC08CC9813DFB237CFEEA116371FE19 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DDCEC26E7C1C01111754F3897BAA1558 /* konashi-ios-sdk */,
+				A743B7519D1A8767C2624DEF927D2273 /* Pods-PioDrive */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1B76A9EA26465B3E22E327808FD1CFE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6400467481E4FC5022B938DEE53DED7 /* CBPeripheral+Konashi.m in Sources */,
+				1CB00D64156979AB66F5F1B1710D763C /* CBService+Konashi.m in Sources */,
+				57A2DA199D9658CB927E9DE020459B32 /* CBUUID+Konashi.m in Sources */,
+				CDF5926C584586000AFB8DBB2C10D531 /* KNSCentralManager+UI.m in Sources */,
+				CE300D07AC8D7099FDBD9FC389877F48 /* KNSCentralManager.m in Sources */,
+				C833621867A7310207E7984045FB907C /* KNSHandlerManager.m in Sources */,
+				B5238D3EC13327E9DE26D78ED3D81F82 /* KNSKonashiPeripheralImpl.m in Sources */,
+				4E1DE010FE99B34D78E0A1D266D11F90 /* KNSKoshianPeripheralImpl.m in Sources */,
+				E0ECBF04500922E27B4088D73C972979 /* KNSPeripheral.m in Sources */,
+				9BEC2E7D520398C05BA1D7DC9F3035DD /* KNSPeripheralBaseImpl.m in Sources */,
+				BE7130D8FD0EB939645C878B41B5B097 /* Konashi+ACDrive.m in Sources */,
+				1F1590D75F94FD124DFD3884822FEB23 /* Konashi+ADC.m in Sources */,
+				65242D4EAC695FA8B62601D9A799E517 /* Konashi+Grove.m in Sources */,
+				5AE072F2C681FA84825278AFC8D84DA4 /* Konashi+JavaScriptBindings.m in Sources */,
+				0E40000204CD27B724326C573C0DC7AA /* konashi-ios-sdk-dummy.m in Sources */,
+				49CE7D314D2FC4902888B6C54C897148 /* Konashi.m in Sources */,
+				E822F1FCC14F80B9DF7E8A87BAAAB8C5 /* KonashiUtils.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30B28E767FF6065EA934A9B306B1CEB8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75FC966701A1F70ADF471EF6B9D9588D /* Pods-PioDrive-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		60EB0BCE3497EBBF0797B8416DC852B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "konashi-ios-sdk";
+			target = DDCEC26E7C1C01111754F3897BAA1558 /* konashi-ios-sdk */;
+			targetProxy = 80C5F2A886CA686A3F9E3D4C2973BB69 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		03CA91998D6773EC5D02B3DB87B8353E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0B57334D6C23DADAA4F7D802A5760EB2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		130AE5E00E72AF54D7430FE2855F2AF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 969586D28526CB2DF5A45E58EAA3FBA5 /* Pods-PioDrive.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3354004EF8444AB09E0747707510986B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA73BFE061F143937CADD127187E3004 /* Pods-PioDrive.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		A7917D8E4CF57E745EFE0C5F442B9CBA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06C2737B8C7169840BADC33F3922796D /* konashi-ios-sdk.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/konashi-ios-sdk/konashi-ios-sdk-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		CE594A41EC400019CD283401692C6BAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06C2737B8C7169840BADC33F3922796D /* konashi-ios-sdk.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/konashi-ios-sdk/konashi-ios-sdk-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2A4BE89ED99C9B0E0D7513294669D513 /* Build configuration list for PBXNativeTarget "Pods-PioDrive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				130AE5E00E72AF54D7430FE2855F2AF3 /* Debug */,
+				3354004EF8444AB09E0747707510986B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B57334D6C23DADAA4F7D802A5760EB2 /* Debug */,
+				03CA91998D6773EC5D02B3DB87B8353E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B8E4261AC03E35E54787415E8DD4DFBC /* Build configuration list for PBXNativeTarget "konashi-ios-sdk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7917D8E4CF57E745EFE0C5F442B9CBA /* Debug */,
+				CE594A41EC400019CD283401692C6BAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

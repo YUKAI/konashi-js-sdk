@@ -1,0 +1,20 @@
+PODS:
+  - konashi-ios-sdk (4.0.1)
+
+DEPENDENCIES:
+  - konashi-ios-sdk (from `git@github.com:YUKAI/konashi-ios-sdk.git`, branch `feature/spi`)
+
+EXTERNAL SOURCES:
+  konashi-ios-sdk:
+    :branch: feature/spi
+    :git: git@github.com:YUKAI/konashi-ios-sdk.git
+
+CHECKOUT OPTIONS:
+  konashi-ios-sdk:
+    :commit: 6dcd8a62d27c930a86023a4f8f0ced76e4f34764
+    :git: git@github.com:YUKAI/konashi-ios-sdk.git
+
+SPEC CHECKSUMS:
+  konashi-ios-sdk: 2a11146c5fd2fecb39dd0531201e4b836dea8f11
+
+COCOAPODS: 0.39.0

@@ -1,0 +1,571 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		080553D117473E2300400BFB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 080553D017473E2300400BFB /* UIKit.framework */; };
+		080553D317473E2300400BFB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 080553D217473E2300400BFB /* Foundation.framework */; };
+		080553D517473E2300400BFB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 080553D417473E2300400BFB /* CoreGraphics.framework */; };
+		080553F91747468400400BFB /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 080553F81747468400400BFB /* CoreBluetooth.framework */; };
+		0860CBFB175230620093168E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 080553D017473E2300400BFB /* UIKit.framework */; };
+		0860CBFC175230620093168E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 080553D217473E2300400BFB /* Foundation.framework */; };
+		0860CBFD175230620093168E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 080553D417473E2300400BFB /* CoreGraphics.framework */; };
+		0860CC03175230620093168E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0860CC01175230620093168E /* InfoPlist.strings */; };
+		0860CC05175230620093168E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0860CC04175230620093168E /* main.m */; };
+		0860CC09175230620093168E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0860CC08175230620093168E /* AppDelegate.m */; };
+		0860CC0B175230620093168E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0860CC0A175230620093168E /* Default.png */; };
+		0860CC0D175230620093168E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0860CC0C175230620093168E /* Default@2x.png */; };
+		0860CC0F175230620093168E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0860CC0E175230620093168E /* Default-568h@2x.png */; };
+		0860CC12175230620093168E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0860CC10175230620093168E /* MainStoryboard.storyboard */; };
+		0860CC15175230620093168E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0860CC14175230620093168E /* ViewController.m */; };
+		08774903175283680056E99C /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 08774902175283680056E99C /* assets */; };
+		08931CA217508D1000A0C60B /* KonashiWebView+Bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 08931C9F17508D1000A0C60B /* KonashiWebView+Bridge.m */; };
+		08931CA317508D1000A0C60B /* KonashiWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08931CA117508D1000A0C60B /* KonashiWebView.m */; };
+		E9DFEC691BC8F99B00A2A743 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9DFEC591BC8F99B00A2A743 /* AppDelegate.m */; settings = {ASSET_TAGS = (); }; };
+		E9DFEC6A1BC8F99B00A2A743 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9DFEC5A1BC8F99B00A2A743 /* Default-568h@2x.png */; settings = {ASSET_TAGS = (); }; };
+		E9DFEC6B1BC8F99B00A2A743 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E9DFEC5B1BC8F99B00A2A743 /* Default.png */; settings = {ASSET_TAGS = (); }; };
+		E9DFEC6C1BC8F99B00A2A743 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9DFEC5C1BC8F99B00A2A743 /* Default@2x.png */; settings = {ASSET_TAGS = (); }; };
+		E9DFEC6D1BC8F99B00A2A743 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9DFEC5D1BC8F99B00A2A743 /* InfoPlist.strings */; settings = {ASSET_TAGS = (); }; };
+		E9DFEC6E1BC8F99B00A2A743 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9DFEC5F1BC8F99B00A2A743 /* MainStoryboard.storyboard */; settings = {ASSET_TAGS = (); }; };
+		E9DFEC6F1BC8F99B00A2A743 /* icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = E9DFEC611BC8F99B00A2A743 /* icon-72.png */; settings = {ASSET_TAGS = (); }; };
+		E9DFEC701BC8F99B00A2A743 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E9DFEC621BC8F99B00A2A743 /* icon.png */; settings = {ASSET_TAGS = (); }; };
+		E9DFEC711BC8F99B00A2A743 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9DFEC631BC8F99B00A2A743 /* icon@2x.png */; settings = {ASSET_TAGS = (); }; };
+		E9DFEC721BC8F99B00A2A743 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9DFEC641BC8F99B00A2A743 /* main.m */; settings = {ASSET_TAGS = (); }; };
+		E9DFEC731BC8F99B00A2A743 /* SPIDrive-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9DFEC651BC8F99B00A2A743 /* SPIDrive-Info.plist */; settings = {ASSET_TAGS = (); }; };
+		E9DFEC741BC8F99B00A2A743 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9DFEC681BC8F99B00A2A743 /* ViewController.m */; settings = {ASSET_TAGS = (); }; };
+		E9F59B3C1A19F93800FABDCC /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F59B3B1A19F93800FABDCC /* JavaScriptCore.framework */; };
+		EB6C680715FF3B8DC2385FC9 /* libPods-PioDrive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E4BFF4E879FC9FE136C238 /* libPods-PioDrive.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		080553CD17473E2300400BFB /* SPIDrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPIDrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		080553D017473E2300400BFB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		080553D217473E2300400BFB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		080553D417473E2300400BFB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		080553F81747468400400BFB /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		0860CBFA175230620093168E /* KoooTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KoooTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0860CC00175230620093168E /* KoooTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KoooTest-Info.plist"; sourceTree = "<group>"; };
+		0860CC02175230620093168E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0860CC04175230620093168E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0860CC06175230620093168E /* KoooTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KoooTest-Prefix.pch"; sourceTree = "<group>"; };
+		0860CC07175230620093168E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0860CC08175230620093168E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0860CC0A175230620093168E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		0860CC0C175230620093168E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		0860CC0E175230620093168E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		0860CC11175230620093168E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		0860CC13175230620093168E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		0860CC14175230620093168E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		08774902175283680056E99C /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
+		08931C9E17508D1000A0C60B /* KonashiWebView+Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KonashiWebView+Bridge.h"; sourceTree = "<group>"; };
+		08931C9F17508D1000A0C60B /* KonashiWebView+Bridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KonashiWebView+Bridge.m"; sourceTree = "<group>"; };
+		08931CA017508D1000A0C60B /* KonashiWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KonashiWebView.h; sourceTree = "<group>"; };
+		08931CA117508D1000A0C60B /* KonashiWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KonashiWebView.m; sourceTree = "<group>"; };
+		496D94F207B9A4C77149C4EA /* Pods-PioDrive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PioDrive.release.xcconfig"; path = "Pods/Target Support Files/Pods-PioDrive/Pods-PioDrive.release.xcconfig"; sourceTree = "<group>"; };
+		A0E4BFF4E879FC9FE136C238 /* libPods-PioDrive.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PioDrive.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9DFEC581BC8F99B00A2A743 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E9DFEC591BC8F99B00A2A743 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E9DFEC5A1BC8F99B00A2A743 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		E9DFEC5B1BC8F99B00A2A743 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		E9DFEC5C1BC8F99B00A2A743 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		E9DFEC5E1BC8F99B00A2A743 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E9DFEC601BC8F99B00A2A743 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		E9DFEC611BC8F99B00A2A743 /* icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-72.png"; sourceTree = "<group>"; };
+		E9DFEC621BC8F99B00A2A743 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		E9DFEC631BC8F99B00A2A743 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		E9DFEC641BC8F99B00A2A743 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E9DFEC651BC8F99B00A2A743 /* SPIDrive-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SPIDrive-Info.plist"; sourceTree = "<group>"; };
+		E9DFEC661BC8F99B00A2A743 /* SPIDrive-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPIDrive-Prefix.pch"; sourceTree = "<group>"; };
+		E9DFEC671BC8F99B00A2A743 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E9DFEC681BC8F99B00A2A743 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E9F59B3B1A19F93800FABDCC /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F5DD9CE2F5E671CF704F0CBC /* Pods-PioDrive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PioDrive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PioDrive/Pods-PioDrive.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		080553CA17473E2300400BFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9F59B3C1A19F93800FABDCC /* JavaScriptCore.framework in Frameworks */,
+				080553F91747468400400BFB /* CoreBluetooth.framework in Frameworks */,
+				080553D117473E2300400BFB /* UIKit.framework in Frameworks */,
+				080553D317473E2300400BFB /* Foundation.framework in Frameworks */,
+				080553D517473E2300400BFB /* CoreGraphics.framework in Frameworks */,
+				EB6C680715FF3B8DC2385FC9 /* libPods-PioDrive.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0860CBF7175230620093168E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0860CBFB175230620093168E /* UIKit.framework in Frameworks */,
+				0860CBFC175230620093168E /* Foundation.framework in Frameworks */,
+				0860CBFD175230620093168E /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080553C417473E2300400BFB = {
+			isa = PBXGroup;
+			children = (
+				08774902175283680056E99C /* assets */,
+				E9DFEC571BC8F99B00A2A743 /* PioDrive */,
+				08931C9D17508D1000A0C60B /* KonashiWebView */,
+				0860CBFE175230620093168E /* KoooTest */,
+				080553CF17473E2300400BFB /* Frameworks */,
+				080553CE17473E2300400BFB /* Products */,
+				3F2D3189A6FEBE7D4A837663 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		080553CE17473E2300400BFB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				080553CD17473E2300400BFB /* SPIDrive.app */,
+				0860CBFA175230620093168E /* KoooTest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		080553CF17473E2300400BFB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9F59B3B1A19F93800FABDCC /* JavaScriptCore.framework */,
+				080553F81747468400400BFB /* CoreBluetooth.framework */,
+				080553D017473E2300400BFB /* UIKit.framework */,
+				080553D217473E2300400BFB /* Foundation.framework */,
+				080553D417473E2300400BFB /* CoreGraphics.framework */,
+				A0E4BFF4E879FC9FE136C238 /* libPods-PioDrive.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0860CBFE175230620093168E /* KoooTest */ = {
+			isa = PBXGroup;
+			children = (
+				0860CC07175230620093168E /* AppDelegate.h */,
+				0860CC08175230620093168E /* AppDelegate.m */,
+				0860CC10175230620093168E /* MainStoryboard.storyboard */,
+				0860CC13175230620093168E /* ViewController.h */,
+				0860CC14175230620093168E /* ViewController.m */,
+				0860CBFF175230620093168E /* Supporting Files */,
+			);
+			path = KoooTest;
+			sourceTree = "<group>";
+		};
+		0860CBFF175230620093168E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0860CC00175230620093168E /* KoooTest-Info.plist */,
+				0860CC01175230620093168E /* InfoPlist.strings */,
+				0860CC04175230620093168E /* main.m */,
+				0860CC06175230620093168E /* KoooTest-Prefix.pch */,
+				0860CC0A175230620093168E /* Default.png */,
+				0860CC0C175230620093168E /* Default@2x.png */,
+				0860CC0E175230620093168E /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		08931C9D17508D1000A0C60B /* KonashiWebView */ = {
+			isa = PBXGroup;
+			children = (
+				08931C9E17508D1000A0C60B /* KonashiWebView+Bridge.h */,
+				08931C9F17508D1000A0C60B /* KonashiWebView+Bridge.m */,
+				08931CA017508D1000A0C60B /* KonashiWebView.h */,
+				08931CA117508D1000A0C60B /* KonashiWebView.m */,
+			);
+			name = KonashiWebView;
+			path = ../../KonashiWebView;
+			sourceTree = "<group>";
+		};
+		3F2D3189A6FEBE7D4A837663 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F5DD9CE2F5E671CF704F0CBC /* Pods-PioDrive.debug.xcconfig */,
+				496D94F207B9A4C77149C4EA /* Pods-PioDrive.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E9DFEC571BC8F99B00A2A743 /* PioDrive */ = {
+			isa = PBXGroup;
+			children = (
+				E9DFEC581BC8F99B00A2A743 /* AppDelegate.h */,
+				E9DFEC591BC8F99B00A2A743 /* AppDelegate.m */,
+				E9DFEC5A1BC8F99B00A2A743 /* Default-568h@2x.png */,
+				E9DFEC5B1BC8F99B00A2A743 /* Default.png */,
+				E9DFEC5C1BC8F99B00A2A743 /* Default@2x.png */,
+				E9DFEC5D1BC8F99B00A2A743 /* InfoPlist.strings */,
+				E9DFEC5F1BC8F99B00A2A743 /* MainStoryboard.storyboard */,
+				E9DFEC611BC8F99B00A2A743 /* icon-72.png */,
+				E9DFEC621BC8F99B00A2A743 /* icon.png */,
+				E9DFEC631BC8F99B00A2A743 /* icon@2x.png */,
+				E9DFEC641BC8F99B00A2A743 /* main.m */,
+				E9DFEC651BC8F99B00A2A743 /* SPIDrive-Info.plist */,
+				E9DFEC661BC8F99B00A2A743 /* SPIDrive-Prefix.pch */,
+				E9DFEC671BC8F99B00A2A743 /* ViewController.h */,
+				E9DFEC681BC8F99B00A2A743 /* ViewController.m */,
+			);
+			path = PioDrive;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		080553CC17473E2300400BFB /* SPIDrive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 080553F017473E2300400BFB /* Build configuration list for PBXNativeTarget "SPIDrive" */;
+			buildPhases = (
+				D70BAEF93A45C6227B0C6AA0 /* Check Pods Manifest.lock */,
+				080553C917473E2300400BFB /* Sources */,
+				080553CA17473E2300400BFB /* Frameworks */,
+				080553CB17473E2300400BFB /* Resources */,
+				6342912CE1E8385A3EE28384 /* Embed Pods Frameworks */,
+				1F225687CD24C93E671404FA /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SPIDrive;
+			productName = PioDrive;
+			productReference = 080553CD17473E2300400BFB /* SPIDrive.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0860CBF9175230620093168E /* KoooTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0860CC18175230620093168E /* Build configuration list for PBXNativeTarget "KoooTest" */;
+			buildPhases = (
+				0860CBF6175230620093168E /* Sources */,
+				0860CBF7175230620093168E /* Frameworks */,
+				0860CBF8175230620093168E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KoooTest;
+			productName = KoooTest;
+			productReference = 0860CBFA175230620093168E /* KoooTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		080553C517473E2300400BFB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Yukai Engineering";
+			};
+			buildConfigurationList = 080553C817473E2300400BFB /* Build configuration list for PBXProject "SPIDrive" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 080553C417473E2300400BFB;
+			productRefGroup = 080553CE17473E2300400BFB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				080553CC17473E2300400BFB /* SPIDrive */,
+				0860CBF9175230620093168E /* KoooTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		080553CB17473E2300400BFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9DFEC6E1BC8F99B00A2A743 /* MainStoryboard.storyboard in Resources */,
+				E9DFEC6F1BC8F99B00A2A743 /* icon-72.png in Resources */,
+				E9DFEC731BC8F99B00A2A743 /* SPIDrive-Info.plist in Resources */,
+				E9DFEC6C1BC8F99B00A2A743 /* Default@2x.png in Resources */,
+				08774903175283680056E99C /* assets in Resources */,
+				E9DFEC701BC8F99B00A2A743 /* icon.png in Resources */,
+				E9DFEC6B1BC8F99B00A2A743 /* Default.png in Resources */,
+				E9DFEC6A1BC8F99B00A2A743 /* Default-568h@2x.png in Resources */,
+				E9DFEC6D1BC8F99B00A2A743 /* InfoPlist.strings in Resources */,
+				E9DFEC711BC8F99B00A2A743 /* icon@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0860CBF8175230620093168E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0860CC03175230620093168E /* InfoPlist.strings in Resources */,
+				0860CC0B175230620093168E /* Default.png in Resources */,
+				0860CC0D175230620093168E /* Default@2x.png in Resources */,
+				0860CC0F175230620093168E /* Default-568h@2x.png in Resources */,
+				0860CC12175230620093168E /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F225687CD24C93E671404FA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PioDrive/Pods-PioDrive-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6342912CE1E8385A3EE28384 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PioDrive/Pods-PioDrive-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D70BAEF93A45C6227B0C6AA0 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		080553C917473E2300400BFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08931CA217508D1000A0C60B /* KonashiWebView+Bridge.m in Sources */,
+				08931CA317508D1000A0C60B /* KonashiWebView.m in Sources */,
+				E9DFEC721BC8F99B00A2A743 /* main.m in Sources */,
+				E9DFEC691BC8F99B00A2A743 /* AppDelegate.m in Sources */,
+				E9DFEC741BC8F99B00A2A743 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0860CBF6175230620093168E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0860CC05175230620093168E /* main.m in Sources */,
+				0860CC09175230620093168E /* AppDelegate.m in Sources */,
+				0860CC15175230620093168E /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0860CC01175230620093168E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0860CC02175230620093168E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0860CC10175230620093168E /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0860CC11175230620093168E /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		E9DFEC5D1BC8F99B00A2A743 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9DFEC5E1BC8F99B00A2A743 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E9DFEC5F1BC8F99B00A2A743 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9DFEC601BC8F99B00A2A743 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		080553EE17473E2300400BFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		080553EF17473E2300400BFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		080553F117473E2300400BFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5DD9CE2F5E671CF704F0CBC /* Pods-PioDrive.debug.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PioDrive/SPIDrive-Prefix.pch";
+				INFOPLIST_FILE = "PioDrive/SPIDrive-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.uxxu.konashi.js.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = SPIDrive;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		080553F217473E2300400BFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 496D94F207B9A4C77149C4EA /* Pods-PioDrive.release.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PioDrive/SPIDrive-Prefix.pch";
+				INFOPLIST_FILE = "PioDrive/SPIDrive-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.uxxu.konashi.js.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = SPIDrive;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		0860CC16175230620093168E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KoooTest/KoooTest-Prefix.pch";
+				INFOPLIST_FILE = "KoooTest/KoooTest-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0860CC17175230620093168E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KoooTest/KoooTest-Prefix.pch";
+				INFOPLIST_FILE = "KoooTest/KoooTest-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		080553C817473E2300400BFB /* Build configuration list for PBXProject "SPIDrive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				080553EE17473E2300400BFB /* Debug */,
+				080553EF17473E2300400BFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		080553F017473E2300400BFB /* Build configuration list for PBXNativeTarget "SPIDrive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				080553F117473E2300400BFB /* Debug */,
+				080553F217473E2300400BFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0860CC18175230620093168E /* Build configuration list for PBXNativeTarget "KoooTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0860CC16175230620093168E /* Debug */,
+				0860CC17175230620093168E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 080553C517473E2300400BFB /* Project object */;
+}
