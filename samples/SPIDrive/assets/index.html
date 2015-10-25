@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=2, minimum-scale=1, maximum-scale=1, user-scalable=no">
+
+        <link rel="stylesheet" href="sample/ratchet/ratchet.css">
+
+        <style type="text/css">
+            .hello {
+                margin: 10px;
+            }
+
+            .find {
+                margin: 10px;
+            }
+	   .send11 {
+		   margin: 10px;
+	   }
+	   .send25 {
+		   margin: 10px;
+	   }
+	   .read {
+		   margin: 10px;
+	   }
+        </style>
+
+    </head>
+    <body>
+        <header class="bar-title">
+            <h1 class="title">konashi-js-sdk: Drive SPI</h1>
+        </header>
+
+        <div class="content">
+
+            <div class="hello">
+                <p>Hello konashi.js!</p>
+                <p>First make sure you tap the following button to find konashi.
+            </div>
+
+            <div class="find">
+                <a id="btn-find" class="button-main button-block find">Find konashi</a>
+            </div>
+		  <div class="send11">
+			  <a id="btn-send11" class="button-main button-block send11">Send(11)</a>
+		  </div>
+		  <div class="send25">
+			  <a id="btn-send25" class="button-main button-block send25">Send(25)</a>
+		  </div>
+          <div class="read">
+              <a id="btn-read" class="button-main button-block read">Read</a>
+          </div>
+        </div>
+
+        <!-- for konashijs -->
+        <script src="konashi-bridge.js"></script>
+
+        <!-- for this sample -->
+        <script src="sample/zepto/zepto.min.js"></script>
+        <script src="sample/zepto/touch.js"></script>
+        <script src="sample/ratchet/ratchet.js"></script>
+        <script src="sample/sample-spi.js"></script>
+    </body>
+</html>

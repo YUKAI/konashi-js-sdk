@@ -1,0 +1,1 @@
+../../../konashi-ios-sdk/Konashi/Konashi/Category/Konashi/Konashi+JavaScriptBindings.h
