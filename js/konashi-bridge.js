@@ -101,8 +101,8 @@
     KONASHI_EVENT_UPDATE_BATTERY_LEVEL: "updateBatteryLevel",
     KONASHI_EVENT_UPDATE_SIGNAL_STRENGTH: "updateSignalStrength",
     KONASHI_EVENT_START_DISCOVERY: "startDiscovery",
-    KONASHI_EVENT_SPI_WRITE_COMPLETE: "spiWriteComplete",
-    KONASHI_EVENT_SPI_READ_COMPLETE: "spiReadComplete",
+    KONASHI_EVENT_SPI_WRITE_COMPLETE: "completeWriteSPI",
+    KONASHI_EVENT_SPI_READ_COMPLETE: "completeReadSPI",
 
     /***************************************************
      * properties

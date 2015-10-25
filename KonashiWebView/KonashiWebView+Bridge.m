@@ -56,6 +56,8 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(jsKonashiUpdateAnalogValueAio2) name:KonashiEventAnalogIO2DidUpdateNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(jsKonashiCompleteReadI2c) name:KonashiEventI2CReadCompleteNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(jsKonashiCompleteUartRx) name:KonashiEventUartRxCompleteNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(jsKonashiCompleteWriteSPI) name:KonashiEventSPIWriteCompleteNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(jsKonashiCompleteReadSPI) name:KonashiEventSPIReadCompleteNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(jsKonashiUpdateBatteryLevel) name:KonashiEventBatteryLevelDidUpdateNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(jsKonashiUpdateSignalStrength) name:KonashiEventSignalStrengthDidUpdateNotification object:nil];
 
@@ -667,74 +669,69 @@
     /***************************
      * SPI
      ***************************/
-	[self on:@"spiMode" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
-		KB_LOG(@"bridge: spiMode, %@", params);
-		NSDictionary *data;
-		// validation
-		if (![params.allKeys containsObject:@"mode"] || ![params.allKeys containsObject:@"speed"] || ![params.allKeys containsObject:@"bitOrder"]) {
-			data = @{ @"status" : [NSNumber numberWithInteger:KonashiResultFailure] };
-			callback(data);
-			return;
-		}
-		
-		int mode = [params[@"mode"] intValue];
-		int speed = [params[@"speed"] intValue];
-		int bitOrder = [params[@"bitOrder"] intValue];
-		int status = [Konashi spiMode:mode speed:speed bitOrder:bitOrder];
-		data = @{ @"status" : [NSNumber numberWithInteger:status] };
-		callback(data);
-	}];
-	
-	[self on:@"spiWrite" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
-		KB_LOG(@"bridge: spiWrite, %@", params);
-		// validation
-		NSDictionary *data;
-		if (![params.allKeys containsObject:@"data"]) {
-			data = @{ @"status" : [NSNumber numberWithInteger:KonashiResultFailure] };
-			callback(data);
-			return;
-		}
-		
-		int status = 0;
-		NSObject *obj = [params objectForKey:@"data"];
-		if ([obj isKindOfClass:[NSValue class]]) {
-			unsigned char d = [[params objectForKey:@"data"] unsignedCharValue];
-			KB_LOG(@"spiWrite: data:%d", d);
-			status = [Konashi spiWrite:[NSData dataWithBytes:&d length:1]];
-		}
-		else if ([obj isKindOfClass:[NSArray class]]) {
-			NSArray *array = [params objectForKey:@"data"];
-			unsigned char d[array.count];
-			for (int i = 0; i < array.count; i++) {
-				d[i] = [[array objectAtIndex:i] unsignedCharValue];
-				KB_LOG(@"spiWrite: data[%d]:%d", i, d[i]);
-			}
-			status = [Konashi spiWrite:[NSData dataWithBytes:d length:array.count]];
-		}
-		
-		data = @{ @"status" : [NSNumber numberWithInteger:status] };
-		callback(data);
-	}];
-	
-	[self on:@"spiReadRequest" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
-		KB_LOG(@"bridge: spiReadRequest, %@", params);
-		NSDictionary *data = @{ @"status" : [NSNumber numberWithInteger:[Konashi spiReadRequest]] };
-		callback(data);
-	}];
-	
-	[self on:@"spiReadData" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
-		KB_LOG(@"bridge: spiReadData, %@", params);
-		NSData *data = [Konashi spiReadData];
-		unsigned char *byte = NULL;
-		[data getBytes:byte length:data.length];
-		NSMutableArray *jsonData = [NSMutableArray new];
-		for (int i = 0; i < data.length; i++) {
-			[jsonData addObject:@(byte[i])];
-		}
-		NSDictionary *result = @{ @"status" : [NSNumber numberWithInt:KonashiResultSuccess],
-			  @"value" : jsonData };
-		callback(result);
-	}];
+    [self on:@"spiMode" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
+        KB_LOG(@"bridge: spiMode, %@", params);
+        NSDictionary *data;
+        // validation
+        if (![params.allKeys containsObject:@"mode"] || ![params.allKeys containsObject:@"speed"] || ![params.allKeys containsObject:@"bitOrder"]) {
+            data = @{ @"status" : [NSNumber numberWithInteger:KonashiResultFailure] };
+            callback(data);
+            return;
+        }
+        
+        int mode = [params[@"mode"] intValue];
+        int speed = [params[@"speed"] intValue];
+        int bitOrder = [params[@"bitOrder"] intValue];
+        int status = [Konashi spiMode:mode speed:speed bitOrder:bitOrder];
+        data = @{ @"status" : [NSNumber numberWithInteger:status] };
+        callback(data);
+    }];
+    
+    [self on:@"spiWrite" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
+        KB_LOG(@"bridge: spiWrite, %@", params);
+        // validation
+        NSDictionary *data;
+        if (![params.allKeys containsObject:@"data"]) {
+            data = @{ @"status" : [NSNumber numberWithInteger:KonashiResultFailure] };
+            callback(data);
+            return;
+        }
+        
+        int status = 0;
+        NSObject *obj = [params objectForKey:@"data"];
+        if ([obj isKindOfClass:[NSString class]]) {
+            NSString *str = (NSString *)obj;
+            KB_LOG(@"spiWrite: data:%@", str);
+            status = [Konashi spiWrite:[str dataUsingEncoding:NSASCIIStringEncoding]];
+        }
+        
+        data = @{ @"status" : [NSNumber numberWithInteger:status] };
+        callback(data);
+    }];
+    
+    [self on:@"spiReadRequest" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
+        KB_LOG(@"bridge: spiReadRequest, %@", params);
+        NSDictionary *data = @{ @"status" : [NSNumber numberWithInteger:[Konashi spiReadRequest]] };
+        callback(data);
+    }];
+    
+    [self on:@"spiReadData" handlerWithCallback:^(NSDictionary *params, void (^callback)(NSDictionary *)) {
+        KB_LOG(@"bridge: spiReadData, %@", params);
+        KonashiResult r = KonashiResultFailure;
+        NSData *data = [Konashi spiReadData];
+        NSMutableArray *jsonData = [NSMutableArray new];
+        if (data) {
+            unsigned char byte[64];
+            [data getBytes:byte length:data.length];
+            for (int i = 0; i < data.length; i++) {
+                [jsonData addObject:@(byte[i])];
+            }
+            r = KonashiResultSuccess;
+        }
+        NSDictionary *result = @{ @"status" : [NSNumber numberWithInt:r],
+                             @"value" : jsonData };
+        callback(result);
+    }];
 
     /***************************
      * Hardware control
@@ -898,6 +895,20 @@
     NSDictionary *data = @{ @"value" : [NSNumber numberWithInteger:[Konashi uartRead]] };
 
     [self send:@"completeUartRx" withParams:data];
+}
+
+- (void)jsKonashiCompleteWriteSPI
+{
+    KB_LOG(@"bridge: jsKonashiCompleteWriteSPI");
+    
+    [self send:@"completeWriteSPI" withParams:nil];
+}
+
+- (void)jsKonashiCompleteReadSPI
+{
+    KB_LOG(@"bridge: jsKonashiCompleteReadSPI");
+    
+    [self send:@"completeReadSPI" withParams:nil];
 }
 
 - (void)jsKonashiUpdateBatteryLevel

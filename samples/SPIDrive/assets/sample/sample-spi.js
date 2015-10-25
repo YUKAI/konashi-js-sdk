@@ -20,14 +20,14 @@ $(function(){
     }
   });
   $("#btn-send11").on("tap", function() {
-    k.digitalWrite(2, LOW);
-    k.spiWrite(parseInt("ABCDEFGHIJ".val(),16));
-    k.digitalWrite(2, HIGH);
+    k.digitalWrite(2, k.LOW);
+    k.spiWrite("ABCDEFGHIJ");
+    k.digitalWrite(2, k.HIGH);
   });
   $("#btn-send25").on("tap", function() {
-    k.digitalWrite(2, LOW);
-    k.spiWrite(parseInt("ABCDEFGHIJABCDEFGHIJABCDE".val(),16));
-    k.digitalWrite(2, HIGH);
+    k.digitalWrite(2, k.LOW);
+    k.spiWrite("ABCDEFGHIJABCDEFGHIJABCDE");
+    k.digitalWrite(2, k.HIGH);
   });
   k.completeWriteSPI(function() {
     k.spiReadRequest();
@@ -44,9 +44,9 @@ $(function(){
       .html("Disconnect konashi")
     ;
 
-    k.pinMode(2, OUTPUT);
-    k.digitalWrite(2, HIGH);
-    k.spiMode(KOSHIAN_SPI_MODE_CPOL0_CPHA0, KOSHIAN_SPI_SPEED_200K, KOSHIAN_SPI_BIT_ORDER_LSB_FIRST);
+    k.pinMode(2, k.OUTPUT);
+    k.digitalWrite(2, k.HIGH);
+    k.spiMode(k.KOSHIAN_SPI_MODE_CPOL0_CPHA0, k.KOSHIAN_SPI_SPEED_200K, k.KOSHIAN_SPI_BIT_ORDER_LSB_FIRST);
   });
 
   //k.showDebugLog();
