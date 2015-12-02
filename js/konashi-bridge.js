@@ -52,6 +52,11 @@
     // Konashi UART baudrate
     KONASHI_UART_RATE_2K4: 0x000a,
     KONASHI_UART_RATE_9K6: 0x0028,
+    KONASHI_UART_RATE_19K2: 0x0050,
+    KONASHI_UART_RATE_38K4: 0x00a0,
+    KONASHI_UART_RATE_57K6: 0x00f0,
+    KONASHI_UART_RATE_76K8: 0x0140,
+    KONASHI_UART_RATE_115K2: 0x01e0,
 
     // Konashi I2C
     KONASHI_I2C_DATA_MAX_LENGTH: 18,
@@ -68,6 +73,23 @@
     KONASHI_UART_DISABLE: 0,
     KONASHI_UART_ENABLE: 1,
 
+    // Konashi SPI
+    KOSHIAN_SPI_SPEED_200K: 20,
+    KOSHIAN_SPI_SPEED_500K: 50,
+    KOSHIAN_SPI_SPEED_1M: 100,
+    KOSHIAN_SPI_SPEED_2M: 200,
+    KOSHIAN_SPI_SPEED_3M: 300,
+    KOSHIAN_SPI_SPEED_6M: 600,
+    
+    KOSHIAN_SPI_MODE_CPOL0_CPHA0: 0,
+    KOSHIAN_SPI_MODE_CPOL0_CPHA1: 1,
+    KOSHIAN_SPI_MODE_CPOL1_CPHA0: 2,
+    KOSHIAN_SPI_MODE_CPOL1_CPHA1: 3,
+    KOSHIAN_SPI_MODE_DISABLE: -1,
+    
+    KOSHIAN_SPI_BIT_ORDER_LSB_FIRST: 0,
+    KOSHIAN_SPI_BIT_ORDER_MSB_FIRST: 1,
+
     // Events
     KONASHI_EVENT_CENTRAL_MANAGER_POWERED_ON: "centralManagerPoweredOn",
     KONASHI_EVENT_PERIPHERAL_NOT_FOUND: "peripheralNotFound",
@@ -83,7 +105,9 @@
     KONASHI_EVENT_UART_RX_COMPLETE: "completeUartRx",
     KONASHI_EVENT_UPDATE_BATTERY_LEVEL: "updateBatteryLevel",
     KONASHI_EVENT_UPDATE_SIGNAL_STRENGTH: "updateSignalStrength",
-
+    KONASHI_EVENT_START_DISCOVERY: "startDiscovery",
+    KONASHI_EVENT_SPI_WRITE_COMPLETE: "completeWriteSPI",
+    KONASHI_EVENT_SPI_READ_COMPLETE: "completeReadSPI",
 
     /***************************************************
      * properties
@@ -285,6 +309,22 @@
       }
     },
 
+    completeWriteSPI: function(callback) {
+      if (callback && typeof callback == "function") {
+        this.on(k.KONASHI_EVENT_SPI_WRITE_COMPLETE, function() {
+          callback();
+        });
+      };
+    },
+
+    completeReadSPI: function(callback) {
+      if (callback && typeof callback == "function") {
+        this.on(k.KONASHI_EVENT_SPI_READ_COMPLETE, function() {
+          callback();
+        });
+      };
+    },
+
 
     /***************************************************
      * Public wrap functions (Control functinos)
@@ -451,6 +491,27 @@
           callback(data.value);
         });
       }
+    },
+
+    // SPI
+    spiMode: function(mode, speed, bitOrder) {
+      k.trigger("spiMode", {mode: mode, speed: speed, bitOrder: bitOrder});
+    },
+
+    spiWrite: function(data) {
+      k.trigger("spiWrite", {data: data});
+    },
+
+    spiReadRequest: function() {
+      k.trigger("spiReadRequest", {});
+    },
+
+    spiReadData: function(callback) {
+      if (callback && typeof callback == "function") {
+        k.trigger("spiReadData", {}, function(data) {
+          callback(data.value);
+        });
+      };
     },
 
     // Hardware Control
