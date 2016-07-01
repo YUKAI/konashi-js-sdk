@@ -3,6 +3,8 @@ konashi-js-sdk
 
 [![Version](https://img.shields.io/cocoapods/v/konashi-ios-sdk.svg?style=flat)](http://cocoadocs.org/docsets/konashi-ios-sdk)
 
+※ バグ改善や要望以外の質問については `konashi`**AT**`ux-xu.com` 宛にご連絡下さい。
+
 konashi + JavaScript/HTML/CSS = konashi-js-sdk!!
 
 konashi-js-sdkを使えば、JavaScriptだけでkonashiをコントロールできます。
